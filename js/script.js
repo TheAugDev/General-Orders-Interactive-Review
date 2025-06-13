@@ -6,9 +6,10 @@ let currentQuestionIndex = 0;
 let score = 0;
 let questions = [];
 let userAnswers = [];
-let recruitName = '';
+let officerName = ''; // Renamed from recruitName
 
 // --- DOM Elements ---
+const nameInput = document.getElementById('officer-name'); // Changed ID
 const mainHeader = document.querySelector('header');
 const welcomeScreen = document.getElementById('welcome-screen');
 const unitSelectionModal = document.getElementById('unit-selection-modal');
@@ -82,18 +83,18 @@ function renderChapterButtons() {
 
 // --- User Interaction & Flow ---
 function handleNameCheck() {
-    const nameInput = document.getElementById('recruit-name');
-    recruitName = nameInput.value;
-    if (recruitName.trim() === '') {
-        nameInput.classList.add('border-red-500', 'ring-red-500');
+    // const nameInput = document.getElementById('recruit-name'); // Already changed above
+    officerName = nameInput.value; // Renamed from recruitName
+    if (officerName.trim() === '') { // Renamed from recruitName
+        nameInput.classList.add('border-red-500');
         nameInput.placeholder = 'Your name is required!';
         setTimeout(() => {
-            nameInput.classList.remove('border-red-500', 'ring-red-500');
+            nameInput.classList.remove('border-red-500');
             nameInput.placeholder = 'Enter your full name';
         }, 2500);
         return false;
     }
-    nameInput.classList.remove('border-red-500', 'ring-red-500');
+    nameInput.classList.remove('border-red-500');
     return true;
 }
 
@@ -247,79 +248,51 @@ function getRecommendations() {
 
 function generateReportHTML() {
     const totalQuestions = questions.length;
-    const percentage = totalQuestions > 0 ? ((score / totalQuestions) * 100) : 0;
+    const percentage = totalQuestions > 0 ? ((score / totalQuestions) * 100).toFixed(0) : 0;
     const date = new Date().toLocaleDateString('en-US', { year: 'numeric', month: 'long', day: 'numeric' });
     const recommendations = getRecommendations();
 
-    const radius = 60;
-    const circumference = 2 * Math.PI * radius;
-    const offset = circumference - (percentage / 100) * circumference;
-
     return `
-        <div class="bg-white p-8 rounded-lg shadow-2xl">
-            <div id="report-header" class="text-center border-b-2 border-gray-200 pb-6 mb-6">
-                <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAASwAAAEsCAMAAABOo35HAAAC8VBMVEX///8BAQEAAAABAADV1dUA//8AgIAAAIAAgAD//wD5+fnr6+x+fn729vbw8PBoaGhvb283Nzevr68/Pz/Z2dnOzs7i4uLg4ODc3Nzw8PD09PTs7OxSUlIICAgMDAxMTEwzMzOIiIigoKA5OTkREREgICB7e3vc3NzExMTf39+goKCRkZFmZmb5+fkAABoAACoAADkAAD0AAEUAAGYAAGsAAG4AAHAAAHEAAHIAAHMAAHQAAHUAAGoAAFYAAEMAAEAACgD27eEAAAD48ucAACz69O4AADIABRMAAAD28vIAAAIAAwQAARgAASEAAigAASsAAS4ABSsADzAAADwAE0EAFUIAFWUAF2gAGGoAGmwAG3AAHHIAHHIACgD37+YAADL49OgAACf79/AAADUAARUAABwAASIAAikAASwABSsAEC8AETMADzUAADsAD0QAEEIAE0QAFEYAEkcAFkgAFIgAFYwAFZEAFpIAFpcAFpkAFpoAFpsAFpwAF5wAF50AF54AF58AF6AAHHIACgD59eoAACb7+PIAADYAAhUAABwAASQAASgAASsAAS8AEC8AEjEAETMADzMADzcADjsAD0AAD0EAEUIAE0QAFEYAF0gAF4sAFZEAFpUAFpgAFpoAFpsAFpwAF5sAF5wAF50AF54AF58AF6AAGHIACgD59ecAACX7+PMAADYAARQAABwAASQAASgAASwAEjEAETMADzQADjcADjsAD0EAEkQAFEYAFkgAFokAFYwAFZEAFpIAFpcAFpgAFpoAFpsAFpwAF5sAF5wAF50AF54AF58AF6AAGXIACgD59+oAACX7+fEAADcAARQAAB0AASQAAScAASgAASwADysAEjAAETEAEDMADzMADzQADjcADjsADkEAEUIAEkMAFEUAFEcAFkgAFokAFYwAFZEAFpIAFpcAFpgAFpoAFpsAFpwAF5sAF5wAF50AF54AF58AF6AAGXMACgD6+PIAADUAARcAAB4AASUAASgADSkAESsADi4AEzAAEDEAETEAEDMADzMADzQADjcADjsADkEAEUIAEkMAFEUAFEcAFkgAFokAFYwAFZEAFpIAFpcAFpgAFpoAFpsAFpwAF5sAF5wAF50AF54AF58AF6AAGXMABgD69/UAADUAARUAAB0AASQAAScADSkAEisADi4AEzAADzAAEDEAETEAEDMADzMADzQADjcADjsADkEAEUIAEkMAFEUAFEcAFkgAFokAFYwAFZEAFpIAFpcAFpgAFpoAFpsAFpwAF5sAF5wAF50AF54AF58AF6AAGXMAAwD79vQAADUAARUAAB0AASQAAScADSkAEisADi4AEzAADzAAEDEAETEAEDMADzMADzQADjcADjsADkEAEUIAEkMAFEUAFEcAFkgAFokAFYwAFZEAFpIAFpcAFpgAFpoAFpsAFpwAF5sAF5wAF50AF54AF58AF6AAGnM=" alt="Denton PD Logo" class="mx-auto mb-3 rounded-full h-20 w-20">
-                <h2 class="text-3xl font-bold text-gray-800">Performance Review</h2>
-                <p class="text-md text-gray-500">Denton Police Department General Orders</p>
-            </div>
-            <div class="grid grid-cols-1 md:grid-cols-2 gap-8 items-center">
-                <div class="text-center p-6">
-                    <h3 class="text-xl font-semibold mb-4 text-gray-700">Overall Performance</h3>
-                     <svg class="w-48 h-48 mx-auto" viewBox="0 0 140 140">
-                        <circle class="text-gray-200" stroke-width="12" stroke="currentColor" fill="transparent" r="${radius}" cx="70" cy="70" />
-                        <circle class="progress-ring__circle text-blue-600" stroke-width="12" stroke-dasharray="${circumference} ${circumference}" style="stroke-dashoffset:${offset}" stroke-linecap="round" stroke="currentColor" fill="transparent" r="${radius}" cx="70" cy="70" />
-                        <text x="50%" y="50%" text-anchor="middle" stroke="#1E40AF" stroke-width="0.5px" dy=".3em" class="text-4xl font-bold fill-current text-blue-800">${percentage.toFixed(0)}%</text>
-                    </svg>
-                </div>
-                <div class="space-y-4">
-                     <div><strong class="block text-sm font-medium text-gray-500">Recruit Name:</strong> <span class="text-lg font-semibold text-gray-800">${recruitName}</span></div>
-                     <div><strong class="block text-sm font-medium text-gray-500">Assessment Date:</strong> <span class="text-lg font-semibold text-gray-800">${date}</span></div>
-                     <div><strong class="block text-sm font-medium text-gray-500">Unit(s) Tested:</strong> <span class="text-lg font-semibold text-gray-800">${currentChapter.name}</span></div>
-                     <div class="flex pt-2 gap-4">
-                        <div class="text-center bg-green-100 text-green-800 p-3 rounded-lg flex-1">
-                            <p class="text-3xl font-bold">${score}</p>
-                            <p class="text-sm">Correct</p>
-                        </div>
-                        <div class="text-center bg-red-100 text-red-800 p-3 rounded-lg flex-1">
-                            <p class="text-3xl font-bold">${totalQuestions - score}</p>
-                            <p class="text-sm">Incorrect</p>
-                        </div>
-                     </div>
-                </div>
-            </div>
-
-            <div class="mt-8 pt-6 border-t border-gray-200">
-                <h3 class="text-xl font-semibold mb-3">Recommendations for Review</h3>
-                <div class="text-gray-700 bg-gray-50 p-4 rounded-lg">${recommendations}</div>
-            </div>
-            
-            <div class="mt-10 pt-10 border-t-2 border-dashed border-gray-300 print-only">
-                 <div class="grid grid-cols-2 gap-8">
+        <div class="report-container">
+            <header class="report-header">
+                <img src="assets/DPD email logo.png" alt="Denton PD Logo" class="logo">
+                <h1>Performance Review</h1>
+                <p>Denton Police Department</p>
+                <p class="date">Date: ${date}</p>
+            </header>
+            <section class="officer-info"> <!-- Renamed class -->
+                <h3>Officer Information</h3> <!-- Renamed text -->
+                <p><strong>Name:</strong> ${officerName}</p> <!-- Renamed variable -->
+                <p><strong>Assessment Type:</strong> ${currentChapter.name}</p>
+            </section>
+            <section class="performance-summary">
+                <h3>Performance Summary</h3>
+                <p><strong>Score:</strong> ${score} out of ${totalQuestions} (${percentage}%)</p>
+                <div class="score-breakdown">
                     <div>
-                        <p class="text-gray-700">Recruit Signature:</p>
-                        <div class="mt-8 border-b border-gray-400"></div>
+                        <span class="label">Correct Answers:</span>
+                        <span class="value">${score}</span>
                     </div>
                     <div>
-                        <p class="text-gray-700">Supervisor Signature:</p>
-                        <div class="mt-8 border-b border-gray-400"></div>
+                        <span class="label">Incorrect Answers:</span>
+                        <span class="value">${totalQuestions - score}</span>
                     </div>
-                 </div>
-                 <p class="text-center text-xs text-gray-500 mt-6">Official Training Report</p>
-            </div>
-
-            <div class="mt-8 pt-6 border-t border-gray-200 no-print">
-                <div class="flex justify-center gap-4">
-                    <button id="print-report-btn" class="flex items-center gap-2 bg-gray-700 text-white px-6 py-2 rounded-lg hover:bg-gray-800 transition-colors text-base">
-                        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 6 2 18 2 18 9"></polyline><path d="M6 18H4a2 2 0 0 1-2-2v-5a2 2 0 0 1 2-2h16a2 2 0 0 1 2 2v5a2 2 0 0 1-2 2h-2"></path><rect x="6" y="14" width="12" height="8"></rect></svg>
-                        Print Report
-                    </button>
-                    <button id="email-report-btn" class="flex items-center gap-2 bg-blue-600 text-white px-6 py-2 rounded-lg hover:bg-blue-700 transition-colors text-base">
-                        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path><polyline points="22,6 12,13 2,6"></polyline></svg>
-                        Email to Supervisor
-                    </button>
-                     <button id="main-menu-results" class="bg-gray-500 text-white px-6 py-2 rounded-lg hover:bg-gray-600 transition-colors text-base">Main Menu</button>
                 </div>
-            </div>
+            </section>
+            <section class="recommendations-section">
+                <h3>Recommendations for Review</h3>
+                ${recommendations}
+            </section>
+            <section class="signature-section">
+                <div class="signature-line">
+                    <p>Officer Signature:</p> <!-- Renamed text -->
+                    <div></div>
+                </div>
+                <div class="signature-line">
+                    <p>Supervisor Signature:</p>
+                    <div></div>
+                </div>
+            </section>
         </div>
     `;
 }
@@ -351,40 +324,19 @@ function showResults() {
 }
 
 function sendEmail() {
-    const supervisorEmail = document.getElementById('supervisor-email').value;
-    if(!supervisorEmail) {
-         const emailInput = document.getElementById('supervisor-email');
-         emailInput.classList.add('border-red-500', 'ring-red-500');
-         emailInput.placeholder = 'Supervisor email is required!';
-         setTimeout(()=> {
-             emailInput.classList.remove('border-red-500', 'ring-red-500');
-             emailInput.placeholder = 'supervisor@dentonpd.com';
-         }, 2500);
-        return;
-    }
-    const subject = `Performance Review for ${recruitName}`;
-    
-    // Generate a simplified HTML for the email body
-    const emailBody = `
-        <html><body>
-        <h2 style="font-family: sans-serif; color: #333;">Denton PD General Orders - Performance Review</h2>
-        <hr>
-        <p><strong>Recruit:</strong> ${recruitName}</p>
-        <p><strong>Assessment:</strong> ${currentChapter.name}</p>
-        <p><strong>Date:</strong> ${new Date().toLocaleDateString()}</p>
-        <h3>Score: ${score} / ${questions.length} (${((score / questions.length) * 100).toFixed(1)}%)</h3>
-        <hr>
+    const emailTo = document.getElementById('supervisor-email').value;
+    const subject = `Performance Review for ${officerName}`; // Renamed variable
+    const body = `
+        <h1>Performance Review</h1>
+        <p><strong>Officer:</strong> ${officerName}</p> <!-- Renamed variable -->
+        <p><strong>Assessment Type:</strong> ${currentChapter.name}</p>
+        <p><strong>Score:</strong> ${score} out of ${questions.length} (${(score/questions.length*100).toFixed(2)}%)</p>
         <h3>Recommendations for Review:</h3>
         ${getRecommendations()}
-        <hr>
         <p><em>This is an automated report from the DPD Interactive Review System.</em></p>
-        </body></html>
     `;
     
-    const mailtoLink = `mailto:${supervisorEmail}?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(emailBody)}`;
+    const mailtoLink = `mailto:${emailTo}?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
     window.location.href = mailtoLink;
     emailModal.classList.add('hidden');
 }
-    </script>
-</body>
-</html>

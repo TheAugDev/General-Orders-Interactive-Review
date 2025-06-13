@@ -6,7 +6,7 @@ let currentQuestionIndex = 0;
 let score = 0;
 let questions = [];
 let userAnswers = [];
-let recruitName = '';
+let officerName = ''; // Renamed from recruitName
 let currentReviewType = null; // To store 'generalOrders', 'tcole', etc.
 let currentUnitId = null; // To store specific unitId if applicable
 
@@ -91,7 +91,7 @@ function renderReviewTypeSelection() {
         buttonContainer.appendChild(button);
     });
     // Insert after the name input, before existing buttons if any, or append
-    const nameInput = document.getElementById('recruit-name');
+    const nameInput = document.getElementById('officer-name'); // Changed ID from recruit-name
     nameInput.insertAdjacentElement('afterend', buttonContainer);
 
     // Hide old buttons if they exist (or repurpose them)
@@ -129,9 +129,9 @@ function renderChapterButtons(chapters) {
 
 // --- User Interaction & Flow ---
 function handleNameCheck() {
-    const nameInput = document.getElementById('recruit-name');
-    recruitName = nameInput.value;
-    if (recruitName.trim() === '') {
+    const nameInput = document.getElementById('officer-name'); // Changed ID from recruit-name
+    officerName = nameInput.value; // Renamed from recruitName
+    if (officerName.trim() === '') { // Renamed from recruitName
         nameInput.classList.add('border-red-500', 'ring-red-500');
         nameInput.placeholder = 'Your name is required!';
         setTimeout(() => {
@@ -345,10 +345,10 @@ function generateReportHTML() {
             </header>
 
             <section class="report-body grid grid-cols-1 md:grid-cols-3 gap-8 mb-10">
-                <div class="md:col-span-1 recruit-info bg-gray-50 p-6 rounded-lg shadow-sm">
-                    <h3 class="text-xl font-semibold text-gray-700 mb-5 border-b pb-2">Recruit Information</h3>
+                <div class="md:col-span-1 officer-info bg-gray-50 p-6 rounded-lg shadow-sm"> <!-- Renamed class -->
+                    <h3 class="text-xl font-semibold text-gray-700 mb-5 border-b pb-2">Officer Information</h3> <!-- Renamed text -->
                     <div class="space-y-3">
-                        <div><strong class="block text-sm font-medium text-gray-500">Name:</strong> <span class="text-lg text-gray-800">${recruitName}</span></div>
+                        <div><strong class="block text-sm font-medium text-gray-500">Name:</strong> <span class="text-lg text-gray-800">${officerName}</span></div> <!-- Renamed variable -->
                         <div><strong class="block text-sm font-medium text-gray-500">Assessment Type:</strong> <span class="text-lg text-gray-800">${currentReviewType.name}</span></div>
                         ${currentReviewType.hasUnits && currentUnitId !== 'all' ? `<div><strong class="block text-sm font-medium text-gray-500">Unit Tested:</strong> <span class="text-lg text-gray-800">${currentChapter.name.replace(currentReviewType.name + " - ", "")}</span></div>` : ''}
                         ${currentUnitId === 'all' ? `<div><strong class="block text-sm font-medium text-gray-500">Unit Tested:</strong> <span class="text-lg text-gray-800">All Units</span></div>` : ''}
@@ -396,7 +396,7 @@ function generateReportHTML() {
                  <h3 class="text-xl font-semibold text-gray-700 mb-6 text-center">Signatures</h3>
                  <div class="grid grid-cols-2 gap-12">
                     <div class="signature-line">
-                        <p class="text-gray-600 text-sm">Recruit Signature:</p>
+                        <p class="text-gray-600 text-sm">Officer Signature:</p> <!-- Renamed text -->
                         <div class="mt-12 border-b-2 border-gray-500"></div>
                     </div>
                     <div class="signature-line">

@@ -54,13 +54,13 @@ body {
     color: #4b5563; /* Tailwind gray-600 */
 }
 
-.recruit-info,
+.officer-info, /* Renamed from recruit-info */
 .performance-summary,
 .recommendations-section {
     margin-bottom: 2rem;
 }
 
-.recruit-info h3,
+.officer-info h3, /* Renamed from recruit-info */
 .performance-summary h3,
 .recommendations-section h3 {
     color: #374151; /* Tailwind gray-700 */
