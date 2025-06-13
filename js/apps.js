@@ -85,11 +85,27 @@ const texasStatuteCodes = [
     { name: "Property Code", id: "propertyCode" }
 ];
 
+const tpcaCriticalAreas = [
+    { name: "Use of Force", id: "useOfForce" },
+    { name: "Emergency Vehicle Operation and Pursuits", id: "emergencyVehicleOperationAndPursuits" },
+    { name: "Search, Seizure, and Arrest", id: "searchSeizureAndArrest" },
+    { name: "Care, Custody and Restraint of Prisoners", id: "careCustodyAndRestraintOfPrisoners" },
+    { name: "Domestic Violence and agency employee domestic conduct", id: "domesticViolenceAndAgencyEmployeeDomesticConduct" },
+    { name: "Off-Duty Conduct", id: "offDutyConduct" },
+    { name: "Selection and Hiring", id: "selectionAndHiring" },
+    { name: "Sexual Harassment", id: "sexualHarassment" },
+    { name: "Complaint and Internal Affairs Management", id: "complaintAndInternalAffairsManagement" },
+    { name: "Narcotics, SWAT, and High-Risk Warrant Service", id: "narcoticsSwatAndHighRiskWarrantService" },
+    { name: "Dealing with the Mentally Ill and Developmentally Disabled", id: "dealingWithTheMentallyIllAndDevelopmentallyDisabled" },
+    { name: "Property and Evidence Management", id: "propertyAndEvidenceManagement" }
+];
+
 const reviewTypes = [
     { id: 'generalOrders', name: 'General Orders', hasUnits: true, chapters: generalOrderChapters, questionLimit: 100 },
     { id: 'tcole', name: 'TCOLE Review', hasUnits: false, questionLimit: 250 },
     { id: 'texasConstitutions', name: 'Texas Constitutions', hasUnits: true, chapters: texasConstitutionArticles, questionLimit: 100 },
-    { id: 'texasStatutes', name: 'Texas Statutes', hasUnits: true, chapters: texasStatuteCodes, questionLimit: 100 } // Updated for statutes
+    { id: 'texasStatutes', name: 'Texas Statutes', hasUnits: true, chapters: texasStatuteCodes, questionLimit: 100 },
+    { id: 'tpcaBestPractices', name: 'TPCA Best Practices', hasUnits: true, chapters: tpcaCriticalAreas, questionLimit: 100 } // Added TPCA
 ];
 
 // --- Initialization ---
@@ -152,6 +168,8 @@ function selectReviewType(reviewType) {
             modalTitle = 'Select Article';
         } else if (reviewType.id === 'texasStatutes') {
             modalTitle = 'Select Statute Code';
+        } else if (reviewType.id === 'tpcaBestPractices') {
+            modalTitle = 'Select Critical Area';
         }
         renderChapterButtons(reviewType.chapters, modalTitle);
         unitSelectionModal.classList.remove('hidden');
@@ -170,11 +188,13 @@ function renderChapterButtons(chapters, modalTitle = 'Select Unit') {
     const allButton = document.createElement('button');
     allButton.className = 'w-full bg-green-600 text-white p-4 rounded-lg text-lg font-semibold hover:bg-green-700 transition-colors shadow-sm mb-2';
     
-    let allButtonText = 'All Units';
+    let allButtonText = 'All Units'; // Default
     if (currentReviewType.id === 'texasConstitutions') {
         allButtonText = 'All Articles';
     } else if (currentReviewType.id === 'texasStatutes') {
         allButtonText = 'All Statute Codes';
+    } else if (currentReviewType.id === 'tpcaBestPractices') {
+        allButtonText = 'All Critical Areas';
     }
     allButton.textContent = allButtonText;
 
@@ -241,8 +261,8 @@ function startQuiz(reviewTypeId, unitId) {
     if (reviewTypeDetails.hasUnits) {
         if (unitId === 'all') { 
             currentChapter = { name: `Comprehensive ${reviewTypeDetails.name}`, id: "all" };
-            if (reviewTypeId === 'texasConstitutions' || reviewTypeId === 'texasStatutes') {
-                questionPool = Object.values(allReviewData[reviewTypeId]).reduce((acc, codeQuestions) => acc.concat(codeQuestions), []);
+            if (reviewTypeId === 'texasConstitutions' || reviewTypeId === 'texasStatutes' || reviewTypeId === 'tpcaBestPractices') {
+                questionPool = Object.values(allReviewData[reviewTypeId]).reduce((acc, areaQuestions) => acc.concat(areaQuestions), []);
             } else { // General Orders
                  questionPool = Object.values(allReviewData[reviewTypeId]).flat(); 
             }
@@ -252,9 +272,10 @@ function startQuiz(reviewTypeId, unitId) {
             quizName = `${reviewTypeDetails.name} - ${currentChapter.name}`;
             let unitQuestions = allReviewData[reviewTypeId][unitId];
             if (!unitQuestions || unitQuestions.length === 0) {
-                let unitType = 'unit';
+                let unitType = 'unit'; // Default
                 if (reviewTypeId === 'texasConstitutions') unitType = 'article';
                 if (reviewTypeId === 'texasStatutes') unitType = 'statute code';
+                if (reviewTypeId === 'tpcaBestPractices') unitType = 'critical area';
                 unitQuestions = [{ question: `This ${unitType} has no questions yet. Please check back later.`, answer: "OK", options: ["OK"], reference: "N/A" }];
             }
             questionPool = [...unitQuestions];
@@ -358,7 +379,7 @@ function getRecommendations() {
     incorrectAnswers.forEach(ans => {
         if (ans.reference === 'N/A') return;
         
-        let topicKey = ans.reference; // Default topic key
+        let topicKey = ans.reference; 
 
         if (currentReviewType) {
             if (currentReviewType.id === 'generalOrders') {
@@ -401,9 +422,24 @@ function getRecommendations() {
                     const matchedCode = texasStatuteCodes.find(c => c.id.toLowerCase().startsWith(firstWord.toLowerCase().replace(/code$/, '')));
                     topicKey = matchedCode ? matchedCode.name : ans.reference;
                 }
+            } else if (currentReviewType.id === 'tpcaBestPractices') {
+                // Example: Reference "TPCA BP 1.1" -> topicKey "Use of Force"
+                // This requires that TPCA references clearly map to one of the critical areas.
+                // For simplicity, we'll try to match based on the reference prefix or a keyword.
+                const criticalAreaDetail = tpcaCriticalAreas.find(area => {
+                    // A more robust mapping might be needed if references are not standardized.
+                    // This is a basic attempt to link reference to area name or ID.
+                    const refUpper = ans.reference.toUpperCase();
+                    const areaNameUpper = area.name.toUpperCase();
+                    const areaIdUpper = area.id.toUpperCase();
+                    return refUpper.includes(areaNameUpper) || refUpper.includes(areaIdUpper) || areaNameUpper.includes(refUpper.split(' ')[0]);
+                });
+                if (criticalAreaDetail) {
+                    topicKey = criticalAreaDetail.name;
+                } else {
+                    topicKey = ans.reference; // Fallback
+                }
             } else {
-                // For TCOLE, Texas Statutes, or other types, the reference itself might be the topic
-                // Or you might need a more sophisticated way to group recommendations
                 topicKey = ans.reference;
             }
         }

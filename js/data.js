@@ -206,5 +206,22 @@ const allReviewData = {
         businessAndCommerceCode: [],
         propertyCode: []
         // Add more questions for each statute code here...
+    },
+    tpcaBestPractices: {
+        useOfForce: [
+            // { question: "Sample TPCA Use of Force Question?", answer: "Sample Answer", options: ["A", "B"], reference: "TPCA BP 1.1" }
+        ],
+        emergencyVehicleOperationAndPursuits: [],
+        searchSeizureAndArrest: [],
+        careCustodyAndRestraintOfPrisoners: [],
+        domesticViolenceAndAgencyEmployeeDomesticConduct: [],
+        offDutyConduct: [],
+        selectionAndHiring: [],
+        sexualHarassment: [],
+        complaintAndInternalAffairsManagement: [],
+        narcoticsSwatAndHighRiskWarrantService: [],
+        dealingWithTheMentallyIllAndDevelopmentallyDisabled: [],
+        propertyAndEvidenceManagement: []
+        // Add questions for each TPCA critical area here...
     }
 };
