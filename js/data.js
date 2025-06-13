@@ -163,14 +163,48 @@ const allReviewData = {
         { question: "TCOLE Sample Question 2: True or False - The sky is blue.", answer: "True", options: ["True", "False"], reference: "TCOLE Ref 1.2" }
         // Add many more TCOLE questions here...
     ],
-    texasConstitutions: [
-        // Example: Add questions here. App will pick a defined number (e.g., 100).
-        { question: "Texas Constitutions Sample Question 1: What year was the current Texas Constitution adopted?", answer: "1876", options: ["1836", "1845", "1861", "1876"], reference: "TX Const. Art. 1" },
-        // Add more Texas Constitutions questions here...
-    ],
-    texasStatutes: [
-        // Example: Add questions here. App will pick a defined number (e.g., 100).
-        { question: "Texas Statutes Sample Question 1: What does CCP stand for?", answer: "Code of Criminal Procedure", options: ["Criminal Code of Penalties", "Code of Criminal Procedure", "Constitution of Criminal Prosecution", "Civil Case Procedures"], reference: "TX CCP Art. 1.01" },
-        // Add more Texas Statutes questions here...
-    ]
+    texasConstitutions: {
+        article1: [
+            { question: "Texas Constitutions Sample Question 1: What year was the current Texas Constitution adopted?", answer: "1876", options: ["1836", "1845", "1861", "1876"], reference: "TX Const. Art. 1 Sec. 1" }
+            // Add more questions for Article 1 here...
+        ],
+        article2: [
+            { question: "Texas Constitutions Sample Question Article 2: How are the powers of government divided?", answer: "Three distinct departments", options: ["Two distinct departments", "Three distinct departments", "Four distinct departments", "Unified under the Governor"], reference: "TX Const. Art. 2 Sec. 1" }
+            // Add more questions for Article 2 here...
+        ],
+        article3: [/* Add questions for Article 3 here... */],
+        article4: [/* Add questions for Article 4 here... */],
+        article5: [/* Add questions for Article 5 here... */],
+        article6: [/* Add questions for Article 6 here... */],
+        article7: [/* Add questions for Article 7 here... */],
+        article8: [/* Add questions for Article 8 here... */],
+        article9: [/* Add questions for Article 9 here... */],
+        article10: [/* Add questions for Article 10 here... */],
+        article11: [/* Add questions for Article 11 here... */],
+        article12: [/* Add questions for Article 12 here... */],
+        article13: [/* Article 13 is repealed. No questions expected. */],
+        article14: [/* Add questions for Article 14 here... */],
+        article15: [/* Add questions for Article 15 here... */],
+        article16: [/* Add questions for Article 16 here... */],
+        article17: [/* Add questions for Article 17 here... */]
+    },
+    texasStatutes: {
+        penalCode: [
+            // { question: "Sample Penal Code Question?", answer: "Sample Answer", options: ["A", "B"], reference: "PC 1.01" }
+        ],
+        transportationCode: [],
+        alcoholicBeverageCode: [],
+        healthAndSafetyCode: [],
+        familyCode: [],
+        localGovernmentCode: [],
+        codeOfCriminalProcedure: [
+            { question: "Texas Statutes Sample Question 1: What does CCP stand for?", answer: "Code of Criminal Procedure", options: ["Criminal Code of Penalties", "Code of Criminal Procedure", "Constitution of Criminal Prosecution", "Civil Case Procedures"], reference: "TX CCP Art. 1.01" }
+        ],
+        educationCode: [],
+        governmentCode: [],
+        parksAndWildlifeCode: [],
+        businessAndCommerceCode: [],
+        propertyCode: []
+        // Add more questions for each statute code here...
+    }
 };

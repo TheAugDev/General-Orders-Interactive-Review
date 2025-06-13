@@ -50,11 +50,46 @@ const generalOrderChapters = [
     { name: "Unit 16: Health & Wellness", id: "unit16" }
 ];
 
+const texasConstitutionArticles = [
+    { name: "Article 1: Bill of Rights", id: "article1" },
+    { name: "Article 2: The Powers of Government", id: "article2" },
+    { name: "Article 3: Legislative Department", id: "article3" },
+    { name: "Article 4: Executive Department", id: "article4" },
+    { name: "Article 5: Judicial Department", id: "article5" },
+    { name: "Article 6: Suffrage", id: "article6" },
+    { name: "Article 7: Education", id: "article7" },
+    { name: "Article 8: Taxation and Revenue", id: "article8" },
+    { name: "Article 9: Counties", id: "article9" },
+    { name: "Article 10: Railroads", id: "article10" },
+    { name: "Article 11: Municipal Corporations", id: "article11" },
+    { name: "Article 12: Private Corporations", id: "article12" },
+    { name: "Article 13: Spanish and Mexican Land Titles (Repealed)", id: "article13" },
+    { name: "Article 14: Public Lands and Land Office", id: "article14" },
+    { name: "Article 15: Impeachment", id: "article15" },
+    { name: "Article 16: General Provisions", id: "article16" },
+    { name: "Article 17: Mode of Amending the Constitution of this State", id: "article17" }
+];
+
+const texasStatuteCodes = [
+    { name: "Penal Code", id: "penalCode" },
+    { name: "Transportation Code", id: "transportationCode" },
+    { name: "Alcoholic Beverage Code", id: "alcoholicBeverageCode" },
+    { name: "Health and Safety Code", id: "healthAndSafetyCode" },
+    { name: "Family Code", id: "familyCode" },
+    { name: "Local Government Code", id: "localGovernmentCode" },
+    { name: "Code of Criminal Procedure", id: "codeOfCriminalProcedure" },
+    { name: "Education Code", id: "educationCode" },
+    { name: "Government Code", id: "governmentCode" },
+    { name: "Parks and Wildlife Code", id: "parksAndWildlifeCode" },
+    { name: "Business and Commerce Code", id: "businessAndCommerceCode" },
+    { name: "Property Code", id: "propertyCode" }
+];
+
 const reviewTypes = [
     { id: 'generalOrders', name: 'General Orders', hasUnits: true, chapters: generalOrderChapters, questionLimit: 100 },
     { id: 'tcole', name: 'TCOLE Review', hasUnits: false, questionLimit: 250 },
-    { id: 'texasConstitutions', name: 'Texas Constitutions', hasUnits: false, questionLimit: 100 }, // Example limit
-    { id: 'texasStatutes', name: 'Texas Statutes', hasUnits: false, questionLimit: 100 } // Example limit
+    { id: 'texasConstitutions', name: 'Texas Constitutions', hasUnits: true, chapters: texasConstitutionArticles, questionLimit: 100 },
+    { id: 'texasStatutes', name: 'Texas Statutes', hasUnits: true, chapters: texasStatuteCodes, questionLimit: 100 } // Updated for statutes
 ];
 
 // --- Initialization ---
@@ -71,6 +106,12 @@ function init() {
     // Hide containers that shouldn't be visible on load
     quizContainerDiv.classList.add('hidden');
     resultsContainerDiv.classList.add('hidden');
+
+    // Set current year in the footer
+    const yearSpan = document.getElementById('current-year');
+    if (yearSpan) {
+        yearSpan.textContent = new Date().getFullYear();
+    }
 }
 
 // --- UI Rendering ---
@@ -106,15 +147,43 @@ function selectReviewType(reviewType) {
 
     currentReviewType = reviewType;
     if (reviewType.hasUnits) {
-        renderChapterButtons(reviewType.chapters);
+        let modalTitle = 'Select Unit'; // Default
+        if (reviewType.id === 'texasConstitutions') {
+            modalTitle = 'Select Article';
+        } else if (reviewType.id === 'texasStatutes') {
+            modalTitle = 'Select Statute Code';
+        }
+        renderChapterButtons(reviewType.chapters, modalTitle);
         unitSelectionModal.classList.remove('hidden');
     } else {
-        startQuiz(reviewType.id, null); // No unitId for non-unit based reviews
+        startQuiz(reviewType.id, null); 
     }
 }
 
-function renderChapterButtons(chapters) {
+function renderChapterButtons(chapters, modalTitle = 'Select Unit') { 
+    const modalHeader = unitSelectionModal.querySelector('h2');
+    if (modalHeader) {
+        modalHeader.textContent = modalTitle;
+    }
     chapterButtonsDiv.innerHTML = '';
+
+    const allButton = document.createElement('button');
+    allButton.className = 'w-full bg-green-600 text-white p-4 rounded-lg text-lg font-semibold hover:bg-green-700 transition-colors shadow-sm mb-2';
+    
+    let allButtonText = 'All Units';
+    if (currentReviewType.id === 'texasConstitutions') {
+        allButtonText = 'All Articles';
+    } else if (currentReviewType.id === 'texasStatutes') {
+        allButtonText = 'All Statute Codes';
+    }
+    allButton.textContent = allButtonText;
+
+    allButton.onclick = () => {
+        unitSelectionModal.classList.add('hidden');
+        startQuiz(currentReviewType.id, 'all');
+    };
+    chapterButtonsDiv.appendChild(allButton);
+
     chapters.forEach(chapter => {
         const button = document.createElement('button');
         button.className = 'w-full bg-blue-600 text-white p-4 rounded-lg text-lg font-semibold hover:bg-blue-700 transition-colors shadow-sm';
@@ -150,15 +219,17 @@ function showWelcomeScreen() {
      resultsContainerDiv.classList.add('hidden');
      welcomeScreen.classList.remove('hidden');
      mainHeader.classList.remove('hidden');
+     document.getElementById('main-page-footer').classList.remove('hidden'); // Show main page footer
      currentReviewType = null; // Reset review type
      currentUnitId = null; // Reset unit ID
      renderReviewTypeSelection(); // Re-render review type buttons
 }
 
 // --- Quiz Logic ---
-function startQuiz(reviewTypeId, unitId) { // unitId can be null
+function startQuiz(reviewTypeId, unitId) { 
     mainHeader.classList.remove('hidden');
-    currentUnitId = unitId; // Store the unitId
+    document.getElementById('main-page-footer').classList.remove('hidden'); 
+    currentUnitId = unitId; 
 
     const reviewTypeDetails = reviewTypes.find(rt => rt.id === reviewTypeId);
     if (!reviewTypeDetails) return;
@@ -168,20 +239,27 @@ function startQuiz(reviewTypeId, unitId) { // unitId can be null
     const questionLimit = reviewTypeDetails.questionLimit;
 
     if (reviewTypeDetails.hasUnits) {
-        if (unitId === 'all') { // Comprehensive for General Orders
+        if (unitId === 'all') { 
             currentChapter = { name: `Comprehensive ${reviewTypeDetails.name}`, id: "all" };
-            questionPool = Object.values(allReviewData[reviewTypeId]).flat();
+            if (reviewTypeId === 'texasConstitutions' || reviewTypeId === 'texasStatutes') {
+                questionPool = Object.values(allReviewData[reviewTypeId]).reduce((acc, codeQuestions) => acc.concat(codeQuestions), []);
+            } else { // General Orders
+                 questionPool = Object.values(allReviewData[reviewTypeId]).flat(); 
+            }
         } else {
             currentChapter = reviewTypeDetails.chapters.find(c => c.id === unitId);
             if (!currentChapter) return;
             quizName = `${reviewTypeDetails.name} - ${currentChapter.name}`;
             let unitQuestions = allReviewData[reviewTypeId][unitId];
             if (!unitQuestions || unitQuestions.length === 0) {
-                unitQuestions = [{ question: "This unit has no questions yet. Please check back later.", answer: "OK", options: ["OK"], reference: "N/A" }];
+                let unitType = 'unit';
+                if (reviewTypeId === 'texasConstitutions') unitType = 'article';
+                if (reviewTypeId === 'texasStatutes') unitType = 'statute code';
+                unitQuestions = [{ question: `This ${unitType} has no questions yet. Please check back later.`, answer: "OK", options: ["OK"], reference: "N/A" }];
             }
             questionPool = [...unitQuestions];
         }
-    } else { // For TCOLE, Texas Constitutions, Texas Statutes
+    } else { // For TCOLE, Texas Statutes (no units/articles
         currentChapter = { name: reviewTypeDetails.name, id: reviewTypeId }; // No specific sub-unit
         questionPool = allReviewData[reviewTypeId] ? [...allReviewData[reviewTypeId]] : [];
         if (questionPool.length === 0) {
@@ -279,14 +357,56 @@ function getRecommendations() {
     const topics = {};
     incorrectAnswers.forEach(ans => {
         if (ans.reference === 'N/A') return;
-        // Recommendation logic might need to be adjusted based on review type
-        // For General Orders, chapter is fine. For others, it might be different.
-        let topicKey = ans.reference;
-        if (currentReviewType && currentReviewType.id === 'generalOrders') {
-            topicKey = ans.reference.split(' ')[0].replace('GO', 'Chapter');
+        
+        let topicKey = ans.reference; // Default topic key
+
+        if (currentReviewType) {
+            if (currentReviewType.id === 'generalOrders') {
+                // Extracts 'Chapter X' from 'GO X.Y.Z' or similar
+                const match = ans.reference.match(/^GO\s*(\d+)/i);
+                if (match && match[1]) {
+                    topicKey = `General Order Chapter ${match[1]}`;
+                } else {
+                    topicKey = ans.reference; // Fallback if GO format is unexpected
+                }
+            } else if (currentReviewType.id === 'texasConstitutions') {
+                // Extracts 'Article X' from 'TX Const. Art. X Sec. Y'
+                const match = ans.reference.match(/^TX Const\.\s*Art\.\s*(\w+)/i);
+                if (match && match[1]) {
+                    // Attempt to find the article name from the configured list
+                    const articleDetail = texasConstitutionArticles.find(art => art.id.toLowerCase() === `article${match[1]}`.toLowerCase());
+                    topicKey = articleDetail ? articleDetail.name : `Texas Constitution Article ${match[1]}`;
+                } else {
+                    topicKey = ans.reference; // Fallback
+                }
+            } else if (currentReviewType.id === 'texasStatutes') {
+                // Example: Reference "PC 1.01" -> topicKey "Penal Code"
+                // Example: Reference "TX CCP Art. 1.01" -> topicKey "Code of Criminal Procedure"
+                const statuteCodeDetails = texasStatuteCodes.find(code => {
+                    // Create a flexible regex to match common prefixes like "PC", "TC", "ABC", "HSC", "FC", "LGC", "CCP", "EC", "GC", "PWC", "BCC", "PROP"
+                    // This is a simplified approach; more robust parsing might be needed if reference formats vary wildly.
+                    const codePrefix = ans.reference.split(' ')[0].toUpperCase();
+                    const idPrefix = code.id.replace(/Code$/, '').toUpperCase(); // e.g. penalCode -> PENAL
+                    
+                    if (code.id === 'codeOfCriminalProcedure' && (codePrefix === 'CCP' || codePrefix === 'TXCCP')) return true;
+                    if (code.id === 'healthAndSafetyCode' && (codePrefix === 'HSC' || codePrefix === 'H&SC')) return true;
+                     // Add more specific matches if needed for other codes with common abbreviations
+                    return idPrefix.startsWith(codePrefix) || code.name.toUpperCase().startsWith(codePrefix);
+                });
+                if (statuteCodeDetails) {
+                    topicKey = statuteCodeDetails.name;
+                } else {
+                    // Fallback if no specific code is matched from reference
+                    const firstWord = ans.reference.split(' ')[0];
+                    const matchedCode = texasStatuteCodes.find(c => c.id.toLowerCase().startsWith(firstWord.toLowerCase().replace(/code$/, '')));
+                    topicKey = matchedCode ? matchedCode.name : ans.reference;
+                }
+            } else {
+                // For TCOLE, Texas Statutes, or other types, the reference itself might be the topic
+                // Or you might need a more sophisticated way to group recommendations
+                topicKey = ans.reference;
+            }
         }
-        // For TCOLE or other types, the reference itself might be the topic
-        // Or you might need a more sophisticated way to group recommendations
 
         if(topics[topicKey]){
             topics[topicKey]++;
@@ -407,7 +527,7 @@ function generateReportHTML() {
                  <p class="text-center text-sm text-gray-600 mt-10"><em>Official Training Report - Denton Police Department</em></p>
             </section>
 
-            <footer class="report-footer mt-10 pt-8 border-t border-gray-300 no-print">
+            <div class="report-actions mt-10 pt-8 border-t border-gray-300 no-print">
                 <div class="flex justify-center gap-4">
                     <button id="print-report-btn" class="action-button">
                         <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="mr-2"><polyline points="6 9 6 2 18 2 18 9"></polyline><path d="M6 18H4a2 2 0 0 1-2-2v-5a2 2 0 0 1 2-2h16a2 2 0 0 1 2 2v5a2 2 0 0 1-2 2h-2"></path><rect x="6" y="14" width="12" height="8"></rect></svg>
@@ -418,11 +538,7 @@ function generateReportHTML() {
                         Main Menu
                     </button>
                 </div>
-                <div class="mt-6 text-center text-sm text-gray-500">
-                    <p>&copy; ${new Date().getFullYear()} Denton Police Department. All Rights Reserved.</p>
-                    <p>Developed by <a href="https://theaugdev.com" target="_blank" rel="noopener noreferrer" class="text-blue-600 hover:text-blue-700 underline">TheAugDev.com</a></p>
-                </div>
-            </footer>
+            </div>
         </div>
     `;
 }
@@ -430,6 +546,8 @@ function generateReportHTML() {
 function showResults() {
     quizContainerDiv.classList.add('hidden');
     mainHeader.classList.add('hidden'); // Hide main header on results page
+    document.getElementById('main-page-footer').classList.add('hidden'); // Hide main page footer on results page
+
     const reportHTML = generateReportHTML();
     resultsContainerDiv.innerHTML = reportHTML;
     resultsContainerDiv.classList.remove('hidden');
