@@ -1,0 +1,175 @@
+/* Custom Styles for Denton PD Review App */
+
+body {
+    font-family: 'Inter', sans-serif;
+    background-color: #f3f4f6;
+}
+
+.correct {
+    background-color: #16a34a !important; /* Green-600 */
+    color: white !important;
+    border-color: #16a34a !important;
+}
+
+.incorrect {
+    background-color: #dc2626 !important; /* Red-600 */
+    color: white !important;
+    border-color: #dc2626 !important;
+}
+
+.disabled-option {
+    pointer-events: none;
+    opacity: 0.9;
+}
+
+.modal-backdrop {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.6);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 50;
+}
+
+.progress-ring__circle {
+    transition: stroke-dashoffset 0.8s ease-out;
+    transform: rotate(-90deg);
+    transform-origin: 50% 50%;
+}
+
+/* Enhanced Report Styles */
+.report-container {
+    font-family: 'Inter', sans-serif;
+}
+
+.report-header h1 {
+    color: #1f2937; /* Tailwind gray-800 */
+}
+
+.report-header p {
+    color: #4b5563; /* Tailwind gray-600 */
+}
+
+.recruit-info,
+.performance-summary,
+.recommendations-section {
+    margin-bottom: 2rem;
+}
+
+.recruit-info h3,
+.performance-summary h3,
+.recommendations-section h3 {
+    color: #374151; /* Tailwind gray-700 */
+    border-color: #e5e7eb; /* Tailwind gray-200 */
+}
+
+.score-visual text {
+    font-weight: 700;
+}
+
+.score-details div {
+    padding: 0.5rem 0;
+}
+.score-details span:first-child {
+    color: #374151; /* Tailwind gray-700 */
+}
+
+.recommendations-section .prose ul {
+    list-style-type: disc;
+    padding-left: 1.5rem;
+}
+.recommendations-section .prose li {
+    margin-bottom: 0.5rem;
+}
+
+.action-button {
+    display: inline-flex;
+    align-items: center;
+    background-color: #374151; /* Tailwind gray-700 */
+    color: white;
+    padding: 0.75rem 1.5rem;
+    border-radius: 0.5rem;
+    font-weight: 500;
+    transition: background-color 0.2s ease-in-out;
+}
+.action-button:hover {
+    background-color: #1f2937; /* Tailwind gray-800 */
+}
+
+.action-button-secondary {
+    display: inline-flex;
+    align-items: center;
+    background-color: #6b7280; /* Tailwind gray-500 */
+    color: white;
+    padding: 0.75rem 1.5rem;
+    border-radius: 0.5rem;
+    font-weight: 500;
+    transition: background-color 0.2s ease-in-out;
+}
+.action-button-secondary:hover {
+    background-color: #4b5563; /* Tailwind gray-600 */
+}
+
+
+#print-area {
+    display: none;
+}
+
+/* Print-specific styles */
+@media print {
+    body * {
+        visibility: hidden;
+    }
+
+    #results-container, #results-container * {
+        visibility: visible;
+    }
+
+    #results-container .report-container {
+        box-shadow: none !important;
+        border: 1px solid #e5e7eb; /* Light border for print */
+        max-width: 100%;
+        margin: 0;
+        padding: 1.5rem;
+    }
+
+    #results-container {
+        display: block;
+        position: absolute;
+        left: 0;
+        top: 0;
+        width: 100%;
+    }
+
+    .no-print {
+        display: none !important;
+    }
+
+    .print-only {
+        display: block !important;
+    }
+
+    /* Ensure report takes full width for printing */
+    .report-container {
+        width: 100% !important;
+        max-width: none !important;
+        box-shadow: none !important;
+        border: none !important;
+    }
+
+    /* Adjust font sizes for print if needed */
+    .report-header h1 {
+        font-size: 28px;
+    }
+    .report-body,
+    .recommendations-section {
+        font-size: 11pt;
+    }
+    .score-visual text {
+        font-size: 28px;
+    }
+}
