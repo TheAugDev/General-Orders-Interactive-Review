@@ -418,6 +418,10 @@ function generateReportHTML() {
                         Main Menu
                     </button>
                 </div>
+                <div class="mt-6 text-center text-sm text-gray-500">
+                    <p>&copy; ${new Date().getFullYear()} Denton Police Department. All Rights Reserved.</p>
+                    <p>Developed by <a href="https://theaugdev.com" target="_blank" rel="noopener noreferrer" class="text-blue-600 hover:text-blue-700 underline">TheAugDev.com</a></p>
+                </div>
             </footer>
         </div>
     `;
