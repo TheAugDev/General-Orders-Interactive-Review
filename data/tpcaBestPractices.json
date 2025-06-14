@@ -1,0 +1,16 @@
+{
+    "useOfForce": [
+        { "question": "TPCA Sample Use of Force: When is deadly force justified?", "answer": "To protect against imminent threat of death or serious bodily injury", "options": ["Anytime", "To protect property", "To protect against imminent threat of death or serious bodily injury"], "reference": "TPCA BP 1.1" }
+    ],
+    "emergencyVehicleOperationAndPursuits": [],
+    "searchSeizureAndArrest": [],
+    "careCustodyAndRestraintOfPrisoners": [],
+    "domesticViolenceAndAgencyEmployeeDomesticConduct": [],
+    "offDutyConduct": [],
+    "selectionAndHiring": [],
+    "sexualHarassment": [],
+    "complaintAndInternalAffairsManagement": [],
+    "narcoticsSwatAndHighRiskWarrantService": [],
+    "dealingWithTheMentallyIllAndDevelopmentallyDisabled": [],
+    "propertyAndEvidenceManagement": []
+}
