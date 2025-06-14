@@ -1,0 +1,16 @@
+{
+    "penalCode": [
+        { "question": "Texas Statutes Sample Penal Code: What is a felony?", "answer": "A serious crime", "options": ["A minor infraction", "A serious crime", "A civil dispute"], "reference": "PC 1.07" }
+    ],
+    "transportationCode": [],
+    "alcoholicBeverageCode": [],
+    "healthAndSafetyCode": [],
+    "familyCode": [],
+    "localGovernmentCode": [],
+    "codeOfCriminalProcedure": [],
+    "educationCode": [],
+    "governmentCode": [],
+    "parksAndWildlifeCode": [],
+    "businessAndCommerceCode": [],
+    "propertyCode": []
+}
