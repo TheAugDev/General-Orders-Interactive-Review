@@ -60,13 +60,11 @@ const generalOrderChapters = [
     { name: "Unit 12: Support Services", id: "unit12" },
     { name: "Unit 13: Internal Affairs & Ethics", id: "unit13" },
     { name: "Unit 14: Department Property & Appearance", id: "unit14" },
-    { name: "Unit 15: Off-Duty Conduct & Secondary Employment", id: "unit15" },
-    { name: "Unit 16: Health & Wellness", id: "unit16" }
+    { name: "Unit 15: Off-Duty Conduct & Secondary Employment", id: "unit15" }
 ];
 
 const texasConstitutionArticles = [
     { name: "Article 1: Bill of Rights", id: "article1" },
-    { name: "Article 2: The Powers of Government", id: "article2" },
     { name: "Article 3: Legislative Department", id: "article3" },
     { name: "Article 4: Executive Department", id: "article4" },
     { name: "Article 5: Judicial Department", id: "article5" },
@@ -76,9 +74,8 @@ const texasConstitutionArticles = [
     { name: "Article 9: Counties", id: "article9" },
     { name: "Article 10: Railroads", id: "article10" },
     { name: "Article 11: Municipal Corporations", id: "article11" },
-    { name: "Article 12: Private Corporations", id: "article12" },
-    { name: "Article 13: Spanish and Mexican Land Titles (Repealed)", id: "article13" },
-    { name: "Article 14: Public Lands and Land Office", id: "article14" },
+    { name: "Article 12: Private Corporations (Repealed)", id: "article12" },
+    { name: "Article 14: Public Lands and Land Office (Repealed)", id: "article14" },
     { name: "Article 15: Impeachment", id: "article15" },
     { name: "Article 16: General Provisions", id: "article16" },
     { name: "Article 17: Mode of Amending the Constitution of this State", id: "article17" }

@@ -46,7 +46,8 @@ const chaptersData = [
     { name: "Unit 13: Internal Affairs & Ethics", id: "unit13" },
     { name: "Unit 14: Department Property & Appearance", id: "unit14" },
     { name: "Unit 15: Off-Duty Conduct & Secondary Employment", id: "unit15" },
-    { name: "Unit 16: Health & Wellness", id: "unit16" }
+    { name: "Unit 16: Health & Wellness", id: "unit16" },
+    { name: "Unit 17: Internal Affairs", id: "unit17" }
 ];
 
 // --- Initialization ---

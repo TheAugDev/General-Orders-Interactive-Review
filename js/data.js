@@ -141,21 +141,10 @@ const allReviewData = {
         unit11: [/* PLACEHOLDER: Add questions for General Orders Unit 11 here. */
 
         ],
-        unit12: [/* PLACEHOLDER: Add questions for General Orders Unit 12 here. */
-
-        ],
-        unit13: [/* PLACEHOLDER: Add questions for General Orders Unit 13 here. */
-
-        ],
-        unit14: [/* PLACEHOLDER: Add questions for General Orders Unit 14 here. */
-
-        ],
-        unit15: [/* PLACEHOLDER: Add questions for General Orders Unit 15 here. */
-            
-        ],
-        unit16: [/* PLACEHOLDER: Add questions for General Orders Unit 16 here. */
-
-        ]
+        unit12: [/* Article 12 is repealed. No questions expected. */],
+        unit14: [/* Article 14 is repealed. No questions expected. */],
+        unit15: [/* QUESTIONS_UNIT15 */],
+        unit17: [/* QUESTIONS_UNIT17 */],
     },
     tcole: [
         // Example: Add 300+ questions here. App will pick 250.
@@ -165,12 +154,8 @@ const allReviewData = {
     ],
     texasConstitutions: {
         article1: [
-            { question: "Texas Constitutions Sample Question 1: What year was the current Texas Constitution adopted?", answer: "1876", options: ["1836", "1845", "1861", "1876"], reference: "TX Const. Art. 1 Sec. 1" }
+            { question: "Texas Constitutions Sample Question Article 1: What is the Bill of Rights?", answer: "Guarantees fundamental rights and freedoms", options: ["Defines the powers of the legislature", "Guarantees fundamental rights and freedoms", "Establishes the court system", "Outlines the election process"], reference: "TX Const. Art. 1 Sec. 1" }
             // Add more questions for Article 1 here...
-        ],
-        article2: [
-            { question: "Texas Constitutions Sample Question Article 2: How are the powers of government divided?", answer: "Three distinct departments", options: ["Two distinct departments", "Three distinct departments", "Four distinct departments", "Unified under the Governor"], reference: "TX Const. Art. 2 Sec. 1" }
-            // Add more questions for Article 2 here...
         ],
         article3: [/* Add questions for Article 3 here... */],
         article4: [/* Add questions for Article 4 here... */],
@@ -181,9 +166,8 @@ const allReviewData = {
         article9: [/* Add questions for Article 9 here... */],
         article10: [/* Add questions for Article 10 here... */],
         article11: [/* Add questions for Article 11 here... */],
-        article12: [/* Add questions for Article 12 here... */],
-        article13: [/* Article 13 is repealed. No questions expected. */],
-        article14: [/* Add questions for Article 14 here... */],
+        article12: [/* Article 12 is repealed. No questions expected. */],
+        article14: [/* Article 14 is repealed. No questions expected. */],
         article15: [/* Add questions for Article 15 here... */],
         article16: [/* Add questions for Article 16 here... */],
         article17: [/* Add questions for Article 17 here... */]
