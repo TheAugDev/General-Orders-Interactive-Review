@@ -1,3 +1,1982 @@
 [
-    { "question": "TCOLE Sample Question 1: What is the primary responsibility of a peace officer?", "answer": "To protect life and property", "options": ["To write tickets", "To protect life and property", "To make arrests"], "reference": "TCOLE Rule 217.1" }
+  {
+    "question": "What is the primary difference between 'physical fitness' and 'wellness'?",
+    "answer": "Fitness is performance-oriented, while wellness is a measure of illness or risk of illness.",
+    "options": [
+      "Fitness relates to strength, while wellness relates to cardiovascular health.",
+      "They are the same and can be used interchangeably.",
+      "Fitness is performance-oriented, while wellness is a measure of illness or risk of illness.",
+      "Fitness is genetic, while wellness is based on lifestyle choices."
+    ],
+    "reference": "Wellness is slightly different from physical fitness: it is the measure of the individual’s illness or risk of illness. It is possible to be physically fit but not well, while it is difficult to be well without being physically fit."
+  },
+  {
+    "question": "Which of the following are components of motor fitness?",
+    "answer": "Agility and power.",
+    "options": [
+      "Flexibility and muscular endurance.",
+      "Agility and power.",
+      "Cardiovascular endurance and body composition.",
+      "Proper nutrition and stress management."
+    ],
+    "reference": "Physical fitness depends on speed, power, agility, flexibility, cardiovascular endurance, muscular endurance, and muscular strength... Physical fitness is often divided into functional or health-related fitness (more general) and motor fitness (performance-oriented)."
+  },
+  {
+    "question": "What is 'progressive overload' in the context of a safe exercise program?",
+    "answer": "The concept that exercise must be more demanding than daily activity to be effective.",
+    "options": [
+      "Exercising opposing muscle groups.",
+      "Exercising consistently with periods of rest.",
+      "The concept that exercise must be more demanding than daily activity to be effective.",
+      "Focusing on exercises that improve a specific targeted area."
+    ],
+    "reference": "Finally, progressive overload is the concept that exercise must be more demanding than daily activity in order to be effective."
+  },
+  {
+    "question": "What does the acronym FITT stand for in exercise planning?",
+    "answer": "Frequency, Intensity, Time, and Type.",
+    "options": [
+      "Fitness, Intensity, Training, and Time.",
+      "Frequency, Interval, Training, and Type.",
+      "Fitness, Interval, Time, and Threshold.",
+      "Frequency, Intensity, Time, and Type."
+    ],
+    "reference": "Exercise professionals often refer to the basic elements of an exercise program with the initials FITT, which is short for frequency, intensity, time, and type."
+  },
+  {
+    "question": "For cardiovascular training, exercise intensity should be within what target heart rate zone?",
+    "answer": "Between 60 and 80 percent of the predicted maximum heart rate.",
+    "options": [
+      "Between 40 and 50 percent of the predicted maximum heart rate.",
+      "Between 60 and 80 percent of the predicted maximum heart rate.",
+      "Between 80 and 90 percent of the predicted maximum heart rate.",
+      "At 100 percent of the predicted maximum heart rate."
+    ],
+    "reference": "The intensity of exercise should be within the target heart rate zone, which is between 60 and 80 percent of the predicted maximum heart rate."
+  },
+  {
+    "question": "What are the three components of a basic exercise program?",
+    "answer": "Warm-up, workout, and cool-down.",
+    "options": [
+      "Cardio, strength, and flexibility.",
+      "Warm-up, workout, and cool-down.",
+      "Frequency, intensity, and time.",
+      "Aerobic, anaerobic, and stretching."
+    ],
+    "reference": "The basic exercise program has three components: warm-up, workout, and cool-down."
+  },
+  {
+    "question": "Carbohydrates, the body's best source of energy, should make up what percentage of total daily calories?",
+    "answer": "Between 55 and 60 percent.",
+    "options": [
+      "Between 12 and 15 percent.",
+      "Less than 30 percent.",
+      "Between 55 and 60 percent.",
+      "More than 75 percent."
+    ],
+    "reference": "Carbohydrates are the best source of energy for the body and brain... Carbohydrates should make up between 55 and 60 percent of total daily calories."
+  },
+  {
+    "question": "What is the difference between eustress and distress?",
+    "answer": "Eustress is positive stress, while distress is negative stress.",
+    "options": [
+      "Eustress is short-term, while distress is long-term.",
+      "Eustress is work-related, while distress is personal.",
+      "Eustress is positive stress, while distress is negative stress.",
+      "Eustress is physical, while distress is emotional."
+    ],
+    "reference": "Positive stress and negative stress are referred to as eustress and distress, respectively."
+  },
+  {
+    "question": "A prolonged and painful response to a specific traumatic incident that lasts for longer than a month is known as:",
+    "answer": "Posttraumatic stress disorder (PTSD)",
+    "options": [
+      "Chronic stress",
+      "Acute stress",
+      "Critical Incident Stress",
+      "Posttraumatic stress disorder (PTSD)"
+    ],
+    "reference": "Indeed, many law-enforcement officers must grapple with posttraumatic stress disorder, which is a painful and traumatic response to stress that lasts for longer than a month."
+  },
+  {
+    "question": "According to the 'Inverted U Law', at what heart rate do fine motor skills begin to decline due to stress?",
+    "answer": "115 beats per minute",
+    "options": [
+      "100 beats per minute",
+      "115 beats per minute",
+      "145 beats per minute",
+      "175 beats per minute"
+    ],
+    "reference": "However, once the heart rate reaches 115 beats per minute, fine motor skills decline."
+  },
+  {
+    "question": "What are the five typical stages of response to a traumatic event?",
+    "answer": "Denial, anger, bargaining, depression, and acceptance.",
+    "options": [
+      "Denial, anger, bargaining, depression, and acceptance.",
+      "Shock, anxiety, negotiation, grief, and resolution.",
+      "Confusion, fear, confrontation, isolation, and recovery.",
+      "Alertness, resistance, exhaustion, burnout, and recovery."
+    ],
+    "reference": "The five stages of response are denial, anger, bargaining, depression, and acceptance."
+  },
+  {
+    "question": "Which of the following is a sign of potential steroid abuse in an officer?",
+    "answer": "Rapid muscle gain accompanied by erratic behavior and mood swings.",
+    "options": [
+      "Improved performance on physical fitness tests.",
+      "A sudden interest in nutrition and weightlifting.",
+      "Frequent hangovers and guilt about drinking.",
+      "Rapid muscle gain accompanied by erratic behavior and mood swings."
+    ],
+    "reference": "All steroid abusers suffer from violent mood swings... If an officer gains muscle mass rapidly and his or her behavior becomes erratic, steroid abuse may be suspected."
+  },
+  {
+    "question": "According to the study guide, how did the introduction of radio communication and patrol cars affect policing?",
+    "answer": "It created distance between police and the community, as officers began to drive more often than walk.",
+    "options": [
+      "It increased the number of officers required for patrol.",
+      "It led to more community engagement and foot patrols.",
+      "It created distance between police and the community, as officers began to drive more often than walk.",
+      "It had no significant impact on the relationship between police and the community."
+    ],
+    "reference": "At the same time, however, technology created distance between police and the community, as officers began to drive more often than walk. "
+  },
+  {
+    "question": "What entity evolved from the militia organized by Stephen F. Austin to handle police work in the Republic of Texas?",
+    "answer": "The Texas Rangers.",
+    "options": [
+      "The Texas Highway Patrol.",
+      "The Department of Public Safety.",
+      "The County Sheriff's Offices.",
+      "The Texas Rangers."
+    ],
+    "reference": "When Texas became an independent republic, police work was handled by a militia organized by Stephen F. Austin, a militia that eventually evolved into the Texas Rangers. "
+  },
+  {
+    "question": "What is the primary characteristic of the traditional police service model?",
+    "answer": "Officers react to events after they happen.",
+    "options": [
+      "Officers focus on community outreach and problem-solving.",
+      "Officers are proactive and work to prevent crime before it occurs.",
+      "Decisions are made in cooperation with community leaders.",
+      "Officers react to events after they happen."
+    ],
+    "reference": "In the traditional model of police service, officers react to events after they happen. "
+  },
+  {
+    "question": "In the community policing model, how is departmental success measured?",
+    "answer": "By improvements in community cleanliness and morale, rather than just crime and arrest rates.",
+    "options": [
+      "Solely by the number of citations issued.",
+      "Strictly by crime and arrest rates.",
+      "By the speed of response to calls for service.",
+      "By improvements in community cleanliness and morale, rather than just crime and arrest rates."
+    ],
+    "reference": "Rather than depending on crime and arrest rates as indicators of departmental success, a community-based police force will concentrate on improving cleanliness and morale in the community. "
+  },
+  {
+    "question": "According to the Law Enforcement Code of Ethics, what is the core duty of an officer?",
+    "answer": "To protect citizens, promote peace, and respect constitutional rights.",
+    "options": [
+      "To follow all orders from superiors without question.",
+      "To ensure all laws are enforced to the fullest extent.",
+      "To prioritize officer safety above all else.",
+      "To protect citizens, promote peace, and respect constitutional rights."
+    ],
+    "reference": "The Law Enforcement Code of Ethics begins by declaring that the core duty of an officer is to protect citizens, promote peace, and respect the rights outlined by the Constitution. "
+  },
+  {
+    "question": "Under Texas Penal Code Section 39.03, the offense of subjecting people to unlawful arrest, mistreatment, or search is known as what?",
+    "answer": "Official Oppression",
+    "options": [
+      "Abuse of Official Capacity",
+      "Official Oppression",
+      "Improper Influence",
+      "Obstruction"
+    ],
+    "reference": "These offenses are known collectively as official oppression, and are designated as Class A misdemeanors. "
+  },
+  {
+    "question": "What is the penalty for a peace officer engaging in sexual contact with a person in custody, according to Texas Penal Code Section 39.04?",
+    "answer": "A state jail felony, or a second-degree felony if the detainee is a minor.",
+    "options": [
+      "A Class A misdemeanor.",
+      "A Class B misdemeanor.",
+      "A state jail felony, or a second-degree felony if the detainee is a minor.",
+      "A third-degree felony."
+    ],
+    "reference": "Section 39.04 of the Texas Penal Code states that peace officers... may not... engage in any sexual contact with people in custody. ...sexual contact with a detainee is a state jail felony unless the detainee is a minor, in which case the crime is a second-degree felony. "
+  },
+  {
+    "question": "Which federal statute pertains to 'conspiracy against rights,' making it illegal for officers to conspire to restrict constitutional rights?",
+    "answer": "USC 241",
+    "options": [
+      "USC 241",
+      "USC 242",
+      "The 14th Amendment",
+      "The Civil Rights Act"
+    ],
+    "reference": "A peace officer may be subject to federal prosecution because of violations of USC 241 or 242. USC 241 pertains to conspiracy against rights: it declares that peace officers (and others) may not conspire to restrict the rights laid out by the laws and Constitution of the United States. "
+  },
+  {
+    "question": "What is a 'writ of habeas corpus'?",
+    "answer": "A writ necessary for a person to be brought before a court or judge.",
+    "options": [
+      "A warrant for a person's arrest.",
+      "An order to release a person from custody.",
+      "A document outlining the charges against a person.",
+      "A writ necessary for a person to be brought before a court or judge."
+    ],
+    "reference": "The United States Constitution is composed of a Preamble followed by a Writ of Habeas Corpus. This writ is necessary for a person to be brought before a court or judge. "
+  },
+  {
+    "question": "Which article of the U.S. Constitution establishes the Supreme Court and distinguishes between original and appellate jurisdiction?",
+    "answer": "Article 3",
+    "options": [
+      "Article 1",
+      "Article 2",
+      "Article 3",
+      "Article 4"
+    ],
+    "reference": "Article 3 establishes the composition and the jurisdiction of the Supreme Court. This article also distinguishes original and appellate jurisdiction. "
+  },
+  {
+    "question": "Which amendment to the U.S. Constitution protects against double jeopardy and compelled self-incrimination?",
+    "answer": "The Fifth Amendment",
+    "options": [
+      "The Fourth Amendment",
+      "The Fifth Amendment",
+      "The Sixth Amendment",
+      "The Eighth Amendment"
+    ],
+    "reference": "Constitutional Amendment V declares that a person cannot be tried twice for the same crime (double jeopardy). This amendment also... makes it illegal to require a person to be a witness against him or herself. "
+  },
+  {
+    "question": "The right to keep and bear arms is asserted in which section of the Texas Constitution's Bill of Rights?",
+    "answer": "Section 23",
+    "options": [
+      "Section 9",
+      "Section 10",
+      "Section 23",
+      "Section 30"
+    ],
+    "reference": "Section 23 asserts the right to keep and bear arms. "
+  },
+  {
+    "question": "What are the three components of the criminal justice system?",
+    "answer": "The police, the courts, and the correctional system.",
+    "options": [
+      "The police, the courts, and the correctional system.",
+      "The legislature, the governor, and the judiciary.",
+      "Federal, state, and local agencies.",
+      "Arrest, trial, and appeal."
+    ],
+    "reference": "The three components of the criminal justice system are the police, the courts, and the correctional system. "
+  },
+  {
+    "question": "Which Texas court has final appellate and review jurisdiction in all criminal cases, including all death penalty cases?",
+    "answer": "The Court of Criminal Appeals",
+    "options": [
+      "The Texas Supreme Court",
+      "The Courts of Appeals",
+      "The District Courts",
+      "The Court of Criminal Appeals"
+    ],
+    "reference": "Section 2 of the Code of Criminal Procedure Article 4.04 declares that the Court of Criminal Appeals has final appellate and review jurisdiction in criminal cases within Texas. This court handles all final appeals in cases involving the death penalty... "
+  },
+  {
+    "question": "What is the original jurisdiction of Texas municipal courts?",
+    "answer": "All criminal cases that pertain to municipal ordinances or are punishable by a maximum fine of $500.",
+    "options": [
+      "All felony cases within their city limits.",
+      "All civil cases under $10,000.",
+      "All criminal cases that pertain to municipal ordinances or are punishable by a maximum fine of $500.",
+      "All traffic violations in the county."
+    ],
+    "reference": "Code of Criminal Procedure Article 4.14 states that municipal courts have original and exclusive jurisdiction within their territory for all criminal cases that pertain to municipal ordinances or are punishable by a maximum fine of $500... "
+  },
+  {
+    "question": "What is 'ethnocentrism'?",
+    "answer": "The desire to believe one’s own group or culture is better.",
+    "options": [
+      "A negative opinion not based on knowledge or fact.",
+      "The desire to blame other people for problems.",
+      "The desire to believe one’s own group or culture is better.",
+      "The act of projecting one's own weaknesses onto others."
+    ],
+    "reference": "One reason for prejudice is the desire to believe one’s own group or culture is better. This is called ethnocentrism. "
+  },
+  {
+    "question": "What is a primary reason peace officers must avoid the appearance of prejudice or bias?",
+    "answer": "They often work by themselves and may not have friendly witnesses.",
+    "options": [
+      "It is required by federal law but not state law.",
+      "They often work by themselves and may not have friendly witnesses.",
+      "It makes report writing more difficult.",
+      "It can lead to a reduction in pay."
+    ],
+    "reference": "The work of a peace officer is sensitive, so it is especially important to avoid even the appearance of prejudice or bias. Peace officers often work by themselves and may not have friendly witnesses. "
+  },
+  {
+    "question": "What is one of the six objects of the Code of Criminal Procedure according to Article 1.03?",
+    "answer": "To ensure fair and impartial trials.",
+    "options": [
+      "To guarantee the highest possible conviction rate.",
+      "To ensure all offenders receive the maximum sentence.",
+      "To prioritize the rights of victims over the accused.",
+      "To ensure fair and impartial trials."
+    ],
+    "reference": "The fifth object of the Code of Criminal Procedure is to ensure fair and impartial trials. "
+  },
+  {
+    "question": "Under CCP Art. 1.051, what right is a criminal defendant entitled to if they cannot afford an attorney?",
+    "answer": "The right to a court-appointed attorney.",
+    "options": [
+      "The right to represent themselves.",
+      "The right to a state-funded legal consultation.",
+      "The right to have their case dismissed.",
+      "The right to a court-appointed attorney."
+    ],
+    "reference": "Article 1.051 of the Code of Criminal Procedure declares that criminal defendants have the right to counsel. Those defendants who cannot afford counsel are entitled to a court-appointed attorney. "
+  },
+  {
+    "question": "What protection does Article 1.06 of the Code of Criminal Procedure provide to citizens?",
+    "answer": "Protection from all unreasonable searches and seizures.",
+    "options": [
+      "Protection from self-incrimination.",
+      "The right to a trial by jury.",
+      "Protection from all unreasonable searches and seizures.",
+      "The right to face one's accuser."
+    ],
+    "reference": "Article 1.06 of the Code of Criminal Procedure states that the citizens of Texas are protected from all unreasonable searches and seizures of their persons, homes, and possessions. "
+  },
+  {
+    "question": "The legal principle that a person cannot be tried twice for the same offense is known as what?",
+    "answer": "Double jeopardy.",
+    "options": [
+      "Habeas Corpus.",
+      "Due Course of Law.",
+      "Double jeopardy.",
+      "Res Judicata."
+    ],
+    "reference": "Article 1.10 of the Code of Criminal Procedure states that no person may be put on trial twice for the same offense, in what is known as double jeopardy. "
+  },
+  {
+    "question": "Under what circumstance can a person be tried again for an offense for which they were acquitted?",
+    "answer": "If the court that issued the acquittal did not have jurisdiction.",
+    "options": [
+      "If new evidence is discovered.",
+      "If the victim appeals the verdict.",
+      "If the court that issued the acquittal did not have jurisdiction.",
+      "Under no circumstances."
+    ],
+    "reference": "Article 1.11 of the Code of Criminal Procedure declares that being acquitted of a crime means a person can never be tried for the same offense again, unless the court that issued the acquittal did not have jurisdiction. "
+  },
+  {
+    "question": "When can a defendant in a capital felony case waive their right to a jury trial?",
+    "answer": "If the state assures them that the death penalty will not be sought.",
+    "options": [
+      "At any time, by signing a written waiver.",
+      "They can never waive this right.",
+      "If the defendant is representing themselves.",
+      "If the state assures them that the death penalty will not be sought."
+    ],
+    "reference": "If a defendant in a capital felony case is assured that the death penalty will not be sought by the state, he may waive a jury trial. "
+  },
+  {
+    "question": "Who is exempt from arrest during a legislative session, except in cases of treason, felony, or breach of the peace?",
+    "answer": "Senators and representatives.",
+    "options": [
+      "Judges and justices.",
+      "The Governor.",
+      "Senators and representatives.",
+      "All public officials."
+    ],
+    "reference": "Article 1.21 of the Code of Criminal Procedure declares that senators and representatives are exempt from arrest during the legislative session, except in cases of treason, felony, or breach of the peace. "
+  },
+  {
+    "question": "What is the primary duty of every peace officer according to CCP Article 2.13?",
+    "answer": "To preserve peace in his or her jurisdiction.",
+    "options": [
+      "To issue citations for all observed infractions.",
+      "To conduct investigations on all reported crimes.",
+      "To testify in court proceedings.",
+      "To preserve peace in his or her jurisdiction."
+    ],
+    "reference": "Article 2.13 of the Code of Criminal Procedure declares that the primary duty of a peace officer is to preserve peace in his or her jurisdiction. "
+  },
+  {
+    "question": "What is the penalty for an officer who neglects to execute a subpoena, according to CCP Art. 2.16?",
+    "answer": "A fine between $10 and $200, treated as contempt of court.",
+    "options": [
+      "A mandatory suspension.",
+      "A written reprimand.",
+      "A fine between $10 and $200, treated as contempt of court.",
+      "A felony charge."
+    ],
+    "reference": "Article 2.16 of the Code of Criminal Procedure declares that officers may be held liable for neglecting to execute a subpoena or any other legal process. This violation may be punishable by a fine of between $10 and $200. The violation is treated as a contempt of court. "
+  },
+  {
+    "question": "What is the timeframe for a peace officer to begin an investigation into a highest-priority child abuse allegation?",
+    "answer": "No later than 24 hours after being notified.",
+    "options": [
+      "Immediately upon receiving the report.",
+      "Within 48 hours.",
+      "No later than 24 hours after being notified.",
+      "Within one week."
+    ],
+    "reference": "The peace officer and agent should begin their work as soon as possible, and no later than 24 hours after being notified. "
+  },
+  {
+    "question": "What is the legal definition of 'racial profiling' under CCP Article 3.05?",
+    "answer": "A law enforcement action based on a person's race or ethnicity instead of their behavior.",
+    "options": [
+      "Using race as one of many factors in a suspect description.",
+      "Stopping a person who matches the racial description of a suspect.",
+      "A law enforcement action based on a person's race or ethnicity instead of their behavior.",
+      "Patrolling in a neighborhood with a high concentration of a particular race."
+    ],
+    "reference": "Article 3.05 of the Code of Criminal Procedure defines racial profiling as any action by law enforcement that is based on another person’s race, ethnicity, or national origin instead of on the person’s behavior or on information about the person’s behavior. "
+  },
+  {
+    "question": "Within how many days must a state attorney initiate a notification of forfeiture proceeding after property is seized?",
+    "answer": "Within 30 days.",
+    "options": [
+      "Within 10 days.",
+      "Within 24 hours.",
+      "Within 30 days.",
+      "Within 60 days."
+    ],
+    "reference": "Article 59.04 of the Code of Criminal Procedure declares that when property is seized by a peace officer, the state attorney must initiate a notification of forfeiture proceeding within 30 days. "
+  },
+  {
+    "question": "What is the primary responsibility of a peace officer when investigating a family violence allegation?",
+    "answer": "To protect the victim, enforce the state law, and make any necessary lawful arrests.",
+    "options": [
+      "To provide marriage counseling to the parties.",
+      "To determine who is at fault for the argument.",
+      "To protect the victim, enforce the state law, and make any necessary lawful arrests.",
+      "To remove all parties from the residence."
+    ],
+    "reference": "It states that when investigating an allegation of family violence, the primary responsibility of the peace officer is to protect the victim, enforce the state law, and make any necessary lawful arrests. "
+  },
+  {
+    "question": "What can an officer do if they are resisted while executing a legal process?",
+    "answer": "Command as many citizens as necessary to assist in seizing and arresting the resisting parties.",
+    "options": [
+      "Immediately retreat and call for backup.",
+      "Use any amount of force necessary to overcome the resistance.",
+      "Command as many citizens as necessary to assist in seizing and arresting the resisting parties.",
+      "Abandon the execution of the process."
+    ],
+    "reference": "Article 8.01 of the Code of Criminal Procedure states that when an officer is resisted while executing process, the officer may command as many citizens as necessary to seize and arrest the resisting parties. "
+  },
+  {
+    "question": "What is a 'temporary ex parte order'?",
+    "answer": "A protective order issued without notifying the alleged offender, due to a clear and present danger to the applicant.",
+    "options": [
+      "A permanent protective order issued after a full hearing.",
+      "An order to appear in court for a hearing.",
+      "A protective order that only lasts for 24 hours.",
+      "A protective order issued without notifying the alleged offender, due to a clear and present danger to the applicant."
+    ],
+    "reference": "Article 7A.02 of the Code of Criminal Procedure states that... the court may enter a temporary ex parte order for the protection of the applicant or any member of his family or household. This may be done without notifying the alleged offender or holding a hearing. "
+  },
+  {
+    "question": "For which of the following crimes is there NO statute of limitations in Texas?",
+    "answer": "Murder and manslaughter.",
+    "options": [
+      "Robbery.",
+      "Arson.",
+      "Kidnapping.",
+      "Murder and manslaughter."
+    ],
+    "reference": "Article 12.01 of the Code of Criminal Procedure states that there is no statute of limitations on indictments for the following felonies: murder, manslaughter... "
+  },
+  {
+    "question": "What is the statute of limitations for presenting an indictment for a Class A or B misdemeanor?",
+    "answer": "Two years from the date of the commission of the offense.",
+    "options": [
+      "One year.",
+      "Two years from the date of the commission of the offense.",
+      "Three years.",
+      "Five years."
+    ],
+    "reference": "Article 12.02 of the Code of Criminal Procedure states that indictment or information related to a Class A or B misdemeanor must be presented within two years of the date of the commission of the offense. "
+  },
+  {
+    "question": "When may a peace officer arrest an offender without a warrant?",
+    "answer": "When an offense is committed in the officer's presence or view.",
+    "options": [
+      "Only if the offense is a felony.",
+      "Only with a supervisor's direct order.",
+      "When an offense is committed in the officer's presence or view.",
+      "Never, a warrant is always required."
+    ],
+    "reference": "Also, peace officers may arrest offenders for any offense committed in the sight of the officer. "
+  },
+  {
+    "question": "An officer has satisfactory proof from a credible person that a felony has been committed. The officer may pursue and arrest without a warrant if what other condition exists?",
+    "answer": "The offender is about to escape.",
+    "options": [
+      "The offense involved a weapon.",
+      "The officer personally knows the offender.",
+      "The offender is about to escape.",
+      "The crime occurred within the last hour."
+    ],
+    "reference": "Article 14.04 of the Code of Criminal Procedure states that when a peace officer has satisfactory proof from a credible person that a felony has been committed and the offender is going to escape, the peace officer may pursue and arrest the accused without a warrant. "
+  },
+  {
+    "question": "A person arrested without a warrant must be taken before a magistrate no later than how long after the arrest?",
+    "answer": "48 hours.",
+    "options": [
+      "12 hours.",
+      "24 hours.",
+      "48 hours.",
+      "72 hours."
+    ],
+    "reference": "Article 14.06 of the Code of Criminal Procedure states that whenever a person is arrested without a warrant, he must be taken before a magistrate as soon as possible, and no later than 48 hours after being arrested. "
+  },
+  {
+    "question": "What is a 'subpoena duces tecum'?",
+    "answer": "A subpoena that requires a person to bring a particular object to court as evidence.",
+    "options": [
+      "A subpoena for a juvenile witness.",
+      "A subpoena that requires a person to bring a particular object to court as evidence.",
+      "A subpoena delivered electronically.",
+      "An order to arrest a witness who failed to appear."
+    ],
+    "reference": "Article 24.02 of the Code of Criminal Procedure states that a subpoena may require a person to bring a particular object to court as evidence. This is known as a subpoena duces tecum. "
+  },
+  {
+    "question": "According to CCP Art. 17.15, what is the primary consideration when setting the amount of bail?",
+    "answer": "It must be high enough to ensure compliance, but not be an instrument of oppression.",
+    "options": [
+      "The severity of the crime only.",
+      "The defendant's ability to pay only.",
+      "It must be high enough to ensure compliance, but not be an instrument of oppression.",
+      "The recommendation of the arresting officer."
+    ],
+    "reference": "When doing so, the official should be aware that bail must be high enough to ensure compliance. However, bail is not supposed to become an instrument of oppression... "
+  },
+  {
+    "question": "What are the requisites of an arrest warrant?",
+    "answer": "It must name the person (or provide a description), describe the offense, and be signed by a magistrate.",
+    "options": [
+      "It must be signed by the District Attorney and include the victim's statement.",
+      "It must name the person (or provide a description), describe the offense, and be signed by a magistrate.",
+      "It must specify the bail amount and be served within 24 hours of issuance.",
+      "It must include a photograph of the suspect and be delivered by a sheriff."
+    ],
+    "reference": "First, an arrest warrant must either specify the name of the person to be arrested... Second, the arrest warrant must describe the offense... Finally, the arrest warrant must be signed by the magistrate... "
+  },
+  {
+    "question": "When executing a search warrant, a peace officer must complete the search within what timeframe from its issuance?",
+    "answer": "Within three days.",
+    "options": [
+      "Within 24 hours.",
+      "Within three days.",
+      "Within ten days.",
+      "Within 15 days, if it is for DNA."
+    ],
+    "reference": "Article 18.06 of the Code of Criminal Procedure asserts that a peace officer must execute a search warrant without delay, and within three days of its being issued. "
+  },
+  {
+    "question": "What is an 'indictment'?",
+    "answer": "A grand jury’s written statement accusing a person of an offense.",
+    "options": [
+      "A formal complaint filed by a citizen.",
+      "An order from a judge to make an arrest.",
+      "A written statement filed by a prosecutor charging a defendant.",
+      "A grand jury’s written statement accusing a person of an offense."
+    ],
+    "reference": "Article 21.01 of the Code of Criminal Procedure defines an indictment as a grand jury’s written statement accusing a person of an act or omission that has been designated as an offense. "
+  },
+  {
+    "question": "Under what circumstance must a justice of the peace conduct an inquest?",
+    "answer": "If a person dies an unnatural death, dies in prison, or possibly commits suicide.",
+    "options": [
+      "For every death that occurs in their county.",
+      "Only for deaths that occur in a hospital.",
+      "If a person dies an unnatural death, dies in prison, or possibly commits suicide.",
+      "Only when requested by the family of the deceased."
+    ],
+    "reference": "A justice must perform an inquest if a person dies an unnatural death, dies in prison, or possibly commits suicide. "
+  },
+  {
+    "question": "What offense is it to intentionally or knowingly obstruct the entrance of a justice of the peace to a place where a body has been found?",
+    "answer": "A Class B Misdemeanor.",
+    "options": [
+      "A Class C Misdemeanor.",
+      "A Class A Misdemeanor.",
+      "A State Jail Felony.",
+      "A Class B Misdemeanor."
+    ],
+    "reference": "Article 49.06 of the Code of Criminal Procedure asserts that it is illegal to obstruct intentionally or knowingly the entrance of the justice of the peace to a place where a death has occurred or a body has been found. This offense is a Class B misdemeanor. "
+  },
+  {
+    "question": "What is the penalty for a person who is required to register as a sex offender and fails to do so?",
+    "answer": "A state jail felony, third-degree felony, or second-degree felony, depending on severity.",
+    "options": [
+      "A Class A Misdemeanor.",
+      "A state jail felony, third-degree felony, or second-degree felony, depending on severity.",
+      "A civil fine only.",
+      "A mandatory life sentence."
+    ],
+    "reference": "Failure to comply with registration requirements is a state jail felony, third-degree felony, or second-degree felony, depending on the severity of the restrictions placed on the offender. "
+  },
+  {
+    "question": "What is the legal standard for probable cause?",
+    "answer": "It is an objective standard, meaning a reasonable person would agree that there is sufficient evidence.",
+    "options": [
+      "It is a subjective standard based on the officer's personal opinion and experience.",
+      "It is an objective standard, meaning a reasonable person would agree that there is sufficient evidence.",
+      "It requires enough evidence to guarantee a conviction in trial.",
+      "It is the same as simple suspicion."
+    ],
+    "reference": "It is important to note that the courts view probable cause as subject to an objective standard rather than to the opinion of the officer. Probable cause only exists when a reasonable person would agree that there is sufficient evidence. "
+  },
+  {
+    "question": "Which of the following is a factor that can be used to build probable cause?",
+    "answer": "Information obtained from an informant.",
+    "options": [
+      "The suspect's refusal to answer questions.",
+      "The suspect's prior criminal record alone.",
+      "Information obtained from an informant.",
+      "A person's presence in a public place."
+    ],
+    "reference": "Probable cause may be based on an officer’s prior knowledge of a suspect, or on information obtained from an informant. "
+  },
+  {
+    "question": "What is the difference between 'mere suspicion' and 'reasonable suspicion'?",
+    "answer": "Mere suspicion allows an officer to approach and ask questions, while reasonable suspicion allows for temporary detention.",
+    "options": [
+      "There is no difference; the terms are interchangeable.",
+      "Mere suspicion allows for a frisk, while reasonable suspicion allows for a full search.",
+      "Mere suspicion allows an officer to approach and ask questions, while reasonable suspicion allows for temporary detention.",
+      "Mere suspicion is enough for an arrest, while reasonable suspicion requires a warrant."
+    ],
+    "reference": "A suspicious peace officer may investigate further, and may approach people to ask questions. However, these people may not be detained... If an officer has a reasonable suspicion that a crime has taken place, he or she may temporarily detain a suspect. "
+  },
+  {
+    "question": "When is an officer permitted to 'frisk' a person?",
+    "answer": "When the officer feels his or her safety may be threatened.",
+    "options": [
+      "During any temporary detention.",
+      "When the officer feels his or her safety may be threatened.",
+      "After any lawful arrest.",
+      "If the person refuses to provide identification."
+    ],
+    "reference": "Frisking is permissible whenever an officer feels his or her safety may be threatened. "
+  },
+  {
+    "question": "A search that is incidental to a lawful arrest should not extend beyond what area?",
+    "answer": "The area within the immediate control of the suspect.",
+    "options": [
+      "The entire vehicle the suspect was in.",
+      "The suspect's entire home.",
+      "The area within the immediate control of the suspect.",
+      "Any property owned by the suspect."
+    ],
+    "reference": "A search that is incidental to a lawful arrest should not extend beyond the area within the immediate control of the suspect. "
+  },
+  {
+    "question": "What is the 'Fruit of the Poisonous Tree' doctrine?",
+    "answer": "A doctrine that excludes evidence obtained illegally, as well as any other evidence gained from that initial illegal act.",
+    "options": [
+      "A rule allowing evidence from an unreliable source if it can be corroborated.",
+      "A doctrine that allows tainted evidence to be used if it would have been inevitably discovered.",
+      "A doctrine that excludes evidence obtained illegally, as well as any other evidence gained from that initial illegal act.",
+      "A rule that applies only to physical evidence, not confessions."
+    ],
+    "reference": "It is important to note that this rule applies not only to physical pieces of evidence, but also to confessions or other testimony received subsequent to an illegal search. All of this evidence is referred to as “fruit of the poisonous tree,” and must be excluded. "
+  },
+  {
+    "question": "Under the Uniform Criminal Extradition Act, when can a peace officer arrest a person without a warrant?",
+    "answer": "When there is reasonable information that the accused is guilty of a crime punishable by at least one year in prison.",
+    "options": [
+      "Only for felony offenses committed within Texas.",
+      "Only if they are in fresh pursuit of the suspect from another state.",
+      "When there is reasonable information that the accused is guilty of a crime punishable by at least one year in prison.",
+      "Never, an extradition warrant is always required."
+    ],
+    "reference": "Section 14 of this document states that peace officers and private citizens may arrest a person without a warrant so long as there is reasonable information to believe that the accused is guilty of a crime punishable by at least one year in prison. "
+  },
+  {
+    "question": "According to CCP Art. 15.05, which of the following is a requisite component of a complaint?",
+    "answer": "The time and place of the commission of the offense.",
+    "options": [
+      "The suspect's criminal history.",
+      "The name of the investigating officer.",
+      "A statement from a witness.",
+      "The time and place of the commission of the offense."
+    ],
+    "reference": "Article 15.05 of the Code of Criminal Procedure states a complaint must have the following components: name of the accused or a reasonable description of him, reasons to believe the accused has committed some offense, time and place of the commission of the offense, and the signature or mark of the affiant. "
+  },
+  {
+    "question": "What is a primary objective of the Texas Penal Code?",
+    "answer": "To establish a series of penalties to handle behavior that causes or threatens harm.",
+    "options": [
+      "To provide guidelines for civil lawsuits.",
+      "To outline the rules for law enforcement hiring.",
+      "To establish a series of penalties to handle behavior that causes or threatens harm.",
+      "To define the jurisdiction of Texas courts."
+    ],
+    "reference": "Section 1.02 of the Penal Code describes the objectives of the code. In general, the intention of the Code is to establish a series of penalties to handle behavior that causes or threatens harm to individual or public interests. "
+  },
+  {
+    "question": "According to the Penal Code, when does a person reach a particular age?",
+    "answer": "On the day of the anniversary of his or her birthday.",
+    "options": [
+      "At the beginning of the calendar year in which their birthday falls.",
+      "On the day of the anniversary of his or her birthday.",
+      "The day after their birthday.",
+      "At 12:01 AM on the date of their birthday."
+    ],
+    "reference": "Regarding age, section 1.06 of the Penal Code states that a person reaches a particular age on the day of the anniversary of his or her birthday. "
+  },
+  {
+    "question": "What is the burden of proof required for a criminal conviction?",
+    "answer": "Guilt must be proved beyond a reasonable doubt.",
+    "options": [
+      "Preponderance of the evidence.",
+      "Clear and convincing evidence.",
+      "Guilt must be proved beyond a reasonable doubt.",
+      "A reasonable suspicion of guilt."
+    ],
+    "reference": "Section 2.01 of the Penal Code declares that all persons are presumed innocent and may not be convicted of an offense unless guilt is proved beyond a reasonable doubt. "
+  },
+  {
+    "question": "When an affirmative defense is submitted to a jury, what is the defendant required to do?",
+    "answer": "Prove the affirmative defense with a preponderance of evidence.",
+    "options": [
+      "Prove the affirmative defense beyond a reasonable doubt.",
+      "Provide evidence that the prosecution must disprove.",
+      "Prove the affirmative defense with a preponderance of evidence.",
+      "The defendant is not required to prove anything."
+    ],
+    "reference": "When the issue of the existence of an affirmative defense is submitted to the jury, the court will require the defendant to prove the affirmative defense with a preponderance of evidence. "
+  },
+  {
+    "question": "What is a 'criminal episode' as defined by the Penal Code?",
+    "answer": "The commission of two or more offenses as part of the same transaction or common scheme.",
+    "options": [
+      "Any single criminal act.",
+      "Any felony offense.",
+      "The commission of two or more offenses as part of the same transaction or common scheme.",
+      "A crime that is reported in the media."
+    ],
+    "reference": "Section 3.01 of the Penal Code defines a criminal episode as the commission of two or more offenses, so long as the offenses are committed as part of the same transaction or as part of multiple transactions connected by a common scheme or plan. "
+  },
+  {
+    "question": "Which of the following is the highest level of culpable mental state?",
+    "answer": "Intentional",
+    "options": [
+      "Reckless",
+      "Knowing",
+      "Criminal Negligence",
+      "Intentional"
+    ],
+    "reference": "The range of culpability in mental states proceeds as follows, from highest to lowest: intentional, knowing, reckless, and criminally negligent. "
+  },
+  {
+    "question": "A person acts ______________ when they are aware of but consciously ignore a substantial risk.",
+    "answer": "Recklessly",
+    "options": [
+      "Intentionally",
+      "Knowingly",
+      "Recklessly",
+      "With criminal negligence"
+    ],
+    "reference": "A person acts recklessly when he is aware of but consciously ignores a substantial risk that would be considered a gross deviation from the behavior of an ordinary person. "
+  },
+  {
+    "question": "Under what circumstance is a person criminally responsible for the conduct of another?",
+    "answer": "If he intentionally solicited, directed, or attempted to help the other person commit the offense.",
+    "options": [
+      "If they were merely present when the offense was committed.",
+      "If he intentionally solicited, directed, or attempted to help the other person commit the offense.",
+      "If they are related to the person who committed the offense.",
+      "Only if they were paid to help."
+    ],
+    "reference": "Section 7.02 of the Penal Code declares that a person is criminally responsible for another person’s conduct if he intentionally solicited, directed, or attempted to help the other person commit the offense. "
+  },
+  {
+    "question": "Which of the following is an affirmative defense to prosecution under the Penal Code?",
+    "answer": "Duress, where the person was compelled by threat of imminent death or serious bodily injury.",
+    "options": [
+      "Voluntary intoxication.",
+      "Ignorance of the law.",
+      "Duress, where the person was compelled by threat of imminent death or serious bodily injury.",
+      "The belief that the conduct was not immoral."
+    ],
+    "reference": "Section 8.05 of the Penal Code asserts that it is an affirmative defense to prosecution that the person committed the offense because he was threatened with imminent death or serious injury to himself or another person. "
+  },
+  {
+    "question": "What is the general age at which a person can be prosecuted for an offense in Texas?",
+    "answer": "15 years of age.",
+    "options": [
+      "13 years of age.",
+      "14 years of age.",
+      "15 years of age.",
+      "17 years of age."
+    ],
+    "reference": "Section 8.07 of the Penal Code states that a person may not face prosecution for any offense he committed when younger than 15. "
+  },
+  {
+    "question": "A Class A Misdemeanor is punishable by:",
+    "answer": "A fine up to $4,000, a jail sentence up to one year, or both.",
+    "options": [
+      "A fine up to $500.",
+      "A jail sentence of no more than 180 days.",
+      "A fine up to $2,000, a jail sentence up to 180 days, or both.",
+      "A fine up to $4,000, a jail sentence up to one year, or both."
+    ],
+    "reference": "Section 12.21 of the Penal Code declares that Class A misdemeanors are punishable by a fine of no more than $4000, a jail sentence of no more than one year, or both. "
+  },
+  {
+    "question": "What is the punishment for a state jail felony?",
+    "answer": "Confinement in a state jail for 180 days to two years and an optional fine up to $10,000.",
+    "options": [
+      "A prison term of two to 10 years.",
+      "A prison term of five to 99 years.",
+      "Confinement in a state jail for 180 days to two years and an optional fine up to $10,000.",
+      "Life imprisonment without parole."
+    ],
+    "reference": "Section 12.35 of the Penal Code declares that state jail felony is punishable by confinement in a state jail for a term of 180 days to two years, as well as an optional fine of no more than $10,000. "
+  },
+  {
+    "question": "If an offense is found to have been committed because of bias or prejudice, how is the punishment typically affected?",
+    "answer": "It is increased to the next highest category of offense.",
+    "options": [
+      "The fines are doubled.",
+      "Community service is added to the sentence.",
+      "It is increased to the next highest category of offense.",
+      "The punishment is not affected, but it is noted in the record."
+    ],
+    "reference": "Section 12.47 of the Penal Code declares that for all offenses other than first-degree felonies or Class A misdemeanors, punishment is increased to the next highest category of offense if it is found that the offense was committed because of bias or prejudice. "
+  },
+  {
+    "question": "The offense of 'Criminal Attempt' is generally punished as what?",
+    "answer": "One category lower than the offense attempted.",
+    "options": [
+      "The same as the offense attempted.",
+      "A Class C Misdemeanor.",
+      "One category lower than the offense attempted.",
+      "It is not a punishable offense."
+    ],
+    "reference": "Criminal attempts are designated one category lower than the attempted offense. "
+  },
+  {
+    "question": "A person commits 'Criminal Solicitation' if they request or command another to engage in what level of offense?",
+    "answer": "A capital felony or first-degree felony.",
+    "options": [
+      "Any misdemeanor.",
+      "A state jail felony.",
+      "Any felony.",
+      "A capital felony or first-degree felony."
+    ],
+    "reference": "Section 15.03 of the Penal Code defines criminal solicitation as the request, command, or attempt to persuade another to engage in specific conduct that amounts to a felony, and if it is done with the intent that a capital felony or first-degree felony be committed. "
+  },
+  {
+    "question": "Under what circumstance might a murder charge be downgraded to a second-degree felony?",
+    "answer": "If the defendant proves they acted under the immediate influence of passion arising from an adequate cause.",
+    "options": [
+      "If the victim had a prior criminal record.",
+      "If the defendant shows remorse.",
+      "If the defendant proves they acted under the immediate influence of passion arising from an adequate cause.",
+      "If a deadly weapon was not used."
+    ],
+    "reference": "However, if the defendant proves that he acted under the immediate influence of passion arising from an adequate cause, murder may be downgraded to a second-degree felony. "
+  },
+  {
+    "question": "A murder becomes 'Capital Murder' if the victim is:",
+    "answer": "A known peace officer or firefighter who is performing his duties lawfully.",
+    "options": [
+      "Any public servant.",
+      "A person over the age of 65.",
+      "A known peace officer or firefighter who is performing his duties lawfully.",
+      "A person under the age of 18."
+    ],
+    "reference": "Section 19.03 of the Penal Code asserts that a murder becomes defined as capital murder if the victim is a known peace officer or firefighter who is performing his duties lawfully. "
+  },
+  {
+    "question": "What is the offense of 'Manslaughter'?",
+    "answer": "A reckless act that causes the death of another person.",
+    "options": [
+      "An intentional act that causes the death of another.",
+      "A criminally negligent act that causes death.",
+      "A reckless act that causes the death of another person.",
+      "Causing a death during the commission of any felony."
+    ],
+    "reference": "Section 19.04 of the Penal Code defines manslaughter as a reckless act that causes the death of another person. "
+  },
+  {
+    "question": "An assault becomes 'Aggravated Assault' if it causes serious bodily injury or what other factor is present?",
+    "answer": "The use of a deadly weapon.",
+    "options": [
+      "The victim is a family member.",
+      "The assault occurs in a public place.",
+      "The use of a deadly weapon.",
+      "The suspect has a prior assault conviction."
+    ],
+    "reference": "Section 22.02 of the Penal Code declares that an assault is aggravated if it causes serious injury or involves the use of a deadly weapon. "
+  },
+  {
+    "question": "What is the penalty for leaving a child under the age of 7 unattended in a motor vehicle for more than five minutes?",
+    "answer": "A Class C Misdemeanor.",
+    "options": [
+      "A Class B Misdemeanor.",
+      "A Class C Misdemeanor.",
+      "A State Jail Felony.",
+      "A verbal warning."
+    ],
+    "reference": "Section 22.10 of the Penal Code declares that it is illegal to intentionally or knowingly leave a child under the age of 7 unaccompanied by another person who is 14 years or older in a motor vehicle for more than five minutes. Leaving a child in the vehicle is a Class C misdemeanor. "
+  },
+  {
+    "question": "A person commits the offense of 'Interference with Child Custody' if they:",
+    "answer": "Retain or take a child younger than 18 years old in violation of a court order.",
+    "options": [
+      "Refuse to pay child support.",
+      "Discipline a child that is not their own.",
+      "Retain or take a child younger than 18 years old in violation of a court order.",
+      "Fail to enroll a child in school."
+    ],
+    "reference": "Section 25.03 of the Penal Code asserts that it is illegal to retain or take a child younger than 18 years old in violation of a court order. "
+  },
+  {
+    "question": "Under what circumstance is Arson considered a first-degree felony?",
+    "answer": "If the fire causes injury or death, or the target was a place of worship.",
+    "options": [
+      "If the property value is over $100,000.",
+      "If the fire causes injury or death, or the target was a place of worship.",
+      "If the offender has a previous arson conviction.",
+      "If the fire is started using an accelerant."
+    ],
+    "reference": "Arson is a second-degree felony, unless the fire causes injury or death or the target was a place of worship, in which cases the offense is a first-degree felony. "
+  },
+  {
+    "question": "What is the offense of 'Burglary of a Vehicle'?",
+    "answer": "Breaking into or entering a vehicle with the intent to commit any felony or theft.",
+    "options": [
+      "Stealing a vehicle.",
+      "Joyriding in a vehicle without consent.",
+      "Breaking into or entering a vehicle with the intent to commit any felony or theft.",
+      "Damaging a vehicle with a value over $1,500."
+    ],
+    "reference": "Section 30.04 of the Penal Code declares that it is illegal to break into or enter a vehicle or any part of a vehicle with the intent to commit any felony or theft without the effective consent of the owner. "
+  },
+  {
+    "question": "A person commits 'Theft of Service' if they:",
+    "answer": "Intentionally or knowingly secure performance of a service by deception or fraud.",
+    "options": [
+      "Refuse to pay for a service due to poor quality.",
+      "Negotiate a lower price for a service.",
+      "Intentionally or knowingly secure performance of a service by deception or fraud.",
+      "Barter for services instead of paying cash."
+    ],
+    "reference": "Section 31.04 of the Penal Code defines theft of service as a crime committed with the intent to avoid paying for services that demand compensation. A person commits theft of service if he intentionally or knowingly secures performance by deception or fraud. "
+  },
+  {
+    "question": "What is the offense of 'Fraudulent Use or Possession of Identifying Information'?",
+    "answer": "Obtaining, possessing, or using another person's identifying information without consent, with intent to harm or defraud.",
+    "options": [
+      "Forgetting your own social security number.",
+      "Using a fake name on social media.",
+      "Obtaining, possessing, or using another person's identifying information without consent, with intent to harm or defraud.",
+      "Having a credit card with a name similar to your own."
+    ],
+    "reference": "Section 32.51 of the Penal Code states that it is illegal to obtain, possess, transfer, or use, with the intent to harm or defraud another person, the identifying information of another person without consent. "
+  },
+  {
+    "question": "Knowingly accessing a computer or network without the effective consent of the owner constitutes what offense?",
+    "answer": "Breach of Computer Security",
+    "options": [
+      "Theft of Service",
+      "Criminal Mischief",
+      "Breach of Computer Security",
+      "Online Impersonation"
+    ],
+    "reference": "Section 33.02 of the Penal Code defines breach of computer security as knowingly accessing a computer, computer network, or computer system without the effective consent of the owner."
+  },
+  {
+    "question": "What is the purpose of General Order 100, Law Enforcement Authority?",
+    "answer": "To affirm the authority of the members of the Denton Police Department to perform their functions based on established legal authority.",
+    "options": [
+      "To affirm the authority of the members of the Denton Police Department to perform their functions based on established legal authority.",
+      "To detail the department's budget and resource allocation.",
+      "To outline the procedures for community engagement.",
+      "To specify the requirements for officer promotions."
+    ],
+    "reference": "GO 100.1"
+  },
+  {
+    "question": "What is the stated policy of the Denton Police Department regarding the exercise of authority by its members?",
+    "answer": "To limit its members to only exercise the authority granted to them by law.",
+    "options": [
+      "To limit its members to only exercise the authority granted to them by law.",
+      "To allow members to use their own discretion in all situations.",
+      "To grant members unlimited authority in emergency situations.",
+      "To have members exercise authority as directed by the Mayor."
+    ],
+    "reference": "GO 100.2"
+  },
+  {
+    "question": "Does the Denton Police Department tolerate abuse of law enforcement authority?",
+    "answer": "No, the department does not tolerate abuse of law enforcement authority.",
+    "options": [
+      "No, the department does not tolerate abuse of law enforcement authority.",
+      "Yes, in certain pre-approved circumstances.",
+      "Only if the Chief of Police authorizes it.",
+      "It is tolerated if it leads to a successful arrest."
+    ],
+    "reference": "GO 100.2"
+  },
+  {
+    "question": "Under which Texas Code of Criminal Procedure article are sworn members considered peace officers?",
+    "answer": "Tex. Code of Crim. Pro. art. 2.12",
+    "options": [
+      "Tex. Code of Crim. Pro. art. 2.12",
+      "Tex. Penal Code § 49.02",
+      "Tex. Occ. Code § 1701.358",
+      "Tex. Local Gov't Code § 143.013"
+    ],
+    "reference": "GO 100.3"
+  },
+  {
+    "question": "What is the geographical extent of a Denton peace officer's authority?",
+    "answer": "The authority extends to any place in the State of Texas.",
+    "options": [
+      "The authority extends to any place in the State of Texas.",
+      "The authority is limited to the city limits of Denton.",
+      "The authority is limited to Denton County.",
+      "The authority extends to Texas and all contiguous states."
+    ],
+    "reference": "GO 100.3"
+  },
+  {
+    "question": "According to Tex. Code of Crim. Pro. art. 2.13, what is the duty of every peace officer?",
+    "answer": "To preserve the peace within the State of Texas and their jurisdiction through all lawful means.",
+    "options": [
+      "To preserve the peace within the State of Texas and their jurisdiction through all lawful means.",
+      "To exclusively handle traffic enforcement.",
+      "To only respond to calls dispatched by the communications center.",
+      "To conduct daily patrols of their assigned area."
+    ],
+    "reference": "GO 100.3"
+  },
+  {
+    "question": "When can a Denton police officer make an arrest without a warrant within their jurisdiction?",
+    "answer": "For any offense committed in the officer's presence or within their view.",
+    "options": [
+      "For any offense committed in the officer's presence or within their view.",
+      "Only for felony offenses.",
+      "Only if they have permission from a supervisor.",
+      "Only if the suspect is a known felon."
+    ],
+    "reference": "GO 100.3.1(b)"
+  },
+  {
+    "question": "Under what condition can an officer be ordered by a magistrate to make a warrantless arrest?",
+    "answer": "For a felony or breach-of-the-peace offense observed by the magistrate.",
+    "options": [
+      "For a felony or breach-of-the-peace offense observed by the magistrate.",
+      "For any traffic violation.",
+      "For any Class C misdemeanor.",
+      "For any offense the magistrate deems serious."
+    ],
+    "reference": "GO 100.3.1(c)"
+  },
+  {
+    "question": "An officer may arrest without a warrant when they find a person in a suspicious place who is threatening to commit or is about to commit what?",
+    "answer": "Some offense.",
+    "options": [
+      "Some offense.",
+      "Only a felony offense.",
+      "Only a breach of the peace.",
+      "Only an offense against a person."
+    ],
+    "reference": "GO 100.3.1(d)(a)"
+  },
+  {
+    "question": "An officer has probable cause to arrest for an assault resulting in bodily injury if they also believe what?",
+    "answer": "That further injury may occur if an arrest is not made.",
+    "options": [
+      "That further injury may occur if an arrest is not made.",
+      "That the victim wishes to press charges.",
+      "That the suspect has a prior record of assault.",
+      "That a weapon was involved."
+    ],
+    "reference": "GO 100.3.1(d)(b)"
+  },
+  {
+    "question": "An officer may arrest without a warrant for a violation of a court order in a family violence case under what condition?",
+    "answer": "Regardless of whether the offense occurs within the presence of the officer.",
+    "options": [
+      "Regardless of whether the offense occurs within the presence of the officer.",
+      "Only if the offense occurs in the officer's presence.",
+      "Only if the victim signs a complaint.",
+      "Only with a supervisor's direct approval."
+    ],
+    "reference": "GO 100.3.1(c)"
+  },
+  {
+    "question": "When can an officer arrest without a warrant for an offense involving family violence?",
+    "answer": "When the officer has probable cause to believe that a person has committed an offense involving family violence.",
+    "options": [
+      "When the officer has probable cause to believe that a person has committed an offense involving family violence.",
+      "Only if there is visible injury to the victim.",
+      "Only if a third-party witness is present.",
+      "Only if the suspect admits to the offense."
+    ],
+    "reference": "GO 100.3.1(d)"
+  },
+  {
+    "question": "An officer can make a warrantless arrest if they have probable cause to believe a person has interfered with another's ability to do what, even if not in their presence?",
+    "answer": "Place an emergency call.",
+    "options": [
+      "Place an emergency call.",
+      "Leave the premises.",
+      "Speak to the officer.",
+      "Seek medical attention."
+    ],
+    "reference": "GO 100.3.1(e)"
+  },
+  {
+    "question": "If an officer is told something by a person that would be admissible against them and it establishes probable cause, what crime must the officer believe the person has committed to make a warrantless arrest?",
+    "answer": "A felony.",
+    "options": [
+      "A felony.",
+      "A misdemeanor.",
+      "Any criminal offense.",
+      "A breach of the peace."
+    ],
+    "reference": "GO 100.3.1(f)"
+  },
+  {
+    "question": "To make a warrantless arrest based on information from a credible person that a felony has been committed, what additional condition must be met?",
+    "answer": "That the offender is about to escape.",
+    "options": [
+      "That the offender is about to escape.",
+      "That the credible person provides a sworn affidavit.",
+      "That the officer personally knows the offender.",
+      "That the felony occurred within the last 24 hours."
+    ],
+    "reference": "GO 100.3.1(f)"
+  },
+  {
+    "question": "When can an officer make a warrantless arrest of a person in possession of stolen property?",
+    "answer": "When the officer has reasonable grounds to believe the person is in possession of stolen property.",
+    "options": [
+      "When the officer has reasonable grounds to believe the person is in possession of stolen property.",
+      "Only if the property value exceeds $500.",
+      "Only if the rightful owner is present to identify the property.",
+      "Only after confirming the property is stolen via a database check."
+    ],
+    "reference": "GO 100.3.1(g)"
+  },
+  {
+    "question": "Under which subtitle of the Texas Transportation Code can an officer make a warrantless arrest for an observed traffic offense?",
+    "answer": "Subtitle C, Texas Transportation Code (Rules of the Road offenses).",
+    "options": [
+      "Subtitle C, Texas Transportation Code (Rules of the Road offenses).",
+      "Subtitle A, Texas Penal Code.",
+      "Subtitle B, Texas Code of Criminal Procedure.",
+      "Subtitle D, Texas Local Government Code."
+    ],
+    "reference": "GO 100.3.1(g)"
+  },
+  {
+    "question": "Outside their jurisdiction, when can an officer make a warrantless arrest for an offense (except traffic offenses)?",
+    "answer": "When the offense is committed within the presence or view of the officer.",
+    "options": [
+      "When the offense is committed within the presence or view of the officer.",
+      "Only if it is a felony offense.",
+      "When in fresh pursuit of a person who committed any offense.",
+      "With the permission of the local jurisdiction."
+    ],
+    "reference": "GO 100.3.2(a)"
+  },
+  {
+    "question": "What must an officer do after making an arrest outside their jurisdiction?",
+    "answer": "Notify the agency having jurisdiction where the arrest was made as soon as practicable.",
+    "options": [
+      "Notify the agency having jurisdiction where the arrest was made as soon as practicable.",
+      "Immediately transport the prisoner to Denton.",
+      "Wait for an officer from the local jurisdiction to take custody.",
+      "Complete all reports before leaving the other jurisdiction."
+    ],
+    "reference": "GO 100.3.2"
+  },
+  {
+    "question": "An officer may enter Arkansas in fresh pursuit of a person who is reasonably suspected of committing what offense?",
+    "answer": "Driving or operating a vehicle while intoxicated, impaired or under the influence.",
+    "options": [
+      "Driving or operating a vehicle while intoxicated, impaired or under the influence.",
+      "Any felony.",
+      "Any traffic violation.",
+      "Any breach of the peace."
+    ],
+    "reference": "GO 100.3(c)"
+  },
+  {
+    "question": "After making an arrest in another state, what is the officer's responsibility regarding the arrested person?",
+    "answer": "To take appropriate action to see that the person is taken to a magistrate or judge in the county where the arrest was made.",
+    "options": [
+      "To take appropriate action to see that the person is taken to a magistrate or judge in the county where the arrest was made.",
+      "To immediately transport the person back to Texas.",
+      "To release the person after notifying the local authorities.",
+      "To hold the person until Texas authorities can arrange transport."
+    ],
+    "reference": "GO 100.3"
+  },
+  {
+    "question": "All members are required to observe and comply with every person's clearly established rights under which constitutions?",
+    "answer": "The United States and Texas Constitutions.",
+    "options": [
+      "The United States and Texas Constitutions.",
+      "The Denton City Charter only.",
+      "The U.S. Constitution only.",
+      "The International Declaration of Human Rights."
+    ],
+    "reference": "GO 100.4"
+  },
+  {
+    "question": "What is the purpose of General Order 101, Chief Executive Officer?",
+    "answer": "To provide guidelines for the appointment of the Chief Executive Officer of the Denton Police Department.",
+    "options": [
+      "To provide guidelines for the appointment of the Chief Executive Officer of the Denton Police Department.",
+      "To define the operational duties of the Chief of Police.",
+      "To outline the disciplinary procedures for the Chief of Police.",
+      "To specify the salary and benefits of the Chief of Police."
+    ],
+    "reference": "GO 101.1"
+  },
+  {
+    "question": "What is the minimum number of years of experience as a law enforcement officer required for the Chief of Police at the time of appointment?",
+    "answer": "A minimum of 5 years' experience.",
+    "options": [
+      "A minimum of 5 years' experience.",
+      "A minimum of 3 years' experience.",
+      "A minimum of 10 years' experience.",
+      "There is no minimum experience requirement."
+    ],
+    "reference": "GO 101.3"
+  },
+  {
+    "question": "What TCOLE certificate, or its equivalent, must a Chief of Police be eligible for at the time of appointment?",
+    "answer": "An intermediate TCOLE certificate.",
+    "options": [
+      "An intermediate TCOLE certificate.",
+      "A basic TCOLE certificate.",
+      "A master peace officer certificate.",
+      "An instructor certificate."
+    ],
+    "reference": "GO 101.3"
+  },
+  {
+    "question": "As a condition of continued employment, a chief executive officer must complete training prescribed by what entity?",
+    "answer": "The Texas Commission on Law Enforcement (TCOLE).",
+    "options": [
+      "The Texas Commission on Law Enforcement (TCOLE).",
+      "The Federal Bureau of Investigation (FBI).",
+      "The Denton City Council.",
+      "The Texas Department of Public Safety (DPS)."
+    ],
+    "reference": "GO 101.3"
+  },
+  {
+    "question": "What is the purpose of General Order 102, Oath of Office?",
+    "answer": "To ensure that oaths, when appropriate, are administered to department members.",
+    "options": [
+      "To ensure that oaths, when appropriate, are administered to department members.",
+      "To create a new, department-specific oath.",
+      "To document the history of the Oath of Office.",
+      "To require all members to renew their oath annually."
+    ],
+    "reference": "GO 102.1"
+  },
+  {
+    "question": "The policy on the Oath of Office is an expression of commitment to the constitutional rights of those served and what else?",
+    "answer": "The dedication of its members to their duties.",
+    "options": [
+      "The dedication of its members to their duties.",
+      "The policies of the department.",
+      "The orders of the Chief of Police.",
+      "The laws of the City of Denton exclusively."
+    ],
+    "reference": "GO 102.2"
+  },
+  {
+    "question": "The Oath of Office requires a member to preserve, protect, and defend the Constitutions and laws of the United States, Texas, and what else?",
+    "answer": "The Charter and ordinances of this City.",
+    "options": [
+      "The Charter and ordinances of this City.",
+      "The directives of the Governor of Texas.",
+      "The rulings of the Supreme Court.",
+      "The articles of the Geneva Convention."
+    ],
+    "reference": "GO 102.3"
+  },
+  {
+    "question": "What phrase in the Oath of Office may be omitted if a member is opposed?",
+    "answer": "\"so help me God\"",
+    "options": [
+      "\"so help me God\"",
+      "\"I, (state name), do solemnly swear or affirm\"",
+      "\"to the best of my ability\"",
+      "\"contributed or promised to contribute any money\""
+    ],
+    "reference": "GO 102.3"
+  },
+  {
+    "question": "Where must the Oath of Office be filed?",
+    "answer": "As prescribed by law (Tex. Const. art. XVI, § 1).",
+    "options": [
+      "As prescribed by law (Tex. Const. art. XVI, § 1).",
+      "In the member's personnel file only.",
+      "With the Denton County Clerk.",
+      "With the Secretary of State."
+    ],
+    "reference": "GO 102.4"
+  },
+  {
+    "question": "What are the two names by which the manual of the Denton Police Department is referred?",
+    "answer": "The General Orders or the manual.",
+    "options": [
+      "The General Orders or the manual.",
+      "The Rulebook or the Codex.",
+      "The Standard Operating Procedures or the Guidebook.",
+      "The Policy Manual or the Blue Book."
+    ],
+    "reference": "GO 103.1"
+  },
+  {
+    "question": "How should the provisions of the General Orders manual be considered, except where otherwise expressly stated?",
+    "answer": "As guidelines.",
+    "options": [
+      "As guidelines.",
+      "As inflexible laws.",
+      "As optional suggestions.",
+      "As a temporary set of rules."
+    ],
+    "reference": "GO 103.2"
+  },
+  {
+    "question": "What standard is the General Orders manual intended to be viewed from?",
+    "answer": "An objective standard, taking into consideration the sound discretion entrusted to members.",
+    "options": [
+      "An objective standard, taking into consideration the sound discretion entrusted to members.",
+      "A subjective standard based on the individual officer's perspective.",
+      "A strict liability standard with no room for discretion.",
+      "A standard set by public opinion."
+    ],
+    "reference": "GO 103.2"
+  },
+  {
+    "question": "According to the disclaimer, what are the provisions of the General Orders NOT intended to create?",
+    "answer": "An employment contract nor any employment rights or entitlements.",
+    "options": [
+      "An employment contract nor any employment rights or entitlements.",
+      "A basis for disciplinary action.",
+      "A higher standard of care for civil or criminal liability.",
+      "Guidelines for internal use."
+    ],
+    "reference": "GO 103.2.1"
+  },
+  {
+    "question": "Violations of any provision in the General Orders shall only form the basis for what?",
+    "answer": "Administrative action, training or discipline.",
+    "options": [
+      "Administrative action, training or discipline.",
+      "Civil liability against the City.",
+      "Criminal liability against the officer.",
+      "An automatic lawsuit."
+    ],
+    "reference": "GO 103.2.1"
+  },
+  {
+    "question": "Who is considered the ultimate authority for the content and adoption of the General Orders?",
+    "answer": "The Chief of Police.",
+    "options": [
+      "The Chief of Police.",
+      "The City Manager.",
+      "The legal department.",
+      "The police officers' association."
+    ],
+    "reference": "GO 103.3"
+  },
+  {
+    "question": "For the purposes of criminal charges (Penal Code), how is an 'Adult' defined in the General Orders?",
+    "answer": "Someone 17 and older.",
+    "options": [
+      "Someone 17 and older.",
+      "Someone 18 and older.",
+      "Someone 21 and older.",
+      "Someone over the age of 16."
+    ],
+    "reference": "GO 103.4"
+  },
+  {
+    "question": "What does the term 'May' indicate in the General Orders?",
+    "answer": "A permissive, discretionary or conditional action.",
+    "options": [
+      "A permissive, discretionary or conditional action.",
+      "A mandatory action.",
+      "A prohibited action.",
+      "A suggested action."
+    ],
+    "reference": "GO 103.4"
+  },
+  {
+    "question": "What does 'Probable cause' to arrest mean?",
+    "answer": "Reasonably trustworthy information sufficient to warrant a reasonable person to believe a particular person has committed or is committing an offense.",
+    "options": [
+      "Reasonably trustworthy information sufficient to warrant a reasonable person to believe a particular person has committed or is committing an offense.",
+      "A gut feeling or hunch by the officer.",
+      "Beyond a reasonable doubt that a person committed an offense.",
+      "An anonymous tip without any corroboration."
+    ],
+    "reference": "GO 103.4"
+  },
+  {
+    "question": "What does 'Reasonable suspicion' mean in the context of the General Orders?",
+    "answer": "Specific, articulable facts that would lead an officer to reasonably conclude that a person is, has been, or soon will be engaged in criminal activity.",
+    "options": [
+      "Specific, articulable facts that would lead an officer to reasonably conclude that a person is, has been, or soon will be engaged in criminal activity.",
+      "A vague feeling that something is wrong.",
+      "A general description of a person that matches a suspect.",
+      "The same as probable cause."
+    ],
+    "reference": "GO 103.4"
+  },
+  {
+    "question": "What do the terms 'Shall' or 'will' indicate in the General Orders?",
+    "answer": "A mandatory action.",
+    "options": [
+      "A mandatory action.",
+      "A permissive action.",
+      "A suggested course of action.",
+      "An action to be taken only if possible."
+    ],
+    "reference": "GO 103.4"
+  },
+  {
+    "question": "What does the term 'Should' indicate in the General Orders?",
+    "answer": "A generally required or expected action, absent a rational basis for failing to conform.",
+    "options": [
+      "A generally required or expected action, absent a rational basis for failing to conform.",
+      "A strictly mandatory action with no exceptions.",
+      "An optional action left entirely to officer discretion.",
+      "An action that is prohibited."
+    ],
+    "reference": "GO 103.4"
+  },
+  {
+    "question": "How long after publication do General Orders become effective?",
+    "answer": "30 days.",
+    "options": [
+      "30 days.",
+      "Immediately upon publication.",
+      "60 days.",
+      "At the start of the next fiscal year."
+    ],
+    "reference": "GO 103.5"
+  },
+  {
+    "question": "Within how many days of being published must each member acknowledge they have had access to and an opportunity to review new general orders?",
+    "answer": "Within 30 days.",
+    "options": [
+      "Within 30 days.",
+      "Within 10 days.",
+      "Within 60 days.",
+      "Within one week."
+    ],
+    "reference": "GO 103.5"
+  },
+  {
+    "question": "Who is responsible for ensuring the General Orders are periodically reviewed and updated?",
+    "answer": "The Chief of Police.",
+    "options": [
+      "The Chief of Police.",
+      "The Accreditation and Compliance Unit.",
+      "The City Attorney.",
+      "A committee of supervisors."
+    ],
+    "reference": "GO 103.6"
+  },
+  {
+    "question": "When are revisions to the General Orders provided to each member?",
+    "answer": "On or before the date the order becomes effective.",
+    "options": [
+      "On or before the date the order becomes effective.",
+      "After the order becomes effective.",
+      "During the member's annual review.",
+      "Only upon request by the member."
+    ],
+    "reference": "GO 103.7"
+  },
+  {
+    "question": "To whom should department members forward their written suggestions for revising the General Orders?",
+    "answer": "To the Accreditation and Compliance Unit.",
+    "options": [
+      "To the Accreditation and Compliance Unit.",
+      "Directly to the Chief of Police.",
+      "To the training division.",
+      "To their immediate supervisor."
+    ],
+    "reference": "GO page 20"
+  },
+  {
+    "question": "According to the Law Enforcement Code of Ethics, what is an officer's fundamental duty?",
+    "answer": "To serve the community.",
+    "options": [
+      "To serve the community.",
+      "To enforce laws without exception.",
+      "To generate revenue through citations.",
+      "To follow all orders from superiors."
+    ],
+    "reference": "GO 104.1"
+  },
+  {
+    "question": "How should an officer treat confidential information they see or hear in their official capacity?",
+    "answer": "It will be kept ever secret unless revelation is necessary in the performance of duty.",
+    "options": [
+      "It will be kept ever secret unless revelation is necessary in the performance of duty.",
+      "It can be shared with family members.",
+      "It can be shared with other law enforcement officers for any reason.",
+      "It must be reported to the media."
+    ],
+    "reference": "GO 104.1"
+  },
+  {
+    "question": "What should an officer never permit to influence their decisions?",
+    "answer": "Personal feelings, prejudices, political beliefs, aspirations, animosities or friendships.",
+    "options": [
+      "Personal feelings, prejudices, political beliefs, aspirations, animosities or friendships.",
+      "The letter of the law.",
+      "The safety of the public.",
+      "The advice of a supervisor."
+    ],
+    "reference": "GO 104.1"
+  },
+  {
+    "question": "What two things does the Law Enforcement Code of Ethics state an officer will never do?",
+    "answer": "Employ unnecessary force or abuse and accept gratuities.",
+    "options": [
+      "Employ unnecessary force or abuse and accept gratuities.",
+      "Question a supervisor's order or work overtime.",
+      "Make an arrest without a warrant or issue a warning.",
+      "Take a break or go off-duty."
+    ],
+    "reference": "GO 104.1"
+  },
+  {
+    "question": "What does the badge of office symbolize, according to the Law Enforcement Code of Ethics?",
+    "answer": "A symbol of public faith.",
+    "options": [
+      "A symbol of public faith.",
+      "A symbol of absolute authority.",
+      "A symbol of the officer's rank.",
+      "A symbol of government power."
+    ],
+    "reference": "GO 104.1"
+  },
+  {
+    "question": "What is an officer's responsibility regarding their own standard of professional performance?",
+    "answer": "They alone are responsible and will take every reasonable opportunity to enhance and improve their knowledge and competence.",
+    "options": [
+      "They alone are responsible and will take every reasonable opportunity to enhance and improve their knowledge and competence.",
+      "Their supervisor is solely responsible for their performance.",
+      "The department provides all necessary training, and no personal effort is required.",
+      "Performance is judged only by the number of arrests made."
+    ],
+    "reference": "GO 104.1"
+  },
+  {
+    "question": "Which General Order section outlines the policy for Law Enforcement Authority?",
+    "answer": "100.2",
+    "options": [
+      "100.2",
+      "100.1",
+      "100.3",
+      "100.4"
+    ],
+    "reference": "GO 100.2"
+  },
+  {
+    "question": "What is the primary duty of every peace officer within their jurisdiction?",
+    "answer": "To preserve the peace.",
+    "options": [
+      "To preserve the peace.",
+      "To issue traffic citations.",
+      "To conduct investigations.",
+      "To file reports."
+    ],
+    "reference": "GO 100.3"
+  },
+  {
+    "question": "In which state can a Denton officer enter in fresh pursuit of a felony subject, according to GO 100.3?",
+    "answer": "Louisiana",
+    "options": [
+      "Louisiana",
+      "Kansas",
+      "Colorado",
+      "Arizona"
+    ],
+    "reference": "GO 100.3(b)"
+  },
+  {
+    "question": "What is the title of General Order 101?",
+    "answer": "Chief Executive Officer",
+    "options": [
+      "Chief Executive Officer",
+      "Oath of Office",
+      "General Orders",
+      "Law Enforcement Authority"
+    ],
+    "reference": "GO 101"
+  },
+  {
+    "question": "What is the title of General Order 102?",
+    "answer": "Oath of Office",
+    "options": [
+      "Oath of Office",
+      "Chief Executive Officer",
+      "General Orders",
+      "Law Enforcement Authority"
+    ],
+    "reference": "GO 102"
+  },
+  {
+    "question": "The policies, procedures, rules, and guidelines of the department are contained in what document?",
+    "answer": "The General Orders or the manual.",
+    "options": [
+      "The General Orders or the manual.",
+      "The City Charter.",
+      "The Texas Penal Code.",
+      "The Employee Handbook."
+    ],
+    "reference": "GO 103.1"
+  },
+  {
+    "question": "For internal use, who are the General Orders intended for?",
+    "answer": "The Denton Police Department.",
+    "options": [
+      "The Denton Police Department.",
+      "The general public.",
+      "Attorneys and legal professionals.",
+      "All City of Denton employees."
+    ],
+    "reference": "GO 103.2.1"
+  },
+  {
+    "question": "Who is authorized to issue Departmental Directives to modify the General Orders manual?",
+    "answer": "The Chief of Police or the authorized designee.",
+    "options": [
+      "The Chief of Police or the authorized designee.",
+      "Any supervisor.",
+      "The Mayor.",
+      "The Training Sergeant."
+    ],
+    "reference": "GO 103.3"
+  },
+  {
+    "question": "What is the definition of 'Department/DPD' in the General Orders?",
+    "answer": "The Denton Police Department.",
+    "options": [
+      "The Denton Police Department.",
+      "The Department of Public Safety.",
+      "The Denton Public Defenders.",
+      "The District Attorney's Office."
+    ],
+    "reference": "GO 103.4"
+  },
+  {
+    "question": "What does TCOLE stand for?",
+    "answer": "The Texas Commission on Law Enforcement.",
+    "options": [
+      "The Texas Commission on Law Enforcement.",
+      "The Texas Coalition of Law Enforcement.",
+      "The Training Commission on Legal Enforcement.",
+      "The Texas Council of Law Enforcement."
+    ],
+    "reference": "GO 103.4"
+  },
+  {
+    "question": "What is the fundamental duty of a law enforcement officer, as stated in the Law Enforcement Code of Ethics?",
+    "answer": "To serve the community; to safeguard lives and property; to protect the innocent against deception, the weak against oppression or intimidation and the peaceful against abuse or disorder; and to respect the constitutional rights of all to liberty, equality and justice.",
+    "options": [
+      "To serve the community; to safeguard lives and property; to protect the innocent against deception, the weak against oppression or intimidation and the peaceful against abuse or disorder; and to respect the constitutional rights of all to liberty, equality and justice.",
+      "To enforce all laws and regulations without question.",
+      "To prioritize the arrest and prosecution of criminals above all else.",
+      "To maintain a professional appearance and bearing at all times."
+    ],
+    "reference": "GO 104.1"
+  },
+  {
+    "question": "According to the Law Enforcement Code of Ethics, how should an officer maintain their private life?",
+    "answer": "Unsullied as an example to all.",
+    "options": [
+      "Unsullied as an example to all.",
+      "It is of no concern to the department.",
+      "Kept completely separate from their official life.",
+      "It should be documented in daily reports."
+    ],
+    "reference": "GO 104.1"
+  },
+  {
+    "question": "What quality must an officer maintain in the face of danger, scorn, or ridicule?",
+    "answer": "Courageous calm.",
+    "options": [
+      "Courageous calm.",
+      "Aggressive posture.",
+      "Complete silence.",
+      "A sense of humor."
+    ],
+    "reference": "GO 104.1"
+  },
+  {
+    "question": "What commitment does an officer make regarding acts of corruption or bribery?",
+    "answer": "I will never engage in acts of corruption or bribery, nor will I condone such acts by other police officers.",
+    "options": [
+      "I will never engage in acts of corruption or bribery, nor will I condone such acts by other police officers.",
+      "I will report them only if they involve a large sum of money.",
+      "I will engage in them only if ordered by a supervisor.",
+      "I will report them anonymously if possible."
+    ],
+    "reference": "GO 104.1"
+  },
+  {
+    "question": "Who is ultimately responsible for an officer's standard of professional performance?",
+    "answer": "The officer alone.",
+    "options": [
+      "The officer alone.",
+      "The Chief of Police.",
+      "The officer's Field Training Officer.",
+      "The department as a whole."
+    ],
+    "reference": "GO 104.1"
+  },
+  {
+    "question": "What is the purpose and scope of General Order 101?",
+    "answer": "To provide guidelines for the appointment of the Chief Executive Officer and ensure they meet specific requirements.",
+    "options": [
+      "To provide guidelines for the appointment of the Chief Executive Officer and ensure they meet specific requirements.",
+      "To provide guidelines for all officer promotions.",
+      "To list the duties of the Assistant Chiefs.",
+      "To detail the department's command structure."
+    ],
+    "reference": "GO 101.1"
+  },
+  {
+    "question": "What is the policy of the Denton Police Department regarding the Chief of Police's qualifications?",
+    "answer": "That the Chief of Police meets the minimum standards for exercising their authority granted by law.",
+    "options": [
+      "That the Chief of Police meets the minimum standards for exercising their authority granted by law.",
+      "That the Chief of Police must be a resident of Denton.",
+      "That the Chief of Police must have served in every rank within the department.",
+      "That the Chief of Police must exceed all minimum standards."
+    ],
+    "reference": "GO 101.2"
+  },
+  {
+    "question": "What is the purpose of General Order 103?",
+    "answer": "To establish the manual of the Denton Police Department, which contains the current policies, procedures, rules and guidelines.",
+    "options": [
+      "To establish the manual of the Denton Police Department, which contains the current policies, procedures, rules and guidelines.",
+      "To list all criminal statutes in Texas.",
+      "To provide a history of the Denton Police Department.",
+      "To serve as a training manual for the academy."
+    ],
+    "reference": "GO 103.1"
+  },
+  {
+    "question": "What is the department's policy on prior manuals that conflict with the current General Orders?",
+    "answer": "They are rescinded, except for portions that do not conflict and have not been included in the new manual.",
+    "options": [
+      "They are rescinded, except for portions that do not conflict and have not been included in the new manual.",
+      "They remain in full effect.",
+      "They are archived and can be used as a reference.",
+      "They are to be followed in cases of ambiguity in the new manual."
+    ],
+    "reference": "GO 103.1"
+  },
+  {
+    "question": "Who is defined as a 'Non-sworn' employee in the General Orders?",
+    "answer": "Employees and volunteers who are not sworn peace officers.",
+    "options": [
+      "Employees and volunteers who are not sworn peace officers.",
+      "Only civilian employees in administrative roles.",
+      "Any employee who does not carry a firearm.",
+      "Only volunteers."
+    ],
+    "reference": "GO 103.4"
+  },
+  {
+    "question": "What does DFPS stand for in the General Orders definitions?",
+    "answer": "The Texas Department of Family and Protective Services.",
+    "options": [
+      "The Texas Department of Family and Protective Services.",
+      "The Denton Family and Protective Services.",
+      "The Department of Federal Protective Services.",
+      "The Denton Fire and Paramedic Services."
+    ],
+    "reference": "GO 103.4"
+  },
+  {
+    "question": "What is the definition of an 'Order' in the General Orders?",
+    "answer": "A written or verbal instruction issued by a superior.",
+    "options": [
+      "A written or verbal instruction issued by a superior.",
+      "Any instruction from the Chief of Police.",
+      "A formal document requiring a court signature.",
+      "A recommendation from a fellow officer."
+    ],
+    "reference": "GO 103.4"
+  },
+  {
+    "question": "What is the definition of 'Rank' in the General Orders?",
+    "answer": "The title of the classification held by an officer.",
+    "options": [
+      "The title of the classification held by an officer.",
+      "An officer's seniority within the department.",
+      "The number of commendations an officer has received.",
+      "An officer's physical placement in a formation."
+    ],
+    "reference": "GO 103.4"
+  },
+  {
+    "question": "What does TLETS stand for?",
+    "answer": "Texas Law Enforcement Telecommunications System.",
+    "options": [
+      "Texas Law Enforcement Telecommunications System.",
+      "Texas Law Enforcement Training System.",
+      "Texas Legal and Enforcement Telecommunications System.",
+      "Tactical Law Enforcement Team System."
+    ],
+    "reference": "GO 103.4"
+  },
+  {
+    "question": "What is the title of General Order 104?",
+    "answer": "Law Enforcement Code of Ethics",
+    "options": [
+      "Law Enforcement Code of Ethics",
+      "General Orders",
+      "Oath of Office",
+      "Chief Executive Officer"
+    ],
+    "reference": "GO 104"
+  },
+  {
+    "question": "What are peace officer powers NOT extended to other states based on?",
+    "answer": "An officer's personal decision to cross state lines.",
+    "options": [
+      "An officer's personal decision to cross state lines.",
+      "Interstate compacts.",
+      "Memorandums of understanding.",
+      "Mutual aid agreements."
+    ],
+    "reference": "GO 100.3"
+  },
+  {
+    "question": "When can a warrantless arrest for a traffic offense be made outside of Denton PD's jurisdiction but within the same county?",
+    "answer": "When the traffic offense is committed under Subtitle C, Title 7, Texas Transportation Code.",
+    "options": [
+      "When the traffic offense is committed under Subtitle C, Title 7, Texas Transportation Code.",
+      "For any traffic offense whatsoever.",
+      "Never, traffic offenses can only be enforced within the primary jurisdiction.",
+      "Only for traffic offenses that are also felonies."
+    ],
+    "reference": "GO 100.3.2(a)"
+  },
+  {
+    "question": "What is the purpose of General Order 104, Law Enforcement Code of Ethics?",
+    "answer": "To outline the fundamental duties and ethical standards for law enforcement officers.",
+    "options": [
+      "To outline the fundamental duties and ethical standards for law enforcement officers.",
+      "To list punishable offenses.",
+      "To detail arrest procedures.",
+      "To define the department's mission statement."
+    ],
+    "reference": "GO 104"
+  },
+  {
+    "question": "In the Code of Ethics, what does the officer dedicate themselves to achieving?",
+    "answer": "These objectives and ideals.",
+    "options": [
+      "These objectives and ideals.",
+      "A promotion in rank.",
+      "A higher salary.",
+      "Public recognition."
+    ],
+    "reference": "GO 104.1"
+  },
+  {
+    "question": "What is the minimum age for a person to be considered an 'Adult' for purposes other than criminal charges?",
+    "answer": "18 years old.",
+    "options": [
+      "18 years old.",
+      "17 years old.",
+      "21 years old.",
+      "16 years old."
+    ],
+    "reference": "GO 103.4"
+  },
+  {
+    "question": "Who is included under the definition of 'Officer' in the General Orders?",
+    "answer": "Those employees, regardless of rank, who are sworn peace officer employees of the Denton Police Department.",
+    "options": [
+      "Those employees, regardless of rank, who are sworn peace officer employees of the Denton Police Department.",
+      "Only employees with the rank of Sergeant or above.",
+      "All sworn and non-sworn employees.",
+      "Only patrol officers."
+    ],
+    "reference": "GO 103.4"
+  },
+  {
+    "question": "What must exist for a search to require probable cause?",
+    "answer": "Reasonably trustworthy facts and circumstances that would lead a person of reasonable prudence to believe that the instrumentality or evidence of a crime will be found.",
+    "options": [
+      "Reasonably trustworthy facts and circumstances that would lead a person of reasonable prudence to believe that the instrumentality or evidence of a crime will be found.",
+      "The consent of the property owner.",
+      "A signed search warrant in all cases.",
+      "A supervisor's verbal approval."
+    ],
+    "reference": "GO 103.4"
+  },
+  {
+    "question": "What Texas state agency is abbreviated as DPS in the General Orders?",
+    "answer": "The Texas Department of Public Safety.",
+    "options": [
+      "The Texas Department of Public Safety.",
+      "The Denton Public Safety department.",
+      "The Division of Protective Services.",
+      "The Department of Personnel and Safety."
+    ],
+    "reference": "GO 103.4"
+  },
+  {
+    "question": "What unit considers recommendations for revisions to the General Orders?",
+    "answer": "The Accreditation and Compliance Unit.",
+    "options": [
+      "The Accreditation and Compliance Unit.",
+      "The Executive Staff.",
+      "The Patrol Bureau.",
+      "The Internal Affairs Division."
+    ],
+    "reference": "GO page 20"
+  },
+  {
+    "question": "The Law Enforcement Code of Ethics is listed as which General Order number?",
+    "answer": "104",
+    "options": [
+      "104",
+      "101",
+      "102",
+      "103"
+    ],
+    "reference": "GO 104"
+  }
 ]
