@@ -1209,6 +1209,226 @@
       "A state jail felony."
     ],
     "reference": "Sec. 15.02. CRIMINAL CONSPIRACY. ... (d) An offense under this section is one category lower than the most serious felony that is the object of the conspiracy, and if the most serious felony that is the object of the conspiracy is a state jail felony, the offense is a Class A misdemeanor."
+  },
+  {
+    "question": "A person commits the offense of 'Abuse of Corpse' if they, without legal authority, do what?",
+    "answer": "Disinter, sell, or treat a human corpse in an offensive manner.",
+    "options": [
+      "Fail to report the discovery of a corpse.",
+      "Attend an autopsy without permission.",
+      "Disinter, sell, or treat a human corpse in an offensive manner.",
+      "Take photographs of a corpse at a crime scene."
+    ],
+    "reference": "Sec. 42.08. ABUSE OF CORPSE. (a) A person commits an offense if the person, without legal authority, knowingly: (1) disinters, disturbs, damages, dissects, in whole or in part, carries away, or treats in an offensive manner a human corpse;"
+  },
+  {
+    "question": "What is the penalty for cockfighting under Section 42.105?",
+    "answer": "A state jail felony.",
+    "options": [
+      "A Class C Misdemeanor.",
+      "A Class A Misdemeanor.",
+      "A state jail felony.",
+      "A third-degree felony."
+    ],
+    "reference": "Sec. 42.105. COCKFIGHTING. (a) A person commits an offense if the person knowingly... (5) causes a cock to fight with another cock; or (6) attends a cockfight. (e) An offense under this section is a state jail felony."
+  },
+  {
+    "question": "It is an offense under Sec. 42.11 to intentionally or knowingly damage, deface, or mutilate what?",
+    "answer": "A public monument or a place of worship or human burial.",
+    "options": [
+      "Any private property.",
+      "A public monument or a place of worship or human burial.",
+      "A state-owned vehicle.",
+      "A public roadway."
+    ],
+    "reference": "Sec. 42.11. DESTRUCTION OF FLAG OR SIMILAR OBJECT. (a) A person commits an offense if the person intentionally or knowingly damages, defaces, mutilates, or burns: ... (2) a public monument; (3) a place of worship or human burial..."
+  },
+  {
+    "question": "A person commits an offense under Sec. 43.03, 'Promotion of Prostitution,' if they knowingly do what?",
+    "answer": "Solicit a person to patronize a prostitute.",
+    "options": [
+      "Pay for sexual conduct.",
+      "Agree to engage in sexual conduct for a fee.",
+      "Solicit a person to patronize a prostitute.",
+      "Are in a place where prostitution occurs."
+    ],
+    "reference": "Sec. 43.03. PROMOTION OF PROSTITUTION. (a) A person commits an offense if, acting other than as a prostitute receiving compensation for personally rendered prostitution services, he or she knowingly: (2) solicits a person to patronize a prostitute;"
+  },
+  {
+    "question": "Aggravated Promotion of Prostitution becomes a third-degree felony if the actor operates a prostitution enterprise that uses how many prostitutes?",
+    "answer": "Two or more.",
+    "options": [
+      "Two or more.",
+      "Three or more.",
+      "Five or more.",
+      "Any number, if it is for profit."
+    ],
+    "reference": "Sec. 43.04. AGGRAVATED PROMOTION OF PROSTITUTION. (a) A person commits an offense if he knowingly owns, invests in, finances, controls, supervises, or manages a prostitution enterprise that uses two or more prostitutes. (b) An offense under this section is a felony of the third degree."
+  },
+  {
+    "question": "Compelling another person to commit prostitution by force or threat is what level of offense?",
+    "answer": "A second-degree felony.",
+    "options": [
+      "A state jail felony.",
+      "A third-degree felony.",
+      "A second-degree felony.",
+      "A first-degree felony."
+    ],
+    "reference": "Sec. 43.05. COMPELLING PROSTITUTION. (a) A person commits an offense if the person knowingly: (1) causes another by force, threat, or fraud to commit prostitution; or (2) causes by any means a person younger than 18 years to commit prostitution... (d) An offense under this section is a felony of the second degree."
+  },
+  {
+    "question": "Under what circumstance does the offense of Gambling become a Class B Misdemeanor?",
+    "answer": "If the gambling occurs in a public place.",
+    "options": [
+      "If the bet is over $100.",
+      "If the gambling occurs in a private place.",
+      "If the gambling occurs in a public place.",
+      "If the actor has a prior gambling conviction."
+    ],
+    "reference": "Sec. 47.02. GAMBLING. (a) A person commits an offense if he: (1) makes a bet on the partial or final result of a game or contest... (b) It is a defense to prosecution... that: (1) the actor engaged in gambling in a private place; ... (c) An offense under this section is a Class C misdemeanor. (d) It is a defense to prosecution under this section that the actor reasonably believed that the conduct was permitted under Chapter 2001, Occupations Code. ... (e) It is an affirmative defense to prosecution under this section that the actor was a guest or patron in a private place..."
+  },
+  {
+    "question": "A person commits the offense of 'Gambling Promotion' if they do what?",
+    "answer": "Operate or participate in the earnings of a gambling place.",
+    "options": [
+      "Make a bet on a sporting event.",
+      "Play cards for money in a private residence.",
+      "Operate or participate in the earnings of a gambling place.",
+      "Purchase a lottery ticket."
+    ],
+    "reference": "Sec. 47.03. GAMBLING PROMOTION. (a) A person commits an offense if he intentionally or knowingly does any of the following acts: (1) operates or participates in the earnings of a gambling place;"
+  },
+  {
+    "question": "What is the penalty for 'Communicating Gambling Information' under Sec. 47.05?",
+    "answer": "A Class A Misdemeanor.",
+    "options": [
+      "A Class C Misdemeanor.",
+      "A Class B Misdemeanor.",
+      "A Class A Misdemeanor.",
+      "A state jail felony."
+    ],
+    "reference": "Sec. 47.05. COMMUNICATING GAMBLING INFORMATION. (a) A person commits an offense if, with the intent to further gambling, he knowingly communicates information as to bets, betting odds, or changes in betting odds... (b) An offense under this section is a Class A misdemeanor."
+  },
+  {
+    "question": "Possession of any gambling device, equipment, or paraphernalia is what level of offense?",
+    "answer": "A Class A Misdemeanor.",
+    "options": [
+      "A Class C Misdemeanor.",
+      "A Class B Misdemeanor.",
+      "A Class A Misdemeanor.",
+      "Not an offense if possessed in a private place."
+    ],
+    "reference": "Sec. 47.06. POSSESSION OF GAMBLING DEVICE, EQUIPMENT, OR PARAPHERNALIA. (a) A person commits an offense if, with the intent to further gambling, he knowingly owns, manufactures, transfers, or possesses any gambling device... (c) An offense under this section is a Class A misdemeanor."
+  },
+  {
+    "question": "It is an offense under Sec. 48.01 to smoke tobacco in which of the following locations?",
+    "answer": "A public school, library, or elevator.",
+    "options": [
+      "A private office building.",
+      "A public park.",
+      "A public school, library, or elevator.",
+      "A restaurant that allows smoking."
+    ],
+    "reference": "Sec. 48.01. SMOKING TOBACCO. (a) A person commits an offense if he is in possession of a burning tobacco product or smokes tobacco in a facility of a public primary or secondary school... (a-1) A person commits an offense if the person is in possession of a burning tobacco product, smokes tobacco, or operates an e-cigarette in an elevator, enclosed theatre or movie house, library, museum, hospital, ... bus..."
+  },
+  {
+    "question": "A person who is convicted of DWI with a child passenger younger than 15 years in the vehicle commits what level of offense?",
+    "answer": "A state jail felony.",
+    "options": [
+      "A Class A Misdemeanor.",
+      "A third-degree felony.",
+      "A state jail felony.",
+      "A second-degree felony."
+    ],
+    "reference": "Sec. 49.045. DRIVING WHILE INTOXICATED WITH CHILD PASSENGER. (a) A person commits an offense if: (1) the person is intoxicated while operating a motor vehicle in a public place; and (2) the vehicle being operated by the person is occupied by a passenger who is younger than 15 years of age. (b) An offense under this section is a state jail felony."
+  },
+  {
+    "question": "What is the minimum term of confinement for a first-time DWI conviction?",
+    "answer": "72 hours.",
+    "options": [
+      "24 hours.",
+      "48 hours.",
+      "72 hours.",
+      "There is no minimum term."
+    ],
+    "reference": "Sec. 49.04. DRIVING WHILE INTOXICATED. ... (b) ...an offense under this section is a Class B misdemeanor, with a minimum term of confinement of 72 hours."
+  },
+  {
+    "question": "A person commits Intoxication Manslaughter if, by reason of intoxication while operating a vehicle, they cause what?",
+    "answer": "The death of another by accident or mistake.",
+    "options": [
+      "Serious bodily injury to another.",
+      "Any bodily injury to another.",
+      "The death of another by accident or mistake.",
+      "A traffic collision involving another vehicle."
+    ],
+    "reference": "Sec. 49.08. INTOXICATION MANSLAUGHTER. (a) A person commits an offense if the person: (1) operates a motor vehicle in a public place... and (2) is intoxicated and by reason of that intoxication causes the death of another by accident or mistake."
+  },
+  {
+    "question": "What is the penalty for Intoxication Assault?",
+    "answer": "A third-degree felony.",
+    "options": [
+      "A Class A Misdemeanor.",
+      "A state jail felony.",
+      "A third-degree felony.",
+      "A second-degree felony."
+    ],
+    "reference": "Sec. 49.07. INTOXICATION ASSAULT. ... (c) An offense under this section is a felony of the third degree."
+  },
+  {
+    "question": "A person commits the offense of Engaging in Organized Criminal Activity if, as a member of a criminal street gang, they commit or conspire to commit which of the following offenses?",
+    "answer": "Robbery.",
+    "options": [
+      "Theft under $100.",
+      "Public Intoxication.",
+      "Robbery.",
+      "Criminal Trespass."
+    ],
+    "reference": "Sec. 71.02. ENGAGING IN ORGANIZED CRIMINAL ACTIVITY. (a) A person commits an offense if, with the intent to establish, maintain, or participate in a combination or in the profits of a combination or as a member of a criminal street gang, the person commits or conspires to commit one or more of the following: ... (1) murder, capital murder, arson, aggravated robbery, robbery, burglary, theft, aggravated kidnapping, kidnapping, aggravated assault, aggravated sexual assault, sexual assault..."
+  },
+  {
+    "question": "What is the minimum number of people required to form a 'combination' for the purposes of engaging in organized criminal activity?",
+    "answer": "Three or more.",
+    "options": [
+      "Two or more.",
+      "Three or more.",
+      "Five or more.",
+      "Seven or more."
+    ],
+    "reference": "Sec. 71.01. DEFINITIONS. In this chapter, ... (a) 'Combination' means three or more persons who collaborate in carrying on criminal activities..."
+  },
+  {
+    "question": "When can deadly force be justified to prevent another from committing suicide?",
+    "answer": "Deadly force is NOT justified; only force short of deadly force is justified.",
+    "options": [
+      "When the person is about to jump from a great height.",
+      "If the person is armed with a firearm.",
+      "Deadly force is NOT justified; only force short of deadly force is justified.",
+      "If the person gives consent."
+    ],
+    "reference": "Sec. 9.34. PROTECTION OF LIFE OR HEALTH. (a) A person is justified in using force, but not deadly force, against another when and to the degree he reasonably believes the force is immediately necessary to prevent the other from committing suicide or inflicting serious bodily injury to himself."
+  },
+  {
+    "question": "Under what circumstance is a person justified in using force to protect their own land or tangible movable property?",
+    "answer": "When they reasonably believe the force is immediately necessary to prevent or terminate trespass or unlawful interference.",
+    "options": [
+      "Any time someone sets foot on their property without permission.",
+      "Only if the property is a habitation.",
+      "When they reasonably believe the force is immediately necessary to prevent or terminate trespass or unlawful interference.",
+      "Only after giving a verbal warning to the other person."
+    ],
+    "reference": "Sec. 9.41. PROTECTION OF ONE'S OWN PROPERTY. (a) A person in lawful possession of land or tangible, movable property is justified in using force against another when and to the degree the actor reasonably believes the force is immediately necessary to prevent or terminate the other's trespass on the land or unlawful interference with the property."
+  },
+  {
+    "question": "A person is justified in using deadly force to protect property to prevent the imminent commission of what offense during the nighttime?",
+    "answer": "Theft or criminal mischief.",
+    "options": [
+      "Criminal trespass.",
+      "Theft or criminal mischief.",
+      "Disorderly conduct.",
+      "Any offense against property."
+    ],
+    "reference": "Sec. 9.42. DEADLY FORCE TO PROTECT PROPERTY. A person is justified in using deadly force... to prevent the other's imminent commission of arson, burglary, robbery, aggravated robbery, theft during the nighttime, or criminal mischief during the nighttime."
   }
 ],
     "transportationCode": [],
