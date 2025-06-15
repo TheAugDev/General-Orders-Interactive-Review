@@ -1,293 +1,293 @@
 {
-    "article1": [
-  {
-    "question": "According to Article 1, Section 1 of the Texas Constitution, Texas is a free and independent State, subject only to what?",
-    "answer": "The Constitution of the United States",
-    "options": [
-      "The laws passed by the Texas Legislature",
-      "The will of the people of Texas",
-      "The Constitution of the United States",
-      "No other authority"
-    ],
-    "reference": "Sec. 1. FREEDOM AND SOVEREIGNTY OF STATE. Texas is a free and independent State, subject only to the Constitution of the United States..."
-  },
-  {
-    "question": "Article 1, Section 2 states that all political power is inherent in what group, and all free governments are founded on their authority?",
-    "answer": "The people",
-    "options": [
-      "The Legislature",
-      "The Judiciary",
-      "The people",
-      "The Executive Branch"
-    ],
-    "reference": "Sec. 2. INHERENT POLITICAL POWER; REPUBLICAN FORM OF GOVERNMENT. All political power is inherent in the people, and all free governments are founded on their authority, and instituted for their benefit."
-  },
-  {
-    "question": "The faith of the people of Texas stands pledged to the preservation of what form of government?",
-    "answer": "A republican form of government",
-    "options": [
-      "A direct democracy",
-      "A parliamentary system",
-      "A republican form of government",
-      "A monarchy"
-    ],
-    "reference": "The faith of the people of Texas stands pledged to the preservation of a republican form of government..."
-  },
-  {
-    "question": "Article 1, Section 3a prohibits the denial or abridgment of equality under the law because of what?",
-    "answer": "Sex, race, color, creed, or national origin.",
-    "options": [
-      "Political affiliation or belief.",
-      "Age, disability, or economic status.",
-      "Sex, race, color, creed, or national origin.",
-      "Place of residence or occupation."
-    ],
-    "reference": "Sec. 3a. EQUALITY UNDER THE LAW. Equality under the law shall not be denied or abridged because of sex, race, color, creed, or national origin."
-  },
-  {
-    "question": "What does Article 1, Section 4 of the Texas Constitution prohibit?",
-    "answer": "Requiring any religious test as a qualification for any office or public trust.",
-    "options": [
-      "The establishment of a state religion.",
-      "Public funding for religious schools.",
-      "Requiring any religious test as a qualification for any office or public trust.",
-      "Holding public office if you are an atheist."
-    ],
-    "reference": "Sec. 4. RELIGIOUS TESTS. No religious test shall ever be required as a qualification to any office, or public trust, in this State..."
-  },
-  {
-    "question": "While no religious test can be required for public office, what must a person in office acknowledge, according to Section 4?",
-    "answer": "The existence of a Supreme Being.",
-    "options": [
-      "The separation of church and state.",
-      "The authority of the Legislature.",
-      "The existence of a Supreme Being.",
-      "The supremacy of the Texas Constitution."
-    ],
-    "reference": "...nor shall any one be excluded from holding office on account of his religious sentiments, provided he acknowledge the existence of a Supreme Being."
-  },
-  {
-    "question": "Under Article 1, Section 5, a person is not disqualified from giving evidence on account of what?",
-    "answer": "His religious opinions.",
-    "options": [
-      "His criminal record.",
-      "His relationship to the defendant.",
-      "His religious opinions.",
-      "His personal interest in the case."
-    ],
-    "reference": "Sec. 5. WITNESSES NOT DISQUALIFIED BY RELIGIOUS BELIEFS; OATHS AND AFFIRMATIONS. No person shall be disqualified to give evidence in any of the Courts of this State on account of his religious opinions..."
-  },
-  {
-    "question": "According to Article 1, Section 6, no human authority ought to control or interfere with what?",
-    "answer": "The rights of conscience in matters of religion.",
-    "options": [
-      "The right to vote.",
-      "The freedom of the press.",
-      "The rights of conscience in matters of religion.",
-      "The right to a public education."
-    ],
-    "reference": "No human authority ought, in any case whatever, to control or interfere with the rights of conscience in matters of religion..."
-  },
-  {
-    "question": "In a prosecution for libel (the publication of papers investigating public officials), what can be given in evidence?",
-    "answer": "The truth of the matter.",
-    "options": [
-      "The opinion of the publisher.",
-      "The political affiliation of the official.",
-      "The truth of the matter.",
-      "The number of people who read the paper."
-    ],
-    "reference": "Sec. 8. FREEDOM OF SPEECH AND PRESS; LIBEL...and in all indictments for libels, the jury shall have the right to determine the law and the facts, under the direction of the Court, as in other cases."
-  },
-  {
-    "question": "According to Article 1, Section 9, a warrant to search a place or seize a person must be based on what?",
-    "answer": "Probable cause, supported by Oath or affirmation.",
-    "options": [
-      "The general reputation of the person.",
-      "An anonymous phone call.",
-      "An officer's intuition.",
-      "Probable cause, supported by Oath or affirmation."
-    ],
-    "reference": "...and no warrant to search any place, or to seize any person or thing, shall issue without describing them as near as may be, nor without probable cause, supported by Oath or affirmation."
-  },
-  {
-    "question": "Which of the following is a right of the accused in a criminal prosecution, according to Article 1, Section 10?",
-    "answer": "The right to be heard by himself or counsel, or both.",
-    "options": [
-      "The right to a private trial.",
-      "The right to choose the judge presiding over the case.",
-      "The right to be heard by himself or counsel, or both.",
-      "The right to delay the trial indefinitely."
-    ],
-    "reference": "In all criminal prosecutions the accused shall have a speedy public trial by an impartial jury. He shall have the right to demand the nature and cause of the accusation against him, and to have a copy thereof. He shall not be compelled to give evidence against himself, and shall have the right of being heard by himself or counsel, or both..."
-  },
-  {
-    "question": "Article 1, Section 10, states that an accused shall not be compelled to do what?",
-    "answer": "Give evidence against himself.",
-    "options": [
-      "Provide a list of witnesses.",
-      "Submit to a polygraph test.",
-      "Give evidence against himself.",
-      "Pay for court costs if found not guilty."
-    ],
-    "reference": "He shall not be compelled to give evidence against himself, and shall have the right of being heard by himself or counsel, or both..."
-  },
-  {
-    "question": "When can bail be denied for a felony less than capital, according to Section 11a?",
-    "answer": "When the person has been theretofore twice convicted of a felony.",
-    "options": [
-      "For any non-capital felony arrest.",
-      "If the person is a flight risk.",
-      "When the person has one prior felony conviction.",
-      "When the person has been theretofore twice convicted of a felony."
-    ],
-    "reference": "Sec. 11a. MULTIPLE CONVICTIONS; DENIAL OF BAIL. (a) Any person (1) accused of a felony less than capital in this State, who has been theretofore twice convicted of a felony..."
-  },
-  {
-    "question": "What is the writ of Habeas Corpus defined as in Article 1, Section 12?",
-    "answer": "A writ of right.",
-    "options": [
-      "A judicial privilege.",
-      "A writ of right.",
-      "A legislative order.",
-      "An executive decree."
-    ],
-    "reference": "Sec. 12. HABEAS CORPUS. The writ of Habeas Corpus is a writ of right, and shall never be suspended."
-  },
-  {
-    "question": "Article 1, Section 13, ensures that all courts shall be what?",
-    "answer": "Open.",
-    "options": [
-      "In session year-round.",
-      "Fair.",
-      "Open.",
-      "Appointed by the governor."
-    ],
-    "reference": "All courts shall be open, and every person for an injury done him, in his lands, goods, person or reputation, shall have remedy by due course of law."
-  },
-  {
-    "question": "What does Article 1, Section 14 prohibit?",
-    "answer": "Double Jeopardy.",
-    "options": [
-      "Bills of Attainder.",
-      "Ex Post Facto Laws.",
-      "Cruel and Unusual Punishment.",
-      "Double Jeopardy."
-    ],
-    "reference": "Sec. 14. DOUBLE JEOPARDY. No person, for the same offense, shall be twice put in jeopardy of life or liberty..."
-  },
-  {
-    "question": "Article 1, Section 15-a provides for the commitment of persons of unsound mind to custody for what purpose?",
-    "answer": "For their restraint and care.",
-    "options": [
-      "For punishment.",
-      "For their restraint and care.",
-      "For medical experimentation.",
-      "For a life term."
-    ],
-    "reference": "Sec. 15-a. COMMITMENT OF PERSONS OF UNSOUND MIND. No person shall be committed as a person of unsound mind except on competent medical or psychiatric testimony. The Legislature may enact all laws necessary to provide for the trial, adjudication of insanity and commitment of persons of unsound mind and to provide for a method of appeal from judgments rendered in such cases."
-  },
-  {
-    "question": "What is an 'ex post facto law,' which is prohibited by Article 1, Section 16?",
-    "answer": "A law that retroactively makes a previously legal act a criminal offense.",
-    "options": [
-      "A law that impairs the obligation of contracts.",
-      "A legislative act that declares someone guilty without a trial.",
-      "A law that applies to future actions only.",
-      "A law that retroactively makes a previously legal act a criminal offense."
-    ],
-    "reference": "Sec. 16. BILLS OF ATTAINDER; EX POST FACTO OR RETROACTIVE LAWS; IMPAIRING OBLIGATION OF CONTRACTS. No bill of attainder, ex post facto law, retroactive law, or any law impairing the obligation of contracts, shall be made."
-  },
-  {
-    "question": "What does Article 1, Section 18 state about imprisonment for debt?",
-    "answer": "No person shall ever be imprisoned for debt.",
-    "options": [
-      "A person can be imprisoned for debts owed to the State.",
-      "A person can be imprisoned for debt if fraud is involved.",
-      "No person shall ever be imprisoned for debt.",
-      "A person can be imprisoned for debt if the amount is over $1,000,000."
-    ],
-    "reference": "Sec. 18. IMPRISONMENT FOR DEBT. No person shall ever be imprisoned for debt."
-  },
-  {
-    "question": "According to Article 1, Section 22, what is required to convict a person of treason?",
-    "answer": "The testimony of two witnesses to the same overt act, or confession in open court.",
-    "options": [
-      "A unanimous jury verdict.",
-      "The testimony of two witnesses to the same overt act, or confession in open court.",
-      "A signed confession.",
-      "Circumstantial evidence."
-    ],
-    "reference": "Sec. 22. TREASON. Treason against the State shall consist only in levying war against it, or adhering to its enemies, giving them aid and comfort; and no person shall be convicted of treason except on the testimony of two witnesses to the same overt act, or on confession in open court."
-  },
-  {
-    "question": "Article 1, Section 25, places a restriction on the quartering of soldiers in a house. What is that restriction?",
-    "answer": "No soldier shall in time of peace be quartered in the house of any citizen without the consent of the owner.",
-    "options": [
-      "Soldiers may be quartered if they pay rent.",
-      "No soldier shall in time of peace be quartered in the house of any citizen without the consent of the owner.",
-      "Soldiers can be quartered in any house during wartime.",
-      "A homeowner can be forced to quarter soldiers if ordered by a general."
-    ],
-    "reference": "Sec. 25. QUARTERING SOLDIERS IN HOUSES. No soldier shall in time of peace be quartered in the house of any citizen without the consent of the owner, nor in time of war but in a manner prescribed by law."
-  },
-  {
-    "question": "What does Article 1, Section 26 declare to be contrary to the genius of a free government?",
-    "answer": "Perpetuities and monopolies.",
-    "options": [
-      "High taxes.",
-      "A standing army.",
-      "Perpetuities and monopolies.",
-      "A state-run lottery."
-    ],
-    "reference": "Sec. 26. PERPETUITIES AND MONOPOLIES; PRIMOGENITURE OR ENTAILMENTS. Perpetuities and monopolies are contrary to the genius of a free government, and shall never be allowed..."
-  },
-  {
-    "question": "What does Article 1, Section 29 state about the Bill of Rights?",
-    "answer": "That everything in the Bill of Rights is excepted out of the general powers of government and shall forever remain inviolate.",
-    "options": [
-      "That the Bill of Rights can be amended by a simple majority vote.",
-      "That the Legislature can suspend parts of the Bill of Rights.",
-      "That the Bill of Rights is a guide, but not legally binding.",
-      "That everything in the Bill of Rights is excepted out of the general powers of government and shall forever remain inviolate."
-    ],
-    "reference": "Sec. 29. PROVISIONS OF BILL OF RIGHTS EXCEPTED FROM POWERS OF GOVERNMENT; TO FOREVER REMAIN INVIOLATE. To guard against transgressions of the high powers herein delegated, we declare that every thing in this 'Bill of Rights' is excepted out of the general powers of government, and shall forever remain inviolate..."
-  },
-  {
-    "question": "What right does Article 1, Section 30 grant to a crime victim regarding court proceedings?",
-    "answer": "The right to be present at all public court proceedings related to the offense.",
-    "options": [
-      "The right to act as their own prosecutor.",
-      "The right to be present at all public court proceedings related to the offense.",
-      "The right to have the trial moved to their home county.",
-      "The right to cross-examine the defendant."
-    ],
-    "reference": "Sec. 30. RIGHTS OF CRIME VICTIMS. (a) A crime victim has the following rights: ... (3) the right to be present at all public court proceedings related to the offense, unless the victim is to testify and the court determines that the victim's testimony would be materially affected if the victim hears other testimony at the trial."
-  },
-  {
-    "question": "What is the subject of Article 1, Section 34 of the Texas Constitution?",
-    "answer": "The right to hunt, fish, and harvest wildlife.",
-    "options": [
-      "The right to access public beaches.",
-      "The definition of marriage.",
-      "The right to hunt, fish, and harvest wildlife.",
-      "The rights of facility residents to designate a caregiver."
-    ],
-    "reference": "Sec. 34. RIGHT TO HUNT, FISH, AND HARVEST WILDLIFE. (a) The people have the right to hunt, fish, and harvest wildlife..."
-  },
-  {
-    "question": "Article 1, Section 36 establishes a right for landowners and lessees to engage in what generally accepted practices?",
-    "answer": "Farming, ranching, timber production, horticulture, and wildlife management.",
-    "options": [
-      "Mining, oil drilling, and mineral exploration.",
-      "Farming, ranching, timber production, horticulture, and wildlife management.",
-      "Commercial development and retail sales.",
-      "Residential construction and subdivision development."
-    ],
-    "reference": "Sec. 36. RIGHT TO ENGAGE IN FARMING, RANCHING, TIMBER PRODUCTION, HORTICULTURE, AND WILDLIFE MANAGEMENT. (a) The people have the right to engage in generally accepted farm, ranch, timber production, horticulture, or wildlife management practices on real property they own or lease."
-  }
-],
-    "article3": [
+      "article1": [
+    {
+      "question": "According to Article 1, Section 1 of the Texas Constitution, Texas is a free and independent State, subject only to what?",
+      "answer": "The Constitution of the United States",
+      "options": [
+        "The laws passed by the Texas Legislature",
+        "The will of the people of Texas",
+        "The Constitution of the United States",
+        "No other authority"
+      ],
+      "reference": "Sec. 1. FREEDOM AND SOVEREIGNTY OF STATE. Texas is a free and independent State, subject only to the Constitution of the United States..."
+    },
+    {
+      "question": "Article 1, Section 2 states that all political power is inherent in what group, and all free governments are founded on their authority?",
+      "answer": "The people",
+      "options": [
+        "The Legislature",
+        "The Judiciary",
+        "The people",
+        "The Executive Branch"
+      ],
+      "reference": "Sec. 2. INHERENT POLITICAL POWER; REPUBLICAN FORM OF GOVERNMENT. All political power is inherent in the people, and all free governments are founded on their authority, and instituted for their benefit."
+    },
+    {
+      "question": "The faith of the people of Texas stands pledged to the preservation of what form of government?",
+      "answer": "A republican form of government",
+      "options": [
+        "A direct democracy",
+        "A parliamentary system",
+        "A republican form of government",
+        "A monarchy"
+      ],
+      "reference": "The faith of the people of Texas stands pledged to the preservation of a republican form of government..."
+    },
+    {
+      "question": "Article 1, Section 3a prohibits the denial or abridgment of equality under the law because of what?",
+      "answer": "Sex, race, color, creed, or national origin.",
+      "options": [
+        "Political affiliation or belief.",
+        "Age, disability, or economic status.",
+        "Sex, race, color, creed, or national origin.",
+        "Place of residence or occupation."
+      ],
+      "reference": "Sec. 3a. EQUALITY UNDER THE LAW. Equality under the law shall not be denied or abridged because of sex, race, color, creed, or national origin."
+    },
+    {
+      "question": "What does Article 1, Section 4 of the Texas Constitution prohibit?",
+      "answer": "Requiring any religious test as a qualification for any office or public trust.",
+      "options": [
+        "The establishment of a state religion.",
+        "Public funding for religious schools.",
+        "Requiring any religious test as a qualification for any office or public trust.",
+        "Holding public office if you are an atheist."
+      ],
+      "reference": "Sec. 4. RELIGIOUS TESTS. No religious test shall ever be required as a qualification to any office, or public trust, in this State..."
+    },
+    {
+      "question": "While no religious test can be required for public office, what must a person in office acknowledge, according to Section 4?",
+      "answer": "The existence of a Supreme Being.",
+      "options": [
+        "The separation of church and state.",
+        "The authority of the Legislature.",
+        "The existence of a Supreme Being.",
+        "The supremacy of the Texas Constitution."
+      ],
+      "reference": "...nor shall any one be excluded from holding office on account of his religious sentiments, provided he acknowledge the existence of a Supreme Being."
+    },
+    {
+      "question": "Under Article 1, Section 5, a person is not disqualified from giving evidence on account of what?",
+      "answer": "His religious opinions.",
+      "options": [
+        "His criminal record.",
+        "His relationship to the defendant.",
+        "His religious opinions.",
+        "His personal interest in the case."
+      ],
+      "reference": "Sec. 5. WITNESSES NOT DISQUALIFIED BY RELIGIOUS BELIEFS; OATHS AND AFFIRMATIONS. No person shall be disqualified to give evidence in any of the Courts of this State on account of his religious opinions..."
+    },
+    {
+      "question": "According to Article 1, Section 6, no human authority ought to control or interfere with what?",
+      "answer": "The rights of conscience in matters of religion.",
+      "options": [
+        "The right to vote.",
+        "The freedom of the press.",
+        "The rights of conscience in matters of religion.",
+        "The right to a public education."
+      ],
+      "reference": "No human authority ought, in any case whatever, to control or interfere with the rights of conscience in matters of religion..."
+    },
+    {
+      "question": "In a prosecution for libel (the publication of papers investigating public officials), what can be given in evidence?",
+      "answer": "The truth of the matter.",
+      "options": [
+        "The opinion of the publisher.",
+        "The political affiliation of the official.",
+        "The truth of the matter.",
+        "The number of people who read the paper."
+      ],
+      "reference": "Sec. 8. FREEDOM OF SPEECH AND PRESS; LIBEL...and in all indictments for libels, the jury shall have the right to determine the law and the facts, under the direction of the Court, as in other cases."
+    },
+    {
+      "question": "According to Article 1, Section 9, a warrant to search a place or seize a person must be based on what?",
+      "answer": "Probable cause, supported by Oath or affirmation.",
+      "options": [
+        "The general reputation of the person.",
+        "An anonymous phone call.",
+        "An officer's intuition.",
+        "Probable cause, supported by Oath or affirmation."
+      ],
+      "reference": "...and no warrant to search any place, or to seize any person or thing, shall issue without describing them as near as may be, nor without probable cause, supported by Oath or affirmation."
+    },
+    {
+      "question": "Which of the following is a right of the accused in a criminal prosecution, according to Article 1, Section 10?",
+      "answer": "The right to be heard by himself or counsel, or both.",
+      "options": [
+        "The right to a private trial.",
+        "The right to choose the judge presiding over the case.",
+        "The right to be heard by himself or counsel, or both.",
+        "The right to delay the trial indefinitely."
+      ],
+      "reference": "In all criminal prosecutions the accused shall have a speedy public trial by an impartial jury. He shall have the right to demand the nature and cause of the accusation against him, and to have a copy thereof. He shall not be compelled to give evidence against himself, and shall have the right of being heard by himself or counsel, or both..."
+    },
+    {
+      "question": "Article 1, Section 10, states that an accused shall not be compelled to do what?",
+      "answer": "Give evidence against himself.",
+      "options": [
+        "Provide a list of witnesses.",
+        "Submit to a polygraph test.",
+        "Give evidence against himself.",
+        "Pay for court costs if found not guilty."
+      ],
+      "reference": "He shall not be compelled to give evidence against himself, and shall have the right of being heard by himself or counsel, or both..."
+    },
+    {
+      "question": "When can bail be denied for a felony less than capital, according to Section 11a?",
+      "answer": "When the person has been theretofore twice convicted of a felony.",
+      "options": [
+        "For any non-capital felony arrest.",
+        "If the person is a flight risk.",
+        "When the person has one prior felony conviction.",
+        "When the person has been theretofore twice convicted of a felony."
+      ],
+      "reference": "Sec. 11a. MULTIPLE CONVICTIONS; DENIAL OF BAIL. (a) Any person (1) accused of a felony less than capital in this State, who has been theretofore twice convicted of a felony..."
+    },
+    {
+      "question": "What is the writ of Habeas Corpus defined as in Article 1, Section 12?",
+      "answer": "A writ of right.",
+      "options": [
+        "A judicial privilege.",
+        "A writ of right.",
+        "A legislative order.",
+        "An executive decree."
+      ],
+      "reference": "Sec. 12. HABEAS CORPUS. The writ of Habeas Corpus is a writ of right, and shall never be suspended."
+    },
+    {
+      "question": "Article 1, Section 13, ensures that all courts shall be what?",
+      "answer": "Open.",
+      "options": [
+        "In session year-round.",
+        "Fair.",
+        "Open.",
+        "Appointed by the governor."
+      ],
+      "reference": "All courts shall be open, and every person for an injury done him, in his lands, goods, person or reputation, shall have remedy by due course of law."
+    },
+    {
+      "question": "What does Article 1, Section 14 prohibit?",
+      "answer": "Double Jeopardy.",
+      "options": [
+        "Bills of Attainder.",
+        "Ex Post Facto Laws.",
+        "Cruel and Unusual Punishment.",
+        "Double Jeopardy."
+      ],
+      "reference": "Sec. 14. DOUBLE JEOPARDY. No person, for the same offense, shall be twice put in jeopardy of life or liberty..."
+    },
+    {
+      "question": "Article 1, Section 15-a provides for the commitment of persons of unsound mind to custody for what purpose?",
+      "answer": "For their restraint and care.",
+      "options": [
+        "For punishment.",
+        "For their restraint and care.",
+        "For medical experimentation.",
+        "For a life term."
+      ],
+      "reference": "Sec. 15-a. COMMITMENT OF PERSONS OF UNSOUND MIND. No person shall be committed as a person of unsound mind except on competent medical or psychiatric testimony. The Legislature may enact all laws necessary to provide for the trial, adjudication of insanity and commitment of persons of unsound mind and to provide for a method of appeal from judgments rendered in such cases."
+    },
+    {
+      "question": "What is an 'ex post facto law,' which is prohibited by Article 1, Section 16?",
+      "answer": "A law that retroactively makes a previously legal act a criminal offense.",
+      "options": [
+        "A law that impairs the obligation of contracts.",
+        "A legislative act that declares someone guilty without a trial.",
+        "A law that applies to future actions only.",
+        "A law that retroactively makes a previously legal act a criminal offense."
+      ],
+      "reference": "Sec. 16. BILLS OF ATTAINDER; EX POST FACTO OR RETROACTIVE LAWS; IMPAIRING OBLIGATION OF CONTRACTS. No bill of attainder, ex post facto law, retroactive law, or any law impairing the obligation of contracts, shall be made."
+    },
+    {
+      "question": "What does Article 1, Section 18 state about imprisonment for debt?",
+      "answer": "No person shall ever be imprisoned for debt.",
+      "options": [
+        "A person can be imprisoned for debts owed to the State.",
+        "A person can be imprisoned for debt if fraud is involved.",
+        "No person shall ever be imprisoned for debt.",
+        "A person can be imprisoned for debt if the amount is over $1,000,000."
+      ],
+      "reference": "Sec. 18. IMPRISONMENT FOR DEBT. No person shall ever be imprisoned for debt."
+    },
+    {
+      "question": "According to Article 1, Section 22, what is required to convict a person of treason?",
+      "answer": "The testimony of two witnesses to the same overt act, or confession in open court.",
+      "options": [
+        "A unanimous jury verdict.",
+        "The testimony of two witnesses to the same overt act, or confession in open court.",
+        "A signed confession.",
+        "Circumstantial evidence."
+      ],
+      "reference": "Sec. 22. TREASON. Treason against the State shall consist only in levying war against it, or adhering to its enemies, giving them aid and comfort; and no person shall be convicted of treason except on the testimony of two witnesses to the same overt act, or on confession in open court."
+    },
+    {
+      "question": "Article 1, Section 25, places a restriction on the quartering of soldiers in a house. What is that restriction?",
+      "answer": "No soldier shall in time of peace be quartered in the house of any citizen without the consent of the owner.",
+      "options": [
+        "Soldiers may be quartered if they pay rent.",
+        "No soldier shall in time of peace be quartered in the house of any citizen without the consent of the owner.",
+        "Soldiers can be quartered in any house during wartime.",
+        "A homeowner can be forced to quarter soldiers if ordered by a general."
+      ],
+      "reference": "Sec. 25. QUARTERING SOLDIERS IN HOUSES. No soldier shall in time of peace be quartered in the house of any citizen without the consent of the owner, nor in time of war but in a manner prescribed by law."
+    },
+    {
+      "question": "What does Article 1, Section 26 declare to be contrary to the genius of a free government?",
+      "answer": "Perpetuities and monopolies.",
+      "options": [
+        "High taxes.",
+        "A standing army.",
+        "Perpetuities and monopolies.",
+        "A state-run lottery."
+      ],
+      "reference": "Sec. 26. PERPETUITIES AND MONOPOLIES; PRIMOGENITURE OR ENTAILMENTS. Perpetuities and monopolies are contrary to the genius of a free government, and shall never be allowed..."
+    },
+    {
+      "question": "What does Article 1, Section 29 state about the Bill of Rights?",
+      "answer": "That everything in the Bill of Rights is excepted out of the general powers of government and shall forever remain inviolate.",
+      "options": [
+        "That the Bill of Rights can be amended by a simple majority vote.",
+        "That the Legislature can suspend parts of the Bill of Rights.",
+        "That the Bill of Rights is a guide, but not legally binding.",
+        "That everything in the Bill of Rights is excepted out of the general powers of government and shall forever remain inviolate."
+      ],
+      "reference": "Sec. 29. PROVISIONS OF BILL OF RIGHTS EXCEPTED FROM POWERS OF GOVERNMENT; TO FOREVER REMAIN INVIOLATE. To guard against transgressions of the high powers herein delegated, we declare that every thing in this 'Bill of Rights' is excepted out of the general powers of government, and shall forever remain inviolate..."
+    },
+    {
+      "question": "What right does Article 1, Section 30 grant to a crime victim regarding court proceedings?",
+      "answer": "The right to be present at all public court proceedings related to the offense.",
+      "options": [
+        "The right to act as their own prosecutor.",
+        "The right to be present at all public court proceedings related to the offense.",
+        "The right to have the trial moved to their home county.",
+        "The right to cross-examine the defendant."
+      ],
+      "reference": "Sec. 30. RIGHTS OF CRIME VICTIMS. (a) A crime victim has the following rights: ... (3) the right to be present at all public court proceedings related to the offense, unless the victim is to testify and the court determines that the victim's testimony would be materially affected if the victim hears other testimony at the trial."
+    },
+    {
+      "question": "What is the subject of Article 1, Section 34 of the Texas Constitution?",
+      "answer": "The right to hunt, fish, and harvest wildlife.",
+      "options": [
+        "The right to access public beaches.",
+        "The definition of marriage.",
+        "The right to hunt, fish, and harvest wildlife.",
+        "The rights of facility residents to designate a caregiver."
+      ],
+      "reference": "Sec. 34. RIGHT TO HUNT, FISH, AND HARVEST WILDLIFE. (a) The people have the right to hunt, fish, and harvest wildlife..."
+    },
+    {
+      "question": "Article 1, Section 36 establishes a right for landowners and lessees to engage in what generally accepted practices?",
+      "answer": "Farming, ranching, timber production, horticulture, and wildlife management.",
+      "options": [
+        "Mining, oil drilling, and mineral exploration.",
+        "Farming, ranching, timber production, horticulture, and wildlife management.",
+        "Commercial development and retail sales.",
+        "Residential construction and subdivision development."
+      ],
+      "reference": "Sec. 36. RIGHT TO ENGAGE IN FARMING, RANCHING, TIMBER PRODUCTION, HORTICULTURE, AND WILDLIFE MANAGEMENT. (a) The people have the right to engage in generally accepted farm, ranch, timber production, horticulture, or wildlife management practices on real property they own or lease."
+    }
+  ],
+      "article3": [
   {
     "question": "According to Article 3, Section 1 of the Texas Constitution, where is the Legislative power of the State vested?",
     "answer": "In a Senate and House of Representatives.",
