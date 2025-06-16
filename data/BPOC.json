@@ -1,0 +1,658 @@
+{
+    "week1": [
+  {
+    "question": "What is the primary goal of the Radio Communications unit as stated in the presentation?",
+    "answer": "To learn key terminology and procedures necessary to communicate effectively via Public Safety Radio.",
+    "options": [
+      "To learn how to repair radio equipment.",
+      "To memorize all FCC regulations.",
+      "To learn key terminology and procedures necessary to communicate effectively via Public Safety Radio.",
+      "To practice advanced pursuit driving techniques."
+    ],
+    "reference": "Unit Goal: Key terminology and procedures necessary to communicate effectively via Public Safety Radio."
+  },
+  {
+    "question": "What does the acronym PSAP stand for in public safety communications?",
+    "answer": "Public Safety Answering Point",
+    "options": [
+      "Police Safety Action Plan",
+      "Public Service Announcement Program",
+      "Primary Suspect Apprehension Protocol",
+      "Public Safety Answering Point"
+    ],
+    "reference": "PSAP: Public Safety Answering Point, communications facility operated continuously assigned the task of receiving first line 9-1-1 calls and dispatching a response."
+  },
+  {
+    "question": "What is a 'Telecommunicator'?",
+    "answer": "A person acknowledged by the commission and employed by a law enforcement agency who receives, processes, and transmits public safety information.",
+    "options": [
+      "An officer assigned to traffic control duties.",
+      "A person who repairs radio equipment for the department.",
+      "A certified IT professional who manages the agency's network.",
+      "A person acknowledged by the commission and employed by a law enforcement agency who receives, processes, and transmits public safety information."
+    ],
+    "reference": "Telecommunicator: a person acknowledged by the commission and employed by or serving a law enforcement agency on a 24-hour basis receives, processes, and transmits public safety information and criminal justice data for the agency by using a base radio station on a public safety frequency"
+  },
+  {
+    "question": "What is 'Interoperability' in the context of public safety communications?",
+    "answer": "Multiple entities being able to communicate with each other when working a large-scale incident.",
+    "options": [
+      "The ability of a radio to operate on multiple frequencies.",
+      "A system for translating between different languages on 9-1-1 calls.",
+      "The procedure for logging out of a mobile data computer.",
+      "Multiple entities being able to communicate with each other when working a large-scale incident."
+    ],
+    "reference": "Interoperability - multiple entities being able to communicate with each other when working a large-scale incident."
+  },
+  {
+    "question": "What information is provided by ANI/ALI?",
+    "answer": "The phone number and address of a 9-1-1 call.",
+    "options": [
+      "The criminal history of a suspect.",
+      "The officer's badge number and unit.",
+      "The phone number and address of a 9-1-1 call.",
+      "The weather conditions at an incident location."
+    ],
+    "reference": "ANI/ALI (Automatic Number Identification/Automatic Location Identification) the phone number and address of a 9-1-1 call that are used to route the call to the appropriate answering point."
+  },
+  {
+    "question": "What is the proper order for broadcasting a description of a person over the radio?",
+    "answer": "Name, gender, race, date of birth, height, weight, hair color, and eye color.",
+    "options": [
+      "Height, weight, hair color, eye color, name, gender, race, date of birth.",
+      "Race, gender, name, date of birth, height, weight, hair color, eye color.",
+      "Name, gender, race, date of birth, height, weight, hair color, and eye color.",
+      "Clothing, distinguishing marks, name, gender, race."
+    ],
+    "reference": "There is a standard order in which this information should be presented: name, gender, race, date of birth, height, weight, hair color, and eye color."
+  },
+  {
+    "question": "The acronym CYMBAL is used to remember the essential information for describing a vehicle. What does the 'C' stand for?",
+    "answer": "Color",
+    "options": [
+      "Car",
+      "Chassis",
+      "Color",
+      "County"
+    ],
+    "reference": "With regard to vehicles, the message should inform in the following order: color, year, make, body-style, and license number."
+  },
+    {
+    "question": "The acronym CYMBAL is used to remember the essential information for describing a vehicle. What does the 'Y' stand for?",
+    "answer": "Year",
+    "options": [
+      "Yield",
+      "Year",
+      "Yonder",
+      "Yard"
+    ],
+    "reference": "With regard to vehicles, the message should inform in the following order: color, year, make, body-style, and license number."
+  },
+  {
+    "question": "When broadcasting vehicle information using CYMBAL, what does the 'M' stand for?",
+    "answer": "Make",
+    "options": [
+      "Mileage",
+      "Model",
+      "Make",
+      "Motor"
+    ],
+    "reference": "With regard to vehicles, the message should inform in the following order: color, year, make, body-style, and license number."
+  },
+  {
+    "question": "According to the FCC rules mentioned in the guide, which of the following is unlawful to broadcast on a police radio?",
+    "answer": "Using pleasantries or profanity.",
+    "options": [
+      "Broadcasting a suspect's license plate.",
+      "Requesting backup during an emergency.",
+      "Using the 10-code system.",
+      "Using pleasantries or profanity."
+    ],
+    "reference": "Federal Communications Commission (FCC) - federal agency responsible for implementing and enforcing America's communications law and regulations. ... Unlawful to use pleasantries or profanity."
+  },
+  {
+    "question": "Is it lawful to rebroadcast any portion of radio programming according to the presentation?",
+    "answer": "No, it is unlawful.",
+    "options": [
+      "Yes, if it is for training purposes.",
+      "No, it is unlawful.",
+      "Yes, with permission from a supervisor.",
+      "Only if the broadcast is from another agency."
+    ],
+    "reference": "Unlawful to rebroadcast any portion of radio programming."
+  },
+  {
+    "question": "According to FCC rules, what is the policy on broadcasting false distress signals?",
+    "answer": "It is unlawful.",
+    "options": [
+      "It is allowed for training drills.",
+      "It is unlawful.",
+      "It is only unlawful if it causes a significant response.",
+      "It is at the discretion of the dispatcher."
+    ],
+    "reference": "Unlawful to broadcast any false distress signals."
+  },
+  {
+    "question": "What is a general guideline an officer should follow when making a radio transmission?",
+    "answer": "Think before you speak and use simple, plain language.",
+    "options": [
+      "Speak as quickly as possible to keep the channel clear.",
+      "Use complex jargon to sound more professional.",
+      "Think before you speak and use simple, plain language.",
+      "Provide as much detail as possible, even if it is not pertinent."
+    ],
+    "reference": "General Guidelines: Use simple and plain language. Communicate pertinent details only. -Think before you speak"
+  },
+  {
+    "question": "Which of the following is listed as a 'DO NOT' for radio traffic?",
+    "answer": "Using unnecessary words like 'at this time' or 'it appears to be'.",
+    "options": [
+      "Using the phonetic alphabet.",
+      "Communicating pertinent details only.",
+      "Using unnecessary words like 'at this time' or 'it appears to be'.",
+      "Using military time."
+    ],
+    "reference": "DO NOTS/NO NOs for Radio Traffic: Avold unnecessary words liker at this time, it appears to be, i ascertained that....etc"
+  },
+  {
+    "question": "When should an officer NOT transmit on the radio?",
+    "answer": "When asked to stand by or during an unrelated emergency situation.",
+    "options": [
+      "When another officer is speaking, regardless of the reason.",
+      "When asked to stand by or during an unrelated emergency situation.",
+      "If they have not been on duty for at least one hour.",
+      "During routine patrol."
+    ],
+    "reference": "Do not transmit unrelated information during an emergency situation. Do not transmit if asked to stand by."
+  },
+  {
+    "question": "What is the recommended cadence and rhythm for radio transmissions?",
+    "answer": "The presentation suggests listening to how others speak and pronounce things.",
+    "options": [
+      "Speak in a monotone voice.",
+      "Use a rapid-fire speech pattern.",
+      "The presentation suggests listening to how others speak and pronounce things.",
+      "Pause for two seconds between each word."
+    ],
+    "reference": "Use a good cadence and rhythm... Cadence and rhythm, regional pronunciations: listen to how others speak and pronounce things."
+  },
+  {
+    "question": "What is the primary purpose of using the phonetic alphabet in radio communications?",
+    "answer": "To ensure clarity when spelling names or other important words.",
+    "options": [
+      "To make transmissions sound more professional.",
+      "To encrypt the message.",
+      "To ensure clarity when spelling names or other important words.",
+      "To shorten the length of the transmission."
+    ],
+    "reference": "Motivate students to memorize the phonetic alphabet as they will be using it frequently in the academy and during their careers"
+  },
+  {
+    "question": "What time system are students motivated to become familiar and comfortable with for use in their profession?",
+    "answer": "Military time.",
+    "options": [
+      "Standard time (AM/PM).",
+      "Greenwich Mean Time (GMT).",
+      "Military time.",
+      "A 10-hour clock system."
+    ],
+    "reference": "Also motivate students to become familiar and comfortable using military time as that will be a staple in their profession as well"
+  },
+  {
+    "question": "In the American Law Enforcement Phonetic Alphabet, what word represents the letter 'A'?",
+    "answer": "ADAM",
+    "options": [
+      "ALPHA",
+      "APPLE",
+      "ADAM",
+      "ABLE"
+    ],
+    "reference": "American Law Enforcement Phonetic Alphabet (A) ADAM"
+  },
+  {
+    "question": "In the American Law Enforcement Phonetic Alphabet, what word represents the letter 'B'?",
+    "answer": "BOY",
+    "options": [
+      "BAKER",
+      "BRAVO",
+      "BOSTON",
+      "BOY"
+    ],
+    "reference": "American Law Enforcement Phonetic Alphabet (B) BOY"
+  },
+  {
+    "question": "In the American Law Enforcement Phonetic Alphabet, what word represents the letter 'C'?",
+    "answer": "CHARLES",
+    "options": [
+      "CHARLIE",
+      "CHARLES",
+      "CAT",
+      "CHICAGO"
+    ],
+    "reference": "American Law Enforcement Phonetic Alphabet (C) CHARLES"
+  },
+  {
+    "question": "In the American Law Enforcement Phonetic Alphabet, what word represents the letter 'D'?",
+    "answer": "DAVID",
+    "options": [
+      "DELTA",
+      "DOG",
+      "DAVID",
+      "DENVER"
+    ],
+    "reference": "American Law Enforcement Phonetic Alphabet (D) DAVID"
+  },
+  {
+    "question": "In the American Law Enforcement Phonetic Alphabet, what word represents the letter 'E'?",
+    "answer": "EDWARD",
+    "options": [
+      "ECHO",
+      "EASY",
+      "EDWARD",
+      "ELEPHANT"
+    ],
+    "reference": "American Law Enforcement Phonetic Alphabet (E) EDWARD"
+  },
+  {
+    "question": "In the American Law Enforcement Phonetic Alphabet, what word represents the letter 'F'?",
+    "answer": "FRANK",
+    "options": [
+      "FOXTROT",
+      "FAN",
+      "FRANK",
+      "FREDDY"
+    ],
+    "reference": "American Law Enforcement Phonetic Alphabet (F) FRANK"
+  },
+  {
+    "question": "In the American Law Enforcement Phonetic Alphabet, what word represents the letter 'G'?",
+    "answer": "GEORGE",
+    "options": [
+      "GOLF",
+      "GEORGE",
+      "GOAT",
+      "GIRL"
+    ],
+    "reference": "American Law Enforcement Phonetic Alphabet (G) GEORGE"
+  },
+  {
+    "question": "In the American Law Enforcement Phonetic Alphabet, what word represents the letter 'H'?",
+    "answer": "HENRY",
+    "options": [
+      "HOTEL",
+      "HENRY",
+      "HARRY",
+      "HAT"
+    ],
+    "reference": "American Law Enforcement Phonetic Alphabet (H) HENRY"
+  },
+  {
+    "question": "In the American Law Enforcement Phonetic Alphabet, what word represents the letter 'I'?",
+    "answer": "IDA",
+    "options": [
+      "INDIA",
+      "IDA",
+      "ICE",
+      "INK"
+    ],
+    "reference": "American Law Enforcement Phonetic Alphabet (I) IDA"
+  },
+  {
+    "question": "In the American Law Enforcement Phonetic Alphabet, what word represents the letter 'J'?",
+    "answer": "JOHN",
+    "options": [
+      "JULIETT",
+      "JOHN",
+      "JACK",
+      "JUMP"
+    ],
+    "reference": "American Law Enforcement Phonetic Alphabet (J) JOHN"
+  },
+  {
+    "question": "In the American Law Enforcement Phonetic Alphabet, what word represents the letter 'K'?",
+    "answer": "KING",
+    "options": [
+      "KILO",
+      "KITE",
+      "KENNETH",
+      "KING"
+    ],
+    "reference": "American Law Enforcement Phonetic Alphabet (K) KING"
+  },
+  {
+    "question": "In the American Law Enforcement Phonetic Alphabet, what word represents the letter 'L'?",
+    "answer": "LINCOLN",
+    "options": [
+      "LIMA",
+      "LION",
+      "LINCOLN",
+      "LARRY"
+    ],
+    "reference": "American Law Enforcement Phonetic Alphabet (L) LINCOLN"
+  },
+  {
+    "question": "In the American Law Enforcement Phonetic Alphabet, what word represents the letter 'M'?",
+    "answer": "MARY",
+    "options": [
+      "MIKE",
+      "MOTHER",
+      "MARY",
+      "MOON"
+    ],
+    "reference": "American Law Enforcement Phonetic Alphabet (M) MARY"
+  },
+  {
+    "question": "In the American Law Enforcement Phonetic Alphabet, what word represents the letter 'N'?",
+    "answer": "NORA",
+    "options": [
+      "NOVEMBER",
+      "NANCY",
+      "NORA",
+      "NORTH"
+    ],
+    "reference": "American Law Enforcement Phonetic Alphabet (N) NORA"
+  },
+  {
+    "question": "In the American Law Enforcement Phonetic Alphabet, what word represents the letter 'O'?",
+    "answer": "OCEAN",
+    "options": [
+      "OSCAR",
+      "OCEAN",
+      "OTTO",
+      "ORANGE"
+    ],
+    "reference": "American Law Enforcement Phonetic Alphabet (O) OCEAN"
+  },
+  {
+    "question": "In the American Law Enforcement Phonetic Alphabet, what word represents the letter 'P'?",
+    "answer": "PAUL",
+    "options": [
+      "PAPA",
+      "PETER",
+      "PAUL",
+      "PONY"
+    ],
+    "reference": "American Law Enforcement Phonetic Alphabet (P) PAUL"
+  },
+  {
+    "question": "In the American Law Enforcement Phonetic Alphabet, what word represents the letter 'Q'?",
+    "answer": "QUEEN",
+    "options": [
+      "QUEBEC",
+      "QUICK",
+      "QUESTION",
+      "QUEEN"
+    ],
+    "reference": "American Law Enforcement Phonetic Alphabet (Q) QUEEN"
+  },
+  {
+    "question": "In the American Law Enforcement Phonetic Alphabet, what word represents the letter 'R'?",
+    "answer": "ROBERT",
+    "options": [
+      "ROMEO",
+      "ROBERT",
+      "ROGER",
+      "RADIO"
+    ],
+    "reference": "American Law Enforcement Phonetic Alphabet (R) ROBERT"
+  },
+  {
+    "question": "In the American Law Enforcement Phonetic Alphabet, what word represents the letter 'S'?",
+    "answer": "SAM",
+    "options": [
+      "SIERRA",
+      "SAM",
+      "SUGAR",
+      "STOP"
+    ],
+    "reference": "American Law Enforcement Phonetic Alphabet (S) SAM"
+  },
+  {
+    "question": "In the American Law Enforcement Phonetic Alphabet, what word represents the letter 'T'?",
+    "answer": "TOM",
+    "options": [
+      "TANGO",
+      "THOMAS",
+      "TIGER",
+      "TOM"
+    ],
+    "reference": "American Law Enforcement Phonetic Alphabet (T) TOM"
+  },
+  {
+    "question": "In the American Law Enforcement Phonetic Alphabet, what word represents the letter 'U'?",
+    "answer": "UNION",
+    "options": [
+      "UNIFORM",
+      "UNCLE",
+      "UNION",
+      "UNITED"
+    ],
+    "reference": "American Law Enforcement Phonetic Alphabet (U) UNION"
+  },
+  {
+    "question": "In the American Law Enforcement Phonetic Alphabet, what word represents the letter 'V'?",
+    "answer": "VICTOR",
+    "options": [
+      "VICTOR",
+      "VICTORY",
+      "VIOLET",
+      "VOICE"
+    ],
+    "reference": "American Law Enforcement Phonetic Alphabet (V) VICTOR"
+  },
+  {
+    "question": "In the American Law Enforcement Phonetic Alphabet, what word represents the letter 'W'?",
+    "answer": "WILLIAM",
+    "options": [
+      "WHISKEY",
+      "WILLIAM",
+      "WILLY",
+      "WAGON"
+    ],
+    "reference": "American Law Enforcement Phonetic Alphabet (W) WILLIAM"
+  },
+  {
+    "question": "In the American Law Enforcement Phonetic Alphabet, what word represents the letter 'X'?",
+    "answer": "X-RAY",
+    "options": [
+      "XENON",
+      "XEROX",
+      "X-RAY",
+      "XYLOPHONE"
+    ],
+    "reference": "American Law Enforcement Phonetic Alphabet (X) X-RAY"
+  },
+  {
+    "question": "In the American Law Enforcement Phonetic Alphabet, what word represents the letter 'Y'?",
+    "answer": "YOUNG",
+    "options": [
+      "YANKEE",
+      "YELLOW",
+      "YESTERDAY",
+      "YOUNG"
+    ],
+    "reference": "American Law Enforcement Phonetic Alphabet (Y) YOUNG"
+  },
+  {
+    "question": "In the American Law Enforcement Phonetic Alphabet, what word represents the letter 'Z'?",
+    "answer": "ZEBRA",
+    "options": [
+      "ZULU",
+      "ZEBRA",
+      "ZERO",
+      "ZODIAC"
+    ],
+    "reference": "American Law Enforcement Phonetic Alphabet (Z) ZEBRA"
+  },
+  {
+    "question": "An officer receives a dispatch for a call at 3:15 PM. How would this be documented in a report using military time?",
+    "answer": "1515",
+    "options": [
+      "0315",
+      "315 PM",
+      "1515",
+      "1315"
+    ],
+    "reference": "To convert a PM time to military time, add 12 to the hour. For example, 3:00 PM becomes 1500 hours. "
+  },
+  {
+    "question": "A report states that an incident occurred at 2330 hours. What is this time in standard AM/PM format?",
+    "answer": "11:30 PM",
+    "options": [
+      "11:30 AM",
+      "1:30 PM",
+      "11:30 PM",
+      "3:30 AM"
+    ],
+    "reference": "To convert military time to standard PM time, subtract 12 from the hour if the hour is 13 or greater. For example, 2330 hours is 23 - 12 = 11, making it 11:30 PM. "
+  },
+  {
+    "question": "An officer begins their shift at 6:00 AM. How should this time be written in military time format?",
+    "answer": "0600",
+    "options": [
+      "6000",
+      "6:00",
+      "0600",
+      "1800"
+    ],
+    "reference": "For morning (AM) hours, military time uses the same hour number, but in a 24-hour format, often with a leading zero for single-digit hours. 6:00 AM is 0600. "
+  },
+  {
+    "question": "A supervisor requests a status update at 1900 hours. What time is it in standard AM/PM format?",
+    "answer": "7:00 PM",
+    "options": [
+      "9:00 AM",
+      "7:00 AM",
+      "9:00 PM",
+      "7:00 PM"
+    ],
+    "reference": "To convert military time to standard PM time, subtract 12 from any hour greater than 12. For 1900 hours, 19 - 12 = 7, making it 7:00 PM. "
+  },
+  {
+    "question": "What is 12:00 PM (noon) in military time?",
+    "answer": "1200",
+    "options": [
+      "0000",
+      "2400",
+      "1200",
+      "12 PM"
+    ],
+    "reference": "12:00 PM (noon) is represented as 1200 in military time. It is the start of the 'PM' hours, so no addition of 12 is needed. "
+  },
+  {
+    "question": "What is 12:00 AM (midnight) in military time?",
+    "answer": "0000",
+    "options": [
+      "1200",
+      "0000",
+      "12 AM",
+      "2400"
+    ],
+    "reference": "12:00 AM (midnight) marks the beginning of a new day and is represented as 0000 in military time. 2400 can be used to signify the end of the previous day. "
+  },
+  {
+    "question": "An officer documents a vehicle stop at 0045 hours. What is the standard AM/PM time?",
+    "answer": "12:45 AM",
+    "options": [
+      "12:45 PM",
+      "4:50 AM",
+      "12:45 AM",
+      "4:50 PM"
+    ],
+    "reference": "For military times between 0001 and 0059, the time is the first hour of the day (the 12 AM hour). 0045 is 12:45 AM. "
+  },
+  {
+    "question": "A witness states an event happened at 'half-past eight in the evening'. How would an officer record this in military time?",
+    "answer": "2030",
+    "options": [
+      "0830",
+      "1830",
+      "2030",
+      "8:30 PM"
+    ],
+    "reference": "To convert an evening (PM) time to military time, add 12 to the hour. 'Half-past eight in the evening' is 8:30 PM. 8 + 12 = 20, so the time is 2030. "
+  },
+  {
+    "question": "What is the primary reason law enforcement and other emergency services use military time?",
+    "answer": "To eliminate the confusion that can arise from using the 12-hour AM/PM system.",
+    "options": [
+      "It is easier to calculate time intervals.",
+      "It is required by federal law for all government agencies.",
+      "To eliminate the confusion that can arise from using the 12-hour AM/PM system.",
+      "It makes radio transmissions shorter."
+    ],
+    "reference": "Military time eliminates the confusion that can arise from using the 12-hour clock system, where the same numbers can mean different times of the day. Military time has many advantages over regular time, especially when it comes to clarity and accuracy. "
+  },
+  {
+    "question": "An officer's report lists a start time of 0900 and an end time of 1700 for an event. How long did the event last?",
+    "answer": "8 hours",
+    "options": [
+      "6 hours",
+      "8 hours",
+      "10 hours",
+      "12 hours"
+    ],
+    "reference": "Calculating time intervals that take place on the same day in military time is easy — simply subtract your start time from your end time. For example, if your time interval begins at 09:00 and ends at 17:00, you'd subtract 9 from 17 to get 8. "
+  }
+],
+    "week2": [
+        { "question": "", "answer": "", "options": [], "reference": "" }
+    ],
+    "week3": [
+        { "question": "", "answer": "", "options": [], "reference": "" }
+    ],
+    "week4": [
+        { "question": "", "answer": "", "options": [], "reference": "" }
+    ],
+    "week5": [
+        { "question": "", "answer": "", "options": [], "reference": "" }
+    ],
+    "week6": [
+        { "question": "", "answer": "", "options": [], "reference": "" }
+    ],
+    "week7": [
+        { "question": "", "answer": "", "options": [], "reference": "" }
+    ],
+    "week8": [
+        { "question": "", "answer": "", "options": [], "reference": "" }
+    ],
+    "week9": [
+        { "question": "", "answer": "", "options": [], "reference": "" }
+    ],
+    "week10": [
+        { "question": "", "answer": "", "options": [], "reference": "" }
+    ],
+    "week11": [
+        { "question": "", "answer": "", "options": [], "reference": "" }
+    ],
+    "week12": [
+        { "question": "", "answer": "", "options": [], "reference": "" }
+    ],
+    "week13": [
+        { "question": "", "answer": "", "options": [], "reference": "" }
+    ],
+    "week14": [
+        { "question": "", "answer": "", "options": [], "reference": "" }
+    ],
+    "week15": [
+        { "question": "", "answer": "", "options": [], "reference": "" }
+    ],
+    "week16": [
+        { "question": "", "answer": "", "options": [], "reference": "" }
+    ],
+    "week17": [
+        { "question": "", "answer": "", "options": [], "reference": "" }
+    ],
+    "week18": [
+        { "question": "", "answer": "", "options": [], "reference": "" }
+    ],
+    "week19": [
+        { "question": "", "answer": "", "options": [], "reference": "" }
+    ],
+    "week20": [
+        { "question": "", "answer": "", "options": [], "reference": "" }
+    ],
+    "week21": [
+        { "question": "", "answer": "", "options": [], "reference": "" }
+    ]
+}

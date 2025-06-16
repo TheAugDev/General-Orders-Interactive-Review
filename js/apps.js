@@ -111,12 +111,37 @@ const tpcaCriticalAreas = [
     { name: "Property and Evidence Management", id: "propertyAndEvidenceManagement" }
 ];
 
+const bpocWeeks = [
+    { name: "Week 1", id: "week1" },
+    { name: "Week 2", id: "week2" },
+    { name: "Week 3", id: "week3" },
+    { name: "Week 4", id: "week4" },
+    { name: "Week 5", id: "week5" },
+    { name: "Week 6", id: "week6" },
+    { name: "Week 7", id: "week7" },
+    { name: "Week 8", id: "week8" },
+    { name: "Week 9", id: "week9" },
+    { name: "Week 10", id: "week10" },
+    { name: "Week 11", id: "week11" },
+    { name: "Week 12", id: "week12" },
+    { name: "Week 13", id: "week13" },
+    { name: "Week 14", id: "week14" },
+    { name: "Week 15", id: "week15" },
+    { name: "Week 16", id: "week16" },
+    { name: "Week 17", id: "week17" },
+    { name: "Week 18", id: "week18" },
+    { name: "Week 19", id: "week19" },
+    { name: "Week 20", id: "week20" },
+    { name: "Week 21", id: "week21" }
+];
+
 const reviewTypes = [
     { id: 'generalOrders', name: 'General Orders', hasUnits: true, chapters: generalOrderChapters, questionLimit: 100 },
     { id: 'tcole', name: 'TCOLE Review', hasUnits: false, questionLimit: 250 },
     { id: 'texasConstitutions', name: 'Texas Constitutions', hasUnits: true, chapters: texasConstitutionArticles, questionLimit: 100 },
     { id: 'texasStatutes', name: 'Texas Statutes', hasUnits: true, chapters: texasStatuteCodes, questionLimit: 100 },
-    { id: 'tpcaBestPractices', name: 'TPCA Best Practices', hasUnits: true, chapters: tpcaCriticalAreas, questionLimit: 100 } // Added TPCA
+    { id: 'tpcaBestPractices', name: 'TPCA Best Practices', hasUnits: true, chapters: tpcaCriticalAreas, questionLimit: 100 },
+    { id: 'BPOC', name: 'BPOC Review', hasUnits: true, chapters: bpocWeeks, questionLimit: 100 } // Added BPOC
 ];
 
 // --- Initialization ---
@@ -255,6 +280,8 @@ function renderChapterButtons(chapters, modalTitle = 'Select Unit') {
         allButtonText = 'All Statute Codes';
     } else if (currentReviewType.id === 'tpcaBestPractices') {
         allButtonText = 'All Critical Areas';
+    } else if (currentReviewType.id === 'BPOC') {
+        allButtonText = 'All Weeks';
     }
     allButton.textContent = allButtonText;
 

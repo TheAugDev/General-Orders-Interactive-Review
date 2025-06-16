@@ -206,6 +206,51 @@ const allReviewData = {
         narcoticsSwatAndHighRiskWarrantService: [],
         dealingWithTheMentallyIllAndDevelopmentallyDisabled: [],
         propertyAndEvidenceManagement: []
-        // Add questions for each TPCA critical area here...
+    },
+    BPOC: {
+        // Data will be loaded from BPOC.json, structure will be:
+        // week1: [{question: "...", answer: "...", ...}],
+        // week2: [], 
+        // ...
+        // week21: []
     }
 };
+
+// Function to fetch and integrate external JSON data
+async function loadExternalData() {
+    try {
+        const response = await fetch('../data/BPOC.json'); // Adjusted path
+        if (!response.ok) {
+            throw new Error(`HTTP error! status: ${response.status}`);
+        }
+        const bpocData = await response.json();
+        // Assuming BPOC.json's root is an object like: {"week1": [], "week2": [], ...}
+        // And allReviewData.BPOC is already initialized as an empty object {}
+        for (const weekKey in bpocData) {
+            if (bpocData.hasOwnProperty(weekKey)) {
+                allReviewData.BPOC[weekKey] = bpocData[weekKey];
+            }
+        }
+        console.log("BPOC data loaded successfully into allReviewData.BPOC");
+    } catch (error) {
+        console.error("Error loading BPOC.json:", error);
+        // Fallback or error handling: ensure allReviewData.BPOC exists
+        if (!allReviewData.BPOC) {
+            allReviewData.BPOC = {}; 
+        }
+        // Optionally populate with empty weeks if loading fails
+        for (let i = 1; i <= 21; i++) {
+            if (!allReviewData.BPOC[`week${i}`]) {
+                allReviewData.BPOC[`week${i}`] = [];
+            }
+        }
+        console.log("BPOC data initialized with empty weeks due to loading error.");
+    }
+}
+
+// Call this function when the application initializes or when data is needed.
+// For example, at the beginning of your script or before starting a quiz.
+loadExternalData().then(() => {
+    // You can now access allReviewData.BPOC with the loaded data
+    // console.log(allReviewData.BPOC);
+});
