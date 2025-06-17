@@ -28,9 +28,19 @@
             <h2 class="text-2xl font-semibold mb-4">Welcome, Officer</h2>
             <p class="text-gray-600 mb-6">Please enter your name to begin or select a review type.</p>
             <input type="text" id="officer-name" placeholder="Enter your full name" class="w-full max-w-md mx-auto p-3 border border-gray-300 rounded-lg mb-6 focus:ring-2 focus:ring-blue-500 focus:outline-none transition-all">
-            <div id="mode-selection-buttons" class="flex flex-col sm:flex-row justify-center gap-4 mt-4 mb-6">
-                 <!-- Review type buttons will be inserted here by JS after name entry -->
+            
+            <div id="mode-selection-container"> <!-- Container for mode buttons -->
+                <div id="mode-selection-buttons" class="flex flex-col sm:flex-row justify-center gap-4 mt-4 mb-6">
+                    <!-- Mode buttons (Quiz/Flashcard) inserted by renderModeSelection -->
+                </div>
             </div>
+
+            <div id="review-type-container" class="hidden"> <!-- Container for review type buttons, initially hidden -->
+                <div id="review-type-buttons" class="flex flex-col sm:flex-row justify-center gap-4 mt-6">
+                    <!-- Review type buttons inserted by renderReviewTypeSelection -->
+                </div>
+            </div>
+            
             <div class="flex justify-center gap-4 hidden"> <!-- Initially hide old buttons -->
                  <button id="start-single-unit" class="bg-blue-600 text-white px-8 py-3 rounded-lg hover:bg-blue-700 transition-colors text-lg">Take Single Unit</button>
                  <button id="start-all-units" class="bg-green-600 text-white px-8 py-3 rounded-lg hover:bg-green-700 transition-colors text-lg">Take All Units</button>
@@ -44,7 +54,10 @@
                  <div id="chapter-buttons" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4 max-h-[60vh] overflow-y-auto p-2">
                      <!-- Unit buttons will be dynamically inserted here -->
                  </div>
-                 <button id="close-modal" class="mt-6 w-full bg-gray-500 text-white p-3 rounded-lg hover:bg-gray-600 transition-colors">Cancel</button>
+                 <div class="mt-6 flex gap-4"> <!-- Flex container for buttons -->
+                    <button id="back-from-unit-selection" class="w-full bg-yellow-500 text-white p-3 rounded-lg hover:bg-yellow-600 transition-colors">Back</button>
+                    <button id="close-modal" class="w-full bg-gray-500 text-white p-3 rounded-lg hover:bg-gray-600 transition-colors">Cancel/Main Menu</button>
+                 </div>
             </div>
         </div>
 
@@ -64,7 +77,10 @@
                     <p id="feedback-reference" class="text-sm mt-1"></p>
                 </div>
                 <div class="mt-6 flex justify-between items-center">
-                    <button id="main-menu-quiz" class="bg-gray-500 text-white px-6 py-2 rounded-lg hover:bg-gray-600 transition-colors">Main Menu</button>
+                    <div> <!-- Group Back and Main Menu buttons -->
+                        <button id="back-from-quiz" class="bg-yellow-500 text-white px-6 py-2 rounded-lg hover:bg-yellow-600 transition-colors mr-2">Back</button>
+                        <button id="main-menu-quiz" class="bg-gray-500 text-white px-6 py-2 rounded-lg hover:bg-gray-600 transition-colors">Main Menu</button>
+                    </div>
                     <div class="text-xl font-bold">Score: <span id="score">0</span></div>
                     <button id="next-question" class="bg-blue-600 text-white px-6 py-2 rounded-lg hover:bg-blue-700 transition-colors hidden">Next Question</button>
                 </div>
@@ -88,7 +104,10 @@
                     </div>
                 </div>
                 <div class="mt-6 flex justify-between items-center">
-                    <button id="main-menu-flashcard" class="bg-gray-500 text-white px-6 py-2 rounded-lg hover:bg-gray-600 transition-colors">Main Menu</button>
+                    <div> <!-- Group Back and Main Menu buttons -->
+                        <button id="back-from-flashcard" class="bg-yellow-500 text-white px-6 py-2 rounded-lg hover:bg-yellow-600 transition-colors mr-2">Back</button>
+                        <button id="main-menu-flashcard" class="bg-gray-500 text-white px-6 py-2 rounded-lg hover:bg-gray-600 transition-colors">Main Menu</button>
+                    </div>
                     <div>
                         <button id="previous-flashcard" class="bg-blue-600 text-white px-6 py-2 rounded-lg hover:bg-blue-700 transition-colors mr-2">Previous</button>
                         <button id="next-flashcard" class="bg-blue-600 text-white px-6 py-2 rounded-lg hover:bg-blue-700 transition-colors">Next</button>
@@ -112,6 +131,7 @@
     <div id="print-area"></div>
 
     <!-- Scripts -->
+    <script src="js/data.js"></script>
     <script src="js/apps.js"></script>
 </body>
 </html>

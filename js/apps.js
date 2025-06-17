@@ -6,10 +6,11 @@ let currentQuestionIndex = 0;
 let score = 0;
 let questions = [];
 let userAnswers = [];
-let officerName = ''; // Renamed from recruitName
-let currentReviewType = null; // To store 'generalOrders', 'tcole', etc.
-let currentUnitId = null; // To store specific unitId if applicable
-let currentMode = 'quiz'; // 'quiz' or 'flashcards'
+let officerName = '';
+let currentReviewType = null;
+let currentUnitId = null;
+let currentMode = 'quiz';
+let backTargetScreen = 'ROOT'; // Renamed from previousScreen, initialized to ROOT
 
 // --- DOM Elements ---
 const mainHeader = document.querySelector('header');
@@ -29,6 +30,11 @@ const feedbackReference = document.getElementById('feedback-reference');
 const scoreSpan = document.getElementById('score');
 const nextQuestionBtn = document.getElementById('next-question');
 
+// Back Buttons
+const backFromUnitSelectionBtn = document.getElementById('back-from-unit-selection');
+const backFromQuizBtn = document.getElementById('back-from-quiz');
+const backFromFlashcardBtn = document.getElementById('back-from-flashcard');
+
 // Flashcard DOM Elements
 const flashcardContainerDiv = document.getElementById('flashcard-container');
 const flashcardTitle = document.getElementById('flashcard-title');
@@ -43,7 +49,6 @@ const nextFlashcardBtn = document.getElementById('next-flashcard');
 const mainMenuFlashcardBtn = document.getElementById('main-menu-flashcard');
 
 // --- Data ---
-// Renamed chaptersData to generalOrderChapters for clarity
 const generalOrderChapters = [
     { name: "Sample Unit (1 Question)", id: "unitSample" },
     { name: "Unit 1: Role, Authority & Organization", id: "unit1" },
@@ -141,33 +146,31 @@ const reviewTypes = [
     { id: 'texasConstitutions', name: 'Texas Constitutions', hasUnits: true, chapters: texasConstitutionArticles, questionLimit: 100 },
     { id: 'texasStatutes', name: 'Texas Statutes', hasUnits: true, chapters: texasStatuteCodes, questionLimit: 100 },
     { id: 'tpcaBestPractices', name: 'TPCA Best Practices', hasUnits: true, chapters: tpcaCriticalAreas, questionLimit: 100 },
-    { id: 'BPOC', name: 'BPOC Review', hasUnits: true, chapters: bpocWeeks, questionLimit: 100 } // Added BPOC
+    { id: 'BPOC', name: 'BPOC Review', hasUnits: true, chapters: bpocWeeks, questionLimit: 100 }
 ];
 
 // --- Initialization ---
 document.addEventListener('DOMContentLoaded', init);
 
 function init() {
-    // document.getElementById('start-single-unit').addEventListener('click', showUnitSelection);
-    // document.getElementById('start-all-units').addEventListener('click', startAllUnitsQuiz);
-    document.getElementById('close-modal').addEventListener('click', () => unitSelectionModal.classList.add('hidden'));
+    document.getElementById('close-modal').addEventListener('click', showWelcomeScreen);
     document.getElementById('main-menu-quiz').addEventListener('click', showWelcomeScreen);
     nextQuestionBtn.addEventListener('click', nextQuestion);
     
-    // Flashcard listeners
     if (flashcardCard) flashcardCard.addEventListener('click', flipFlashcard);
     if (previousFlashcardBtn) previousFlashcardBtn.addEventListener('click', previousFlashcard);
     if (nextFlashcardBtn) nextFlashcardBtn.addEventListener('click', nextFlashcard);
     if (mainMenuFlashcardBtn) mainMenuFlashcardBtn.addEventListener('click', showWelcomeScreen);
 
-    renderModeSelection(); // Initial call to render mode selection
-    // renderReviewTypeSelection(); // This will be called after mode selection
-    // Hide containers that shouldn't be visible on load
+    if (backFromUnitSelectionBtn) backFromUnitSelectionBtn.addEventListener('click', goBack);
+    if (backFromQuizBtn) backFromQuizBtn.addEventListener('click', goBack);
+    if (backFromFlashcardBtn) backFromFlashcardBtn.addEventListener('click', goBack);
+
+    renderModeSelection(); 
     quizContainerDiv.classList.add('hidden');
     resultsContainerDiv.classList.add('hidden');
     flashcardContainerDiv.classList.add('hidden');
 
-    // Set current year in the footer
     const yearSpan = document.getElementById('current-year');
     if (yearSpan) {
         yearSpan.textContent = new Date().getFullYear();
@@ -176,49 +179,73 @@ function init() {
 
 // --- UI Rendering ---
 function renderModeSelection() {
-    const welcomeScreen = document.getElementById('welcome-screen');
-    const modeButtonContainer = document.getElementById('mode-selection-buttons');
-    modeButtonContainer.innerHTML = ''; // Clear existing buttons
+    const welcomeScreenEl = document.getElementById('welcome-screen');
+    const modeContainer = document.getElementById('mode-selection-container');
+    const buttonsParent = document.getElementById('mode-selection-buttons'); 
+    const reviewContainer = document.getElementById('review-type-container');
+    const unitModal = document.getElementById('unit-selection-modal');
+
+    if (!welcomeScreenEl || !modeContainer || !buttonsParent || !reviewContainer || !unitModal) {
+        console.error("One or more critical UI elements are missing for renderModeSelection. Check IDs in index.html and JS.");
+        if (welcomeScreenEl) welcomeScreenEl.classList.remove('hidden');
+        return; 
+    }
+    
+    welcomeScreenEl.classList.remove('hidden'); // Ensure overall welcome screen is visible
+    unitModal.classList.add('hidden');       // Ensure unit modal is hidden
+
+    modeContainer.classList.remove('hidden'); // Mode selection should be visible
+    reviewContainer.classList.add('hidden');   // Review type selection should be hidden
+
+    buttonsParent.innerHTML = ''; // Clear previous mode buttons
 
     const quizButton = document.createElement('button');
     quizButton.className = 'bg-purple-600 text-white px-8 py-3 rounded-lg hover:bg-purple-700 transition-colors text-lg';
     quizButton.textContent = 'Start Quiz Review';
     quizButton.onclick = () => selectMode('quiz');
-    modeButtonContainer.appendChild(quizButton);
+    buttonsParent.appendChild(quizButton);
 
     const flashcardButton = document.createElement('button');
     flashcardButton.className = 'bg-teal-600 text-white px-8 py-3 rounded-lg hover:bg-teal-700 transition-colors text-lg';
     flashcardButton.textContent = 'Start Flashcards';
     flashcardButton.onclick = () => selectMode('flashcards');
-    modeButtonContainer.appendChild(flashcardButton);
+    buttonsParent.appendChild(flashcardButton);
 
-    // Hide review type buttons until a mode is selected
-    const reviewTypeButtonContainer = welcomeScreen.querySelector('#review-type-buttons');
-    if (reviewTypeButtonContainer) reviewTypeButtonContainer.classList.add('hidden');
+    backTargetScreen = 'ROOT'; // When in mode selection, back goes to ROOT
+
+    const oldSingleUnitBtn = document.getElementById('start-single-unit');
+    const oldAllUnitsBtn = document.getElementById('start-all-units');
+    if(oldSingleUnitBtn) oldSingleUnitBtn.classList.add('hidden');
+    if(oldAllUnitsBtn) oldAllUnitsBtn.classList.add('hidden');
 }
 
 function selectMode(mode) {
     if (!handleNameCheck()) return;
     currentMode = mode;
-    renderReviewTypeSelection(); // Now show review type selection
-    const modeButtonContainer = document.getElementById('mode-selection-buttons');
-    if (modeButtonContainer) modeButtonContainer.classList.add('hidden'); // Hide mode buttons
+    renderReviewTypeSelection(); 
+    // backTargetScreen is set by renderReviewTypeSelection
 }
 
 function renderReviewTypeSelection() {
-    const welcomeScreen = document.getElementById('welcome-screen');
-    let reviewTypeButtonContainer = welcomeScreen.querySelector('#review-type-buttons');
+    const welcomeScreenEl = document.getElementById('welcome-screen');
+    const modeSelectionContainer = document.getElementById('mode-selection-container');
+    const reviewTypeContainer = document.getElementById('review-type-container');
+    const reviewTypeButtonContainer = document.getElementById('review-type-buttons');
+    const unitModal = document.getElementById('unit-selection-modal');
 
-    if (!reviewTypeButtonContainer) {
-        reviewTypeButtonContainer = document.createElement('div');
-        reviewTypeButtonContainer.id = 'review-type-buttons';
-        reviewTypeButtonContainer.className = 'flex flex-col sm:flex-row justify-center gap-4 mt-6';
-        const nameInput = document.getElementById('officer-name');
-        nameInput.insertAdjacentElement('afterend', reviewTypeButtonContainer);
-    } else {
-        reviewTypeButtonContainer.innerHTML = ''; // Clear existing buttons if any
-        reviewTypeButtonContainer.classList.remove('hidden'); // Make sure it's visible
+    if (!welcomeScreenEl || !modeSelectionContainer || !reviewTypeContainer || !reviewTypeButtonContainer || !unitModal) {
+        console.error("One or more critical UI elements are missing for renderReviewTypeSelection.");
+        if (welcomeScreenEl) welcomeScreenEl.classList.remove('hidden');
+        return;
     }
+
+    welcomeScreenEl.classList.remove('hidden'); // Ensure overall welcome screen is visible
+    unitModal.classList.add('hidden');       // Ensure unit modal is hidden
+
+    if (modeSelectionContainer) modeSelectionContainer.classList.add('hidden');
+    if (reviewTypeContainer) reviewTypeContainer.classList.remove('hidden');
+
+    reviewTypeButtonContainer.innerHTML = ''; 
 
     reviewTypes.forEach(type => {
         const button = document.createElement('button');
@@ -228,7 +255,11 @@ function renderReviewTypeSelection() {
         reviewTypeButtonContainer.appendChild(button);
     });
 
-    // Hide old buttons if they exist (or repurpose them)
+    const modeButtonContainer = document.getElementById('mode-selection-buttons');
+    if (modeButtonContainer) modeButtonContainer.classList.add('hidden');
+
+    backTargetScreen = 'mode-selection'; // If on review type selection, back goes to mode selection
+
     const oldSingleUnitBtn = document.getElementById('start-single-unit');
     const oldAllUnitsBtn = document.getElementById('start-all-units');
     if(oldSingleUnitBtn) oldSingleUnitBtn.classList.add('hidden');
@@ -236,11 +267,11 @@ function renderReviewTypeSelection() {
 }
 
 function selectReviewType(reviewType) {
-    if (!handleNameCheck()) return; // Should have already been checked by selectMode, but good for safety
+    if (!handleNameCheck()) return; 
 
     currentReviewType = reviewType;
     if (reviewType.hasUnits) {
-        let modalTitle = 'Select Unit'; // Default
+        let modalTitle = 'Select Unit'; 
         if (currentMode === 'flashcards') modalTitle = `Select Unit for Flashcards`;
 
         if (reviewType.id === 'texasConstitutions') {
@@ -249,31 +280,41 @@ function selectReviewType(reviewType) {
             modalTitle = currentMode === 'flashcards' ? 'Select Statute Code for Flashcards' : 'Select Statute Code';
         } else if (reviewType.id === 'tpcaBestPractices') {
             modalTitle = currentMode === 'flashcards' ? 'Select Critical Area for Flashcards' : 'Select Critical Area';
-        } else if (currentMode === 'flashcards') {
-            modalTitle = `Select Unit for ${reviewType.name} Flashcards`;
+        } else if (reviewType.id === 'BPOC') {
+            modalTitle = currentMode === 'flashcards' ? `Select Week for ${reviewType.name} Flashcards` : `Select Week for ${reviewType.name}`;
+        } else if (currentMode === 'flashcards') { 
+             modalTitle = `Select Unit for ${reviewType.name} Flashcards`;
         }
         renderChapterButtons(reviewType.chapters, modalTitle);
         unitSelectionModal.classList.remove('hidden');
+        // backTargetScreen is set by renderChapterButtons
     } else {
         if (currentMode === 'quiz') {
             startQuiz(reviewType.id, null);
         } else {
             startFlashcards(reviewType.id, null);
         }
+        // backTargetScreen is set by startQuiz/startFlashcards
     }
 }
 
 function renderChapterButtons(chapters, modalTitle = 'Select Unit') { 
     const modalHeader = unitSelectionModal.querySelector('h2');
+    const welcomeScreenEl = document.getElementById('welcome-screen');
+
     if (modalHeader) {
         modalHeader.textContent = modalTitle;
     }
     chapterButtonsDiv.innerHTML = '';
 
+    // This function populates unitSelectionModal, so ensure it's visible and welcome is hidden
+    if (unitSelectionModal) unitSelectionModal.classList.remove('hidden');
+    if (welcomeScreenEl) welcomeScreenEl.classList.add('hidden');
+
     const allButton = document.createElement('button');
     allButton.className = 'w-full bg-green-600 text-white p-4 rounded-lg text-lg font-semibold hover:bg-green-700 transition-colors shadow-sm mb-2';
     
-    let allButtonText = 'All Units'; // Default
+    let allButtonText = 'All Units'; 
     if (currentReviewType.id === 'texasConstitutions') {
         allButtonText = 'All Articles';
     } else if (currentReviewType.id === 'texasStatutes') {
@@ -292,6 +333,7 @@ function renderChapterButtons(chapters, modalTitle = 'Select Unit') {
         } else {
             startFlashcards(currentReviewType.id, 'all');
         }
+        // backTargetScreen is set by startQuiz/startFlashcards
     };
     chapterButtonsDiv.appendChild(allButton);
 
@@ -301,21 +343,112 @@ function renderChapterButtons(chapters, modalTitle = 'Select Unit') {
         button.textContent = chapter.name;
         button.onclick = () => {
             unitSelectionModal.classList.add('hidden');
-            if (currentMode === 'quiz') {
-                startQuiz(currentReviewType.id, chapter.id);
+            if (currentReviewType.id === 'BPOC') {
+                handleBpocWeekSelection(currentReviewType.id, chapter.id);
+                // backTargetScreen will be set within handleBpocWeekSelection or renderSubcategorySelection
             } else {
-                startFlashcards(currentReviewType.id, chapter.id);
+                if (currentMode === 'quiz') {
+                    startQuiz(currentReviewType.id, chapter.id);
+                } else {
+                    startFlashcards(currentReviewType.id, chapter.id);
+                }
+                // backTargetScreen is set by startQuiz/startFlashcards
             }
         };
         chapterButtonsDiv.appendChild(button);
     });
+    backTargetScreen = 'review-type-selection'; // If on chapter/unit selection, back goes to review type selection
 }
+
+async function handleBpocWeekSelection(reviewTypeId, weekId) {
+    currentUnitId = weekId; 
+    let bpocData;
+    try {
+        // Ensure allReviewData is loaded, or fetch specifically if not.
+        // Assuming allReviewData.BPOC is populated by data.js
+        if (!allReviewData.BPOC) {
+            console.warn("allReviewData.BPOC not found, attempting to fetch...");
+            const response = await fetch(`data/BPOC.json`);
+            if (!response.ok) throw new Error(`HTTP error! status: ${response.status} for BPOC.json`);
+            allReviewData.BPOC = await response.json(); // Populate it if it was missing
+        }
+        bpocData = allReviewData.BPOC; // Use the globally (or freshly) loaded data
+        if (!bpocData) throw new Error("BPOC data could not be loaded or is empty.");
+
+    } catch (error) {
+        console.error("Error accessing or fetching BPOC data for subcategory check:", error);
+        alert(`Error loading data for ${weekId}. Please try again or check console.`);
+        showWelcomeScreen(); 
+        return;
+    }
+
+    const weekData = bpocData[weekId];
+    if (typeof weekData === 'object' && weekData !== null && !Array.isArray(weekData)) {
+        renderSubcategorySelection(reviewTypeId, weekId, Object.keys(weekData));
+        unitSelectionModal.classList.remove('hidden'); 
+        // backTargetScreen is set by renderSubcategorySelection
+    } else {
+        if (currentMode === 'quiz') {
+            startQuiz(reviewTypeId, weekId); 
+        } else {
+            startFlashcards(reviewTypeId, weekId); 
+        }
+        // backTargetScreen is set by startQuiz/startFlashcards
+    }
+}
+
+function renderSubcategorySelection(reviewTypeId, weekId, subcategoryNames) {
+    const modalHeader = unitSelectionModal.querySelector('h2');
+    const weekDisplayName = bpocWeeks.find(w => w.id === weekId)?.name || weekId;
+    const welcomeScreenEl = document.getElementById('welcome-screen');
+
+    if (modalHeader) {
+        modalHeader.textContent = `Select Subcategory for ${weekDisplayName}`;
+    }
+    chapterButtonsDiv.innerHTML = ''; 
+
+    // This function populates unitSelectionModal, so ensure it's visible and welcome is hidden
+    if (unitSelectionModal) unitSelectionModal.classList.remove('hidden');
+    if (welcomeScreenEl) welcomeScreenEl.classList.add('hidden');
+
+    const allSubcategoriesButton = document.createElement('button');
+    allSubcategoriesButton.className = 'w-full bg-green-600 text-white p-4 rounded-lg text-lg font-semibold hover:bg-green-700 transition-colors shadow-sm mb-2';
+    allSubcategoriesButton.textContent = `All Subcategories in ${weekDisplayName}`;
+    allSubcategoriesButton.onclick = () => {
+        unitSelectionModal.classList.add('hidden');
+        if (currentMode === 'quiz') {
+            startQuiz(reviewTypeId, weekId, 'all_subcategories'); 
+        } else {
+            startFlashcards(reviewTypeId, weekId, 'all_subcategories');
+        }
+        // backTargetScreen is set by startQuiz/startFlashcards
+    };
+    chapterButtonsDiv.appendChild(allSubcategoriesButton);
+
+    subcategoryNames.forEach(subcategoryName => {
+        const button = document.createElement('button');
+        button.className = 'w-full bg-blue-600 text-white p-4 rounded-lg text-lg font-semibold hover:bg-blue-700 transition-colors shadow-sm';
+        button.textContent = subcategoryName; 
+        button.onclick = () => {
+            unitSelectionModal.classList.add('hidden');
+            if (currentMode === 'quiz') {
+                startQuiz(reviewTypeId, weekId, subcategoryName); 
+            } else {
+                startFlashcards(reviewTypeId, weekId, subcategoryName);
+            }
+            // backTargetScreen is set by startQuiz/startFlashcards
+        };
+        chapterButtonsDiv.appendChild(button);
+    });
+    backTargetScreen = 'unit-selection'; // If on subcategory selection, back goes to unit (week) selection
+}
+
 
 // --- User Interaction & Flow ---
 function handleNameCheck() {
-    const nameInput = document.getElementById('officer-name'); // Changed ID from recruit-name
-    officerName = nameInput.value; // Renamed from recruitName
-    if (officerName.trim() === '') { // Renamed from recruitName
+    const nameInput = document.getElementById('officer-name'); 
+    officerName = nameInput.value; 
+    if (officerName.trim() === '') { 
         nameInput.classList.add('border-red-500', 'ring-red-500');
         nameInput.placeholder = 'Your name is required!';
         setTimeout(() => {
@@ -330,108 +463,264 @@ function handleNameCheck() {
 
 function showWelcomeScreen() {
      quizContainerDiv.classList.add('hidden');
-     flashcardContainerDiv.classList.add('hidden'); // Hide flashcard container
-     resultsContainerDiv.innerHTML = ''; // Clear before hiding
+     flashcardContainerDiv.classList.add('hidden'); 
+     resultsContainerDiv.innerHTML = ''; 
      resultsContainerDiv.classList.add('hidden');
-     welcomeScreen.classList.remove('hidden');
+     unitSelectionModal.classList.add('hidden'); 
+     
+     const welcomeScreenEl = document.getElementById('welcome-screen');
+     if (welcomeScreenEl) welcomeScreenEl.classList.remove('hidden');
+     
      mainHeader.classList.remove('hidden');
-     document.getElementById('main-page-footer').classList.remove('hidden'); // Show main page footer
+     document.getElementById('main-page-footer').classList.remove('hidden'); 
 
-     // Ensure correct visibility of button containers on welcome screen
-     const modeButtonContainer = document.getElementById('mode-selection-buttons');
-     if (modeButtonContainer) modeButtonContainer.classList.remove('hidden'); // Show mode buttons
+     currentReviewType = null; 
+     currentUnitId = null; 
+     
+     renderModeSelection(); 
+}
 
-     const reviewTypeButtonContainer = document.getElementById('review-type-buttons');
-     if (reviewTypeButtonContainer) reviewTypeButtonContainer.classList.add('hidden'); // Hide review type buttons initially
+// --- Back Button Logic ---
+function goBack() {
+    // Start by hiding all primary content views
+    welcomeScreen.classList.add('hidden');
+    unitSelectionModal.classList.add('hidden');
+    quizContainerDiv.classList.add('hidden');
+    flashcardContainerDiv.classList.add('hidden');
+    resultsContainerDiv.classList.add('hidden'); 
 
-     currentReviewType = null; // Reset review type
-     currentUnitId = null; // Reset unit ID
-     currentMode = 'quiz'; // Reset mode to default
+    mainHeader.classList.remove('hidden');
+    document.getElementById('main-page-footer').classList.remove('hidden');
 
-     renderModeSelection(); // Re-render mode selection buttons. This also ensures review-type-buttons are hidden.
+    switch (backTargetScreen) {
+        case 'mode-selection':
+            renderModeSelection(); 
+            break;
+        case 'review-type-selection':
+            renderReviewTypeSelection(); 
+            break;
+        case 'unit-selection': 
+            if (currentReviewType && currentReviewType.hasUnits) {
+                let modalTitle = 'Select Unit'; 
+                if (currentReviewType.id === 'texasConstitutions') modalTitle = 'Select Article';
+                else if (currentReviewType.id === 'texasStatutes') modalTitle = 'Select Statute Code';
+                else if (currentReviewType.id === 'tpcaBestPractices') modalTitle = 'Select Critical Area';
+                else if (currentReviewType.id === 'BPOC') modalTitle = `Select Week for ${currentReviewType.name}`;
+                else modalTitle = `Select Unit for ${currentReviewType.name}`;
+                renderChapterButtons(currentReviewType.chapters, modalTitle);
+                // unitSelectionModal.classList.remove('hidden'); // renderChapterButtons now handles this
+            } else {
+                console.warn("goBack to 'unit-selection' called without valid currentReviewType. Falling back to welcome screen.");
+                showWelcomeScreen();
+            }
+            break;
+        case 'subcategory-selection':
+            // Ensure allReviewData and allReviewData.BPOC are available
+            if (currentReviewType && currentReviewType.id === 'BPOC' && currentUnitId && 
+                typeof allReviewData !== 'undefined' && allReviewData.BPOC && 
+                typeof allReviewData.BPOC[currentUnitId] === 'object' && 
+                !Array.isArray(allReviewData.BPOC[currentUnitId])) {
+                renderSubcategorySelection(currentReviewType.id, currentUnitId, Object.keys(allReviewData.BPOC[currentUnitId]));
+                // unitSelectionModal.classList.remove('hidden'); // renderSubcategorySelection now handles this
+            } else {
+                console.warn("goBack to 'subcategory-selection' called with invalid state or missing BPOC data. Fallback initiated.", { currentReviewType, currentUnitId, bpocDataExists: typeof allReviewData !== 'undefined' && !!allReviewData.BPOC });
+                if (currentReviewType && currentReviewType.hasUnits) {
+                    goBackToUnitSelection(); 
+                } else {
+                    showWelcomeScreen();
+                }
+            }
+            break;
+        case 'ROOT':
+        default:
+            showWelcomeScreen(); 
+            break;
+    }
+}
+
+function goBackToUnitSelection() { 
+    if (currentReviewType && currentReviewType.hasUnits) {
+        let modalTitle = 'Select Unit';
+        if (currentReviewType.id === 'texasConstitutions') modalTitle = 'Select Article';
+        else if (currentReviewType.id === 'texasStatutes') modalTitle = 'Select Statute Code';
+        else if (currentReviewType.id === 'tpcaBestPractices') modalTitle = 'Select Critical Area';
+        else if (currentReviewType.id === 'BPOC') modalTitle = `Select Week for ${currentReviewType.name}`;
+        else modalTitle = `Select Unit for ${currentReviewType.name}`;
+        renderChapterButtons(currentReviewType.chapters, modalTitle); // This will show modal and hide welcome
+    } else {
+        showWelcomeScreen();
+    }
 }
 
 // --- Quiz Logic ---
-async function startQuiz(reviewTypeId, unitId) { // Made async
+async function startQuiz(reviewTypeId, unitId, subcategoryId = null) { 
     mainHeader.classList.remove('hidden');
     document.getElementById('main-page-footer').classList.remove('hidden'); 
     currentUnitId = unitId; 
+    // currentReviewType should already be set when selectReviewType was called.
+
+    // Set backTargetScreen based on the screen this quiz is launched FROM
+    if (subcategoryId) {
+        backTargetScreen = 'subcategory-selection';
+    } else if (unitId) { // This includes 'all' or a specific unit/week
+        backTargetScreen = 'unit-selection';
+    } else { // No unitId implies launched directly from review type (e.g., TCOLE)
+        backTargetScreen = 'review-type-selection';
+    }
 
     const reviewTypeDetails = reviewTypes.find(rt => rt.id === reviewTypeId);
-    if (!reviewTypeDetails) return;
+    if (!reviewTypeDetails) {
+        console.error("Review type details not found for:", reviewTypeId);
+        return;
+    }
 
     let questionPool = [];
-    let quizName = reviewTypeDetails.name;
+    let quizName = reviewTypeDetails.name; 
     const questionLimit = reviewTypeDetails.questionLimit;
 
-    // --- Dynamic Data Fetching ---
-    let allReviewDataForType = {}; // To store fetched data
+    let allReviewDataForType = {};
     try {
-        const response = await fetch(`data/${reviewTypeId}.json`);
-        if (!response.ok) {
-            throw new Error(`HTTP error! status: ${response.status}`);
+        // Ensure allReviewData is loaded, or fetch specifically if not.
+        // Assuming allReviewData[reviewTypeId] is populated by data.js
+        if (typeof allReviewData === 'undefined' || !allReviewData[reviewTypeId]) {
+            console.warn(`allReviewData.${reviewTypeId} not found, attempting to fetch...`);
+            const response = await fetch(`data/${reviewTypeId}.json`);
+            if (!response.ok) {
+                throw new Error(`HTTP error! status: ${response.status} for ${reviewTypeId}.json`);
+            }
+            if (typeof allReviewData === 'undefined') { // Initialize allReviewData if it's completely undefined
+                window.allReviewData = {}; // Or however it's structured globally
+            }
+            allReviewData[reviewTypeId] = await response.json();
         }
-        allReviewDataForType = await response.json();
+        allReviewDataForType = allReviewData[reviewTypeId];
+        if (!allReviewDataForType) throw new Error (`Data for ${reviewTypeId} could not be loaded or is empty.`);
+
     } catch (error) {
         console.error("Error fetching review data:", error);
-        // Display an error message to the user or handle appropriately
-        questionPool = [{ question: `Error loading questions for ${reviewTypeDetails.name}. Please try again later.`, answer: "OK", options: ["OK"], reference: "N/A" }];
-        // Proceed with minimal questions to show the error
+        questionPool = [{ question: `Error loading questions for ${reviewTypeDetails.name}. (${error.message}). Please try again later.`, answer: "OK", options: ["OK"], reference: "N/A" }];
         questions = questionPool;
         currentQuestionIndex = 0;
         score = 0;
         userAnswers = [];
         scoreSpan.textContent = score;
-        quizTitle.textContent = currentChapter ? currentChapter.name : reviewTypeDetails.name;
+        quizTitle.textContent = `Error - ${reviewTypeDetails.name}`;
         totalQuestionsSpan.textContent = questions.length;
         welcomeScreen.classList.add('hidden');
         resultsContainerDiv.innerHTML = '';
         resultsContainerDiv.classList.add('hidden');
         quizContainerDiv.classList.remove('hidden');
         displayQuestion();
-        return; // Stop further execution if data fetch fails critically
+        return; 
     }
-    // --- End Dynamic Data Fetching ---
 
-    if (reviewTypeDetails.hasUnits) {
+    if (reviewTypeDetails.id === 'BPOC') {
         if (unitId === 'all') { 
+            currentChapter = { name: `Comprehensive BPOC Review`, id: "all" };
+            quizName = currentChapter.name;
+            for (const weekKey in allReviewDataForType) {
+                const weekContent = allReviewDataForType[weekKey];
+                if (typeof weekContent === 'object' && !Array.isArray(weekContent)) {
+                    questionPool.push(...Object.values(weekContent).flat());
+                } else if (Array.isArray(weekContent)) {
+                    questionPool.push(...weekContent);
+                }
+            }
+        } else { 
+            currentChapter = reviewTypeDetails.chapters.find(c => c.id === unitId); 
+            if (!currentChapter) {
+                console.error(`BPOC chapter/week not found for id: ${unitId}`);
+                questionPool = [{ question: `Week ${unitId} not found.`, answer: "OK", options: ["OK"], reference: "N/A" }];
+            } else {
+                quizName = `${reviewTypeDetails.name} - ${currentChapter.name}`;
+                const weekData = allReviewDataForType[unitId];
+
+                if (typeof weekData === 'object' && weekData !== null && !Array.isArray(weekData)) { 
+                    if (subcategoryId === 'all_subcategories') {
+                        questionPool = Object.values(weekData).flat();
+                        quizName += ` - All Subcategories`;
+                    } else if (subcategoryId && weekData[subcategoryId]) {
+                        questionPool = [...weekData[subcategoryId]]; 
+                        quizName += ` - ${subcategoryId}`;
+                    } else if (!subcategoryId) {
+                        console.error(`BPOC week ${unitId} selected without subcategory, but it has subcategories.`);
+                        questionPool = [{ question: `Error: Subcategory not selected for ${currentChapter.name}.`, answer: "OK", options: ["OK"], reference: "N/A" }];
+                         quizName += ` - Error: No Subcategory`;
+                    } else { 
+                         questionPool = [{ question: `Subcategory '${subcategoryId}' not found in ${currentChapter.name}.`, answer: "OK", options: ["OK"], reference: "N/A" }];
+                         quizName += ` - Subcategory Not Found`;
+                    }
+                } else if (Array.isArray(weekData)) { 
+                    questionPool = [...weekData]; 
+                } else { 
+                    questionPool = [{ question: `No questions found for ${currentChapter.name}.`, answer: "OK", options: ["OK"], reference: "N/A" }];
+                }
+            }
+        }
+    } else if (reviewTypeDetails.hasUnits) { 
+        if (unitId === 'all') {
             currentChapter = { name: `Comprehensive ${reviewTypeDetails.name}`, id: "all" };
-            // Check if the fetched data is an object (like generalOrders) or an array (if structure varies)
+            quizName = currentChapter.name;
             if (typeof allReviewDataForType === 'object' && !Array.isArray(allReviewDataForType)) {
                  questionPool = Object.values(allReviewDataForType).flat(); 
-            } else if (Array.isArray(allReviewDataForType)) { // Should not happen for unitized data as per new structure
-                questionPool = allReviewDataForType; // Fallback, though new structure is { unitId: [], ...}
+            } else if (Array.isArray(allReviewDataForType)) { 
+                questionPool = allReviewDataForType;
             } else {
-                questionPool = []; // Should not happen
+                questionPool = []; 
             }
         } else {
             currentChapter = reviewTypeDetails.chapters.find(c => c.id === unitId);
-            if (!currentChapter) return;
-            quizName = `${reviewTypeDetails.name} - ${currentChapter.name}`;
-            // Access questions for the specific unit from the fetched data
-            let unitQuestions = allReviewDataForType[unitId];
-            if (!unitQuestions || unitQuestions.length === 0) {
-                let unitType = 'unit'; // Default
-                if (reviewTypeId === 'texasConstitutions') unitType = 'article';
-                if (reviewTypeId === 'texasStatutes') unitType = 'statute code';
-                if (reviewTypeId === 'tpcaBestPractices') unitType = 'critical area';
-                unitQuestions = [{ question: `This ${unitType} has no questions yet. Please check back later.`, answer: "OK", options: ["OK"], reference: "N/A" }];
+            if (!currentChapter) {
+                console.error(`Chapter not found for id: ${unitId} in review type ${reviewTypeId}`);
+                questionPool = [{ question: `Unit ${unitId} not found.`, answer: "OK", options: ["OK"], reference: "N/A" }];
+            } else {
+                quizName = `${reviewTypeDetails.name} - ${currentChapter.name}`;
+                let unitQuestions = allReviewDataForType[unitId];
+                if (!unitQuestions || (Array.isArray(unitQuestions) && unitQuestions.length === 0)) {
+                    let unitType = 'unit'; 
+                    if (reviewTypeId === 'texasConstitutions') unitType = 'article';
+                    if (reviewTypeId === 'texasStatutes') unitType = 'statute code';
+                    if (reviewTypeId === 'tpcaBestPractices') unitType = 'critical area';
+                    unitQuestions = [{ question: `This ${unitType} has no questions yet. Please check back later.`, answer: "OK", options: ["OK"], reference: "N/A" }];
+                }
+                questionPool = Array.isArray(unitQuestions) ? [...unitQuestions] : [];
+                 if (!Array.isArray(unitQuestions)) { 
+                    console.error(`Expected array for unit ${unitId} in ${reviewTypeId}, got object:`, unitQuestions);
+                    questionPool = [{ question: `Error loading questions for ${currentChapter.name}.`, answer: "OK", options: ["OK"], reference: "N/A" }];
+                }
             }
-            questionPool = [...unitQuestions];
         }
-    } else { // For TCOLE (which is an array of questions directly)
-        currentChapter = { name: reviewTypeDetails.name, id: reviewTypeId }; // No specific sub-unit
-        // The fetched data for non-unit types (like TCOLE) should be an array of questions
+    } else { 
+        currentChapter = { name: reviewTypeDetails.name, id: reviewTypeId }; 
+        quizName = currentChapter.name;
         questionPool = Array.isArray(allReviewDataForType) ? [...allReviewDataForType] : [];
         if (questionPool.length === 0) {
             questionPool = [{ question: `This section (${reviewTypeDetails.name}) has no questions yet.`, answer: "OK", options: ["OK"], reference: "N/A" }];
         }
     }
 
-    // Shuffle and slice questions
-    questions = questionPool.sort(() => Math.random() - 0.5);
-    if (questionLimit && questions.length > questionLimit) {
-        questions = questions.slice(0, questionLimit);
+    if (questionPool.length > 0 && questionPool.every(q => typeof q === 'object' && q && q.question && q.options && q.answer)) {
+        questions = [...questionPool].sort(() => Math.random() - 0.5);
+        if (questionLimit && questions.length > questionLimit) {
+            questions = questions.slice(0, questionLimit);
+        }
+    } else if (questionPool.length > 0) { 
+        console.warn("Question pool contained invalid items. Filtering them out.", questionPool);
+        questions = questionPool.filter(q => typeof q === 'object' && q && q.question && q.options && q.answer);
+        if (questions.length === 0) { 
+             if (questionPool.length === 1 && questionPool[0].question.toLowerCase().includes("error")) {
+                questions = questionPool;
+            } else {
+                questions = [{ question: "No valid questions could be loaded for this selection.", answer: "OK", options: ["OK"], reference: "N/A" }];
+            }
+        } else { 
+            questions = questions.sort(() => Math.random() - 0.5);
+             if (questionLimit && questions.length > questionLimit) {
+                questions = questions.slice(0, questionLimit);
+            }
+        }
+    } else { 
+        questions = [{ question: "No questions available for this selection.", answer: "OK", options: ["OK"], reference: "N/A" }];
     }
     
     currentQuestionIndex = 0;
@@ -439,7 +728,7 @@ async function startQuiz(reviewTypeId, unitId) { // Made async
     userAnswers = [];
     
     scoreSpan.textContent = score;
-    quizTitle.textContent = quizName; // Use the determined quizName
+    quizTitle.textContent = quizName; 
     totalQuestionsSpan.textContent = questions.length;
     
     welcomeScreen.classList.add('hidden');
@@ -460,18 +749,39 @@ function displayQuestion() {
     }
 
     const question = questions[currentQuestionIndex];
+    if (!question || typeof question.question === 'undefined') {
+        console.error("Invalid question object at index:", currentQuestionIndex, question);
+        questionTextP.textContent = "Error: Could not load this question.";
+        optionsContainerDiv.innerHTML = '';
+        const okButton = document.createElement('button');
+        okButton.textContent = "Continue";
+        okButton.onclick = nextQuestion;
+        optionsContainerDiv.appendChild(okButton);
+        nextQuestionBtn.classList.remove('hidden'); 
+        return;
+    }
+
     questionNumberSpan.textContent = currentQuestionIndex + 1;
     questionTextP.textContent = question.question;
     optionsContainerDiv.innerHTML = '';
     
-    const shuffledOptions = [...question.options].sort(() => Math.random() - 0.5);
-    shuffledOptions.forEach(option => {
-        const button = document.createElement('button');
+    const options = Array.isArray(question.options) ? question.options : [];
+    if (options.length === 0 && question.answer === "OK") { 
+         const button = document.createElement('button');
         button.className = 'w-full text-left bg-white p-4 border border-gray-300 rounded-lg hover:bg-gray-200 hover:border-blue-500 transition-colors';
-        button.textContent = option;
-        button.onclick = () => selectOption(button, option, question.answer, question.reference);
+        button.textContent = "OK";
+        button.onclick = () => selectOption(button, "OK", question.answer, question.reference || "N/A");
         optionsContainerDiv.appendChild(button);
-    });
+    } else {
+        const shuffledOptions = [...options].sort(() => Math.random() - 0.5);
+        shuffledOptions.forEach(option => {
+            const button = document.createElement('button');
+            button.className = 'w-full text-left bg-white p-4 border border-gray-300 rounded-lg hover:bg-gray-200 hover:border-blue-500 transition-colors';
+            button.textContent = option;
+            button.onclick = () => selectOption(button, option, question.answer, question.reference);
+            optionsContainerDiv.appendChild(button);
+        });
+    }
 }
 
 function selectOption(button, selectedAnswer, correctAnswer, reference) {
@@ -492,7 +802,7 @@ function selectOption(button, selectedAnswer, correctAnswer, reference) {
             }
         });
     }
-    feedbackReference.textContent = `Reference: ${reference}`;
+    feedbackReference.textContent = `Reference: ${reference || 'N/A'}`;
     feedbackContainer.classList.remove('hidden');
     
     Array.from(optionsContainerDiv.children).forEach(child => child.classList.add('disabled-option'));
@@ -504,65 +814,245 @@ function nextQuestion() {
     displayQuestion();
 }
 
+function showResults() {
+    quizContainerDiv.classList.add('hidden');
+    resultsContainerDiv.innerHTML = ''; 
+    resultsContainerDiv.classList.remove('hidden');
+    mainHeader.classList.add('hidden'); 
+    document.getElementById('main-page-footer').classList.add('hidden');
+
+    const percentage = questions.length > 0 ? (score / questions.length) * 100 : 0;
+
+    const resultsTitleElement = document.createElement('h2');
+    resultsTitleElement.className = 'text-4xl font-bold text-gray-800 mb-4 text-center';
+    resultsTitleElement.textContent = 'Quiz Results';
+    resultsContainerDiv.appendChild(resultsTitleElement);
+
+    const officerInfo = document.createElement('p');
+    officerInfo.className = 'text-lg text-gray-700 mb-2 text-center';
+    officerInfo.textContent = `Officer: ${officerName}`;
+    resultsContainerDiv.appendChild(officerInfo);
+
+    const quizInfo = document.createElement('p');
+    quizInfo.className = 'text-lg text-gray-700 mb-6 text-center';
+    let quizTakenName = quizTitle.textContent || (currentReviewType ? currentReviewType.name : 'Quiz');
+    quizInfo.textContent = `Quiz Taken: ${quizTakenName}`;
+    resultsContainerDiv.appendChild(quizInfo);
+
+    const scoreInfo = document.createElement('p');
+    scoreInfo.className = 'text-2xl font-semibold text-gray-800 mb-6 text-center';
+    scoreInfo.textContent = `Your Score: ${score} out of ${questions.length} (${percentage.toFixed(1)}%})`;
+    resultsContainerDiv.appendChild(scoreInfo);
+
+    if (questions.length > 0 && questions.every(q => q && q.question)) { // Check if questions are valid
+        const reviewTitle = document.createElement('h3');
+        reviewTitle.className = 'text-2xl font-semibold text-gray-800 mb-4 mt-8 text-center';
+        reviewTitle.textContent = 'Review Your Answers';
+        resultsContainerDiv.appendChild(reviewTitle);
+
+        const reviewContainer = document.createElement('div');
+        reviewContainer.className = 'space-y-6';
+
+        userAnswers.forEach((answer, index) => {
+            const questionDiv = document.createElement('div');
+            questionDiv.className = 'p-6 bg-white rounded-xl shadow-lg border';
+            questionDiv.classList.add(answer.isCorrect ? 'border-green-500' : 'border-red-500');
+
+            const qText = document.createElement('p');
+            qText.className = 'text-lg font-semibold text-gray-800 mb-2';
+            qText.textContent = `${index + 1}. ${answer.question}`;
+            questionDiv.appendChild(qText);
+
+            const userAnswerText = document.createElement('p');
+            userAnswerText.className = 'text-md text-gray-700';
+            userAnswerText.innerHTML = `Your answer: <span class="${answer.isCorrect ? 'text-green-700 font-semibold' : 'text-red-700 font-semibold'}">${answer.selected}</span>`;
+            questionDiv.appendChild(userAnswerText);
+
+            if (!answer.isCorrect) {
+                const correctAnswerText = document.createElement('p');
+                correctAnswerText.className = 'text-md text-green-700 font-semibold';
+                correctAnswerText.textContent = `Correct answer: ${answer.correct}`;
+                questionDiv.appendChild(correctAnswerText);
+            }
+            if (answer.reference && answer.reference !== "N/A") {
+                const referenceText = document.createElement('p');
+                referenceText.className = 'text-sm text-gray-500 mt-1';
+                referenceText.textContent = `Reference: ${answer.reference}`;
+                questionDiv.appendChild(referenceText);
+            }
+            reviewContainer.appendChild(questionDiv);
+        });
+        resultsContainerDiv.appendChild(reviewContainer);
+    } else {
+        const noQuestionsMessage = document.createElement('p');
+        noQuestionsMessage.className = 'text-lg text-gray-700 text-center';
+        noQuestionsMessage.textContent = 'No questions were available for this quiz or an error occurred loading them.';
+        resultsContainerDiv.appendChild(noQuestionsMessage);
+    }
+
+    const mainMenuBtn = document.createElement('button');
+    mainMenuBtn.id = 'main-menu-results';
+    mainMenuBtn.className = 'block mx-auto mt-10 bg-blue-600 text-white px-10 py-4 rounded-lg hover:bg-blue-700 transition-colors text-xl shadow-md';
+    mainMenuBtn.textContent = 'Main Menu';
+    mainMenuBtn.onclick = showWelcomeScreen;
+    resultsContainerDiv.appendChild(mainMenuBtn);
+}
+
+
 // --- Flashcard Logic ---
-async function startFlashcards(reviewTypeId, unitId) {
+async function startFlashcards(reviewTypeId, unitId, subcategoryId = null) {
     mainHeader.classList.remove('hidden');
     document.getElementById('main-page-footer').classList.remove('hidden');
     currentUnitId = unitId;
+    // currentReviewType should already be set
+
+    // Set backTargetScreen based on the screen these flashcards are launched FROM
+    if (subcategoryId) {
+        backTargetScreen = 'subcategory-selection';
+    } else if (unitId) { // This includes 'all' or a specific unit/week
+        backTargetScreen = 'unit-selection';
+    } else { // No unitId implies launched directly from review type
+        backTargetScreen = 'review-type-selection';
+    }
 
     const reviewTypeDetails = reviewTypes.find(rt => rt.id === reviewTypeId);
-    if (!reviewTypeDetails) return;
+    if (!reviewTypeDetails) {
+        console.error("Review type details not found for flashcards:", reviewTypeId);
+        return;
+    }
 
     let questionPool = [];
-    let flashcardDeckName = reviewTypeDetails.name;
+    let cardSetName = reviewTypeDetails.name;
+    const questionLimit = reviewTypeDetails.questionLimit; 
 
+    let allReviewDataForType = {};
     try {
-        const response = await fetch(`data/${reviewTypeId}.json`);
-        if (!response.ok) throw new Error(`HTTP error! status: ${response.status}`);
-        const allReviewDataForType = await response.json();
+        // Ensure allReviewData is loaded, or fetch specifically if not.
+        if (typeof allReviewData === 'undefined' || !allReviewData[reviewTypeId]) {
+            console.warn(`allReviewData.${reviewTypeId} not found for flashcards, attempting to fetch...`);
+            const response = await fetch(`data/${reviewTypeId}.json`);
+            if (!response.ok) throw new Error(`HTTP error! status: ${response.status} for ${reviewTypeId}.json`);
+            if (typeof allReviewData === 'undefined') {
+                window.allReviewData = {};
+            }
+            allReviewData[reviewTypeId] = await response.json();
+        }
+        allReviewDataForType = allReviewData[reviewTypeId];
+        if (!allReviewDataForType) throw new Error (`Data for ${reviewTypeId} could not be loaded or is empty for flashcards.`);
+    } catch (error) {
+        console.error("Error fetching review data for flashcards:", error);
+        questionPool = [{ question: `Error loading flashcards for ${reviewTypeDetails.name}. (${error.message})`, answer: "Please try again.", reference: "N/A" }];
+    }
 
-        if (reviewTypeDetails.hasUnits) {
-            if (unitId === 'all') {
-                currentChapter = { name: `Comprehensive ${reviewTypeDetails.name} Flashcards`, id: "all" };
-                flashcardDeckName = currentChapter.name;
-                if (typeof allReviewDataForType === 'object' && !Array.isArray(allReviewDataForType)) {
-                    questionPool = Object.values(allReviewDataForType).flat();
-                } else {
-                    questionPool = [];
+    if (reviewTypeDetails.id === 'BPOC') {
+        if (unitId === 'all') {
+            currentChapter = { name: `Comprehensive BPOC Flashcards`, id: "all" };
+            cardSetName = currentChapter.name;
+            for (const weekKey in allReviewDataForType) {
+                const weekContent = allReviewDataForType[weekKey];
+                if (typeof weekContent === 'object' && !Array.isArray(weekContent)) {
+                    questionPool.push(...Object.values(weekContent).flat());
+                } else if (Array.isArray(weekContent)) {
+                    questionPool.push(...weekContent);
                 }
+            }
+        } else { 
+            currentChapter = reviewTypeDetails.chapters.find(c => c.id === unitId);
+            if (!currentChapter) {
+                console.error(`BPOC chapter/week not found for id: ${unitId} in flashcards`);
+                questionPool = [{ question: `Week ${unitId} not found for flashcards.`, answer: "Error", reference: "N/A" }];
             } else {
-                currentChapter = reviewTypeDetails.chapters.find(c => c.id === unitId);
-                if (!currentChapter) return;
-                flashcardDeckName = `${reviewTypeDetails.name} Flashcards - ${currentChapter.name}`;
+                cardSetName = `${reviewTypeDetails.name} - ${currentChapter.name}`;
+                const weekData = allReviewDataForType[unitId];
+
+                if (typeof weekData === 'object' && weekData !== null && !Array.isArray(weekData)) {
+                    if (subcategoryId === 'all_subcategories') {
+                        questionPool = Object.values(weekData).flat();
+                        cardSetName += ` - All Subcategories`;
+                    } else if (subcategoryId && weekData[subcategoryId]) {
+                        questionPool = [...weekData[subcategoryId]];
+                        cardSetName += ` - ${subcategoryId}`;
+                    } else if (!subcategoryId) {
+                        console.warn(`BPOC week ${unitId} has subcategories, but none selected for flashcards. Loading all from week.`);
+                        questionPool = Object.values(weekData).flat(); // Default to all subcategories of the week
+                        cardSetName += ` - All Subcategories (Default)`;
+                    } else {
+                        questionPool = [{ question: `Subcategory '${subcategoryId}' not found in ${currentChapter.name} for flashcards.`, answer: "Error", reference: "N/A" }];
+                        cardSetName += ` - Subcategory Not Found`;
+                    }
+                } else if (Array.isArray(weekData)) {
+                    questionPool = [...weekData];
+                } else {
+                    questionPool = [{ question: `No flashcards found for ${currentChapter.name}.`, answer: "Check later.", reference: "N/A" }];
+                }
+            }
+        }
+    } else if (reviewTypeDetails.hasUnits) {
+        if (unitId === 'all') {
+            currentChapter = { name: `Comprehensive ${reviewTypeDetails.name} Flashcards`, id: "all" };
+            cardSetName = currentChapter.name;
+            if (typeof allReviewDataForType === 'object' && !Array.isArray(allReviewDataForType)) {
+                questionPool = Object.values(allReviewDataForType).flat();
+            } else if (Array.isArray(allReviewDataForType)) {
+                questionPool = allReviewDataForType;
+            } else {
+                questionPool = [];
+            }
+        } else {
+            currentChapter = reviewTypeDetails.chapters.find(c => c.id === unitId);
+            if (!currentChapter) {
+                 console.error(`Chapter not found for id: ${unitId} in flashcards type ${reviewTypeId}`);
+                 questionPool = [{ question: `Unit ${unitId} not found for flashcards.`, answer: "Error", reference: "N/A" }];
+            } else {
+                cardSetName = `${reviewTypeDetails.name} - ${currentChapter.name}`;
                 let unitQuestions = allReviewDataForType[unitId];
-                if (!unitQuestions || unitQuestions.length === 0) {
+                if (!unitQuestions || (Array.isArray(unitQuestions) && unitQuestions.length === 0)) {
                     let unitType = 'unit';
                     if (reviewTypeId === 'texasConstitutions') unitType = 'article';
                     if (reviewTypeId === 'texasStatutes') unitType = 'statute code';
                     if (reviewTypeId === 'tpcaBestPractices') unitType = 'critical area';
-                    unitQuestions = [{ question: `This ${unitType} has no flashcards yet.`, answer: "N/A", options: [], reference: "N/A" }];
+                    unitQuestions = [{ question: `This ${unitType} has no flashcards yet.`, answer: "Please check back later.", reference: "N/A" }];
                 }
-                questionPool = [...unitQuestions];
-            }
-        } else { // For TCOLE (array of questions)
-            currentChapter = { name: `${reviewTypeDetails.name} Flashcards`, id: reviewTypeId };
-            flashcardDeckName = currentChapter.name;
-            questionPool = Array.isArray(allReviewDataForType) ? [...allReviewDataForType] : [];
-            if (questionPool.length === 0) {
-                questionPool = [{ question: `This section (${reviewTypeDetails.name}) has no flashcards yet.`, answer: "N/A", options: [], reference: "N/A" }];
+                questionPool = Array.isArray(unitQuestions) ? [...unitQuestions] : [];
+                if (!Array.isArray(unitQuestions)) {
+                    console.error(`Expected array for flashcard unit ${unitId} in ${reviewTypeId}, got object:`, unitQuestions);
+                    questionPool = [{ question: `Error loading flashcards for ${currentChapter.name}.`, answer: "Error", reference: "N/A" }];
+                }
             }
         }
-    } catch (error) {
-        console.error("Error fetching flashcard data:", error);
-        questionPool = [{ question: `Error loading flashcards for ${reviewTypeDetails.name}. Please try again.`, answer: "Error", options: [], reference: "System Error" }];
+    } else {
+        currentChapter = { name: reviewTypeDetails.name, id: reviewTypeId };
+        cardSetName = currentChapter.name;
+        questionPool = Array.isArray(allReviewDataForType) ? [...allReviewDataForType] : [];
+         if (questionPool.length === 0) {
+            questionPool = [{ question: `This section (${reviewTypeDetails.name}) has no flashcards yet.`, answer: "Please check back later.", reference: "N/A" }];
+        }
     }
 
-    questions = questionPool.sort(() => Math.random() - 0.5); // Shuffle for flashcards too
-    currentQuestionIndex = 0;
-
-    flashcardTitle.textContent = flashcardDeckName;
+    if (questionPool.length > 0 && questionPool.every(q => typeof q === 'object' && q && q.question && q.answer)) {
+        questions = [...questionPool].sort(() => Math.random() - 0.5);
+        if (questionLimit && questions.length > questionLimit) {
+            questions = questions.slice(0, questionLimit);
+        }
+    } else if (questionPool.length > 0) {
+        console.warn("Flashcard pool contained invalid items. Filtering them out.", questionPool);
+        questions = questionPool.filter(q => typeof q === 'object' && q && q.question && q.answer);
+        if (questions.length === 0) {
+            if (questionPool.length === 1 && questionPool[0].question.toLowerCase().includes("error")) {
+                questions = questionPool;
+            } else {
+                questions = [{ question: "No valid flashcards could be loaded.", answer: "Error", reference: "N/A" }];
+            }
+        }
+    } else {
+        questions = [{ question: "No flashcards available for this selection.", answer: "Error", reference: "N/A" }];
+    }
+    
+    currentQuestionIndex = 0; 
+    
+    flashcardTitle.textContent = cardSetName;
     totalFlashcardsSpan.textContent = questions.length;
-
+    
     welcomeScreen.classList.add('hidden');
     quizContainerDiv.classList.add('hidden');
     resultsContainerDiv.classList.add('hidden');
@@ -571,43 +1061,63 @@ async function startFlashcards(reviewTypeId, unitId) {
     displayFlashcard();
 }
 
+
 function displayFlashcard() {
-    if (questions.length === 0 || currentQuestionIndex >= questions.length) {
-        // Optionally handle end of flashcards (e.g., show a message or loop)
-        flashcardQuestionTextP.textContent = "No more cards.";
+    if (!questions || questions.length === 0 || !questions[currentQuestionIndex]) {
+        flashcardQuestionTextP.textContent = "No flashcards available or error loading.";
         flashcardAnswerTextP.textContent = "";
         flashcardReferenceTextP.textContent = "";
-        flashcardCard.classList.remove('is-flipped');
-        previousFlashcardBtn.disabled = true;
-        nextFlashcardBtn.disabled = true;
+        flashcardNumberSpan.textContent = "0";
+        totalFlashcardsSpan.textContent = "0";
+        previousFlashcardBtn.classList.add('hidden');
+        nextFlashcardBtn.classList.add('hidden');
+        if(flashcardCard) flashcardCard.classList.remove('is-flipped');
         return;
     }
 
-    const cardData = questions[currentQuestionIndex];
-    flashcardNumberSpan.textContent = currentQuestionIndex + 1;
-    flashcardQuestionTextP.textContent = cardData.question;
-    flashcardAnswerTextP.textContent = cardData.answer;
-    flashcardReferenceTextP.textContent = cardData.reference ? `Reference: ${cardData.reference}` : "";
-    flashcardCard.classList.remove('is-flipped');
+    // Ensure currentQuestionIndex is within bounds
+    if (currentQuestionIndex >= questions.length) currentQuestionIndex = questions.length - 1;
+    if (currentQuestionIndex < 0) currentQuestionIndex = 0;
 
+    const card = questions[currentQuestionIndex];
+    if (!card || typeof card.question === 'undefined' || typeof card.answer === 'undefined') {
+        flashcardQuestionTextP.textContent = "Error loading this flashcard.";
+        flashcardAnswerTextP.textContent = "Please try again.";
+        flashcardReferenceTextP.textContent = "";
+    } else {
+        flashcardQuestionTextP.textContent = card.question;
+        flashcardAnswerTextP.textContent = card.answer;
+        flashcardReferenceTextP.textContent = card.reference ? `Reference: ${card.reference}` : "";
+    }
+    
+    flashcardNumberSpan.textContent = currentQuestionIndex + 1;
+    totalFlashcardsSpan.textContent = questions.length; // Ensure this is updated if questions array changes
+    
+    if(flashcardCard) flashcardCard.classList.remove('is-flipped');
+
+    previousFlashcardBtn.classList.remove('hidden');
+    nextFlashcardBtn.classList.remove('hidden');
     previousFlashcardBtn.disabled = currentQuestionIndex === 0;
-    nextFlashcardBtn.disabled = currentQuestionIndex === questions.length - 1;
+    nextFlashcardBtn.disabled = currentQuestionIndex >= questions.length - 1; // Use >= to be safe
+
+    previousFlashcardBtn.classList.toggle('opacity-50', previousFlashcardBtn.disabled);
+    nextFlashcardBtn.classList.toggle('opacity-50', nextFlashcardBtn.disabled);
 }
 
 function flipFlashcard() {
-    flashcardCard.classList.toggle('is-flipped');
-}
-
-function nextFlashcard() {
-    if (currentQuestionIndex < questions.length - 1) {
-        currentQuestionIndex++;
-        displayFlashcard();
-    }
+    if(flashcardCard) flashcardCard.classList.toggle('is-flipped');
 }
 
 function previousFlashcard() {
     if (currentQuestionIndex > 0) {
         currentQuestionIndex--;
+        displayFlashcard();
+    }
+}
+
+function nextFlashcard() {
+    if (currentQuestionIndex < questions.length - 1) {
+        currentQuestionIndex++;
         displayFlashcard();
     }
 }
@@ -618,6 +1128,8 @@ function getRecommendations() {
     if(incorrectAnswers.length === 0) {
         return '<p>Excellent work! No specific areas for review based on this perfect score.</p>';
     }
+    
+
     
     const topics = {};
     incorrectAnswers.forEach(ans => {
@@ -749,6 +1261,9 @@ function generateReportHTML() {
                         <div><strong class="block text-sm font-medium text-gray-500">Assessment Type:</strong> <span class="text-lg text-gray-800">${currentReviewType.name}</span></div>
                         ${currentReviewType.hasUnits && currentUnitId !== 'all' ? `<div><strong class="block text-sm font-medium text-gray-500">Unit Tested:</strong> <span class="text-lg text-gray-800">${currentChapter.name.replace(currentReviewType.name + " - ", "")}</span></div>` : ''}
                         ${currentUnitId === 'all' ? `<div><strong class="block text-sm font-medium text-gray-500">Unit Tested:</strong> <span class="text-lg text-gray-800">All Units</span></div>` : ''}
+
+                        <!-- New field for Date of Assessment -->
+                        <div><strong class="block text-sm font-medium text-gray-500">Date of Assessment:</strong> <span class="text-lg text-gray-800">${date}</span></div>
                     </div>
                 </div>
 
@@ -818,31 +1333,4 @@ function generateReportHTML() {
             </div>
         </div>
     `;
-}
-
-function showResults() {
-    quizContainerDiv.classList.add('hidden');
-    mainHeader.classList.add('hidden'); // Hide main header on results page
-    document.getElementById('main-page-footer').classList.add('hidden'); // Hide main page footer on results page
-
-    const reportHTML = generateReportHTML();
-    resultsContainerDiv.innerHTML = reportHTML;
-    resultsContainerDiv.classList.remove('hidden');
-    document.getElementById('print-area').innerHTML = reportHTML; // Prepare for printing
-
-
-    // Animate the progress ring
-    const circle = document.querySelector('.progress-ring__circle');
-    if (circle) {
-        // This forces a reflow, which is necessary for the transition to work on the first render
-        circle.getBoundingClientRect(); 
-        const radius = circle.r.baseVal.value;
-        const circumference = 2 * Math.PI * radius;
-        const scorePercentage = questions.length > 0 ? (score / questions.length) : 0;
-        const offset = circumference - scorePercentage * circumference;
-        circle.style.strokeDashoffset = offset;
-    }
-
-    document.getElementById('main-menu-results').addEventListener('click', showWelcomeScreen);
-    document.getElementById('print-report-btn').addEventListener('click', () => window.print());
 }
