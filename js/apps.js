@@ -211,31 +211,21 @@ function renderModeSelection() {
         return; 
     }
     
-    console.log('renderModeSelection: Setting visibility states');
-    
     // Ensure correct visibility states
     welcomeScreenEl.classList.remove('hidden');
     if (unitModal) unitModal.classList.add('hidden');
     modeContainer.classList.remove('hidden');
     if (reviewContainer) reviewContainer.classList.add('hidden');
 
-    // Clear and recreate buttons
-    console.log('renderModeSelection: Clearing existing buttons');
-    buttonsParent.innerHTML = '';    console.log('renderModeSelection: Creating new buttons');
-    
+    // Set flex row for side-by-side layout
+    buttonsParent.className = 'flex flex-row justify-center gap-3 md:gap-4 mt-4 mb-6';
+    buttonsParent.innerHTML = '';
+
     // Create Quiz button
     const quizButton = document.createElement('button');
     quizButton.className = 'bg-purple-600 text-white px-6 md:px-8 py-3 md:py-3 rounded-lg hover:bg-purple-700 transition-colors text-base md:text-lg min-h-12 md:min-h-auto';
     quizButton.textContent = 'Start Quiz Review';
     quizButton.onclick = () => selectMode('quiz');
-    
-    // Force button visibility with inline styles for debugging
-    quizButton.style.display = 'inline-block';
-    quizButton.style.visibility = 'visible';
-    quizButton.style.opacity = '1';
-    quizButton.style.minHeight = '48px';
-    quizButton.style.minWidth = '200px';
-    
     buttonsParent.appendChild(quizButton);
 
     // Create Flashcard button
@@ -243,22 +233,7 @@ function renderModeSelection() {
     flashcardButton.className = 'bg-teal-600 text-white px-6 md:px-8 py-3 md:py-3 rounded-lg hover:bg-teal-700 transition-colors text-base md:text-lg min-h-12 md:min-h-auto';
     flashcardButton.textContent = 'Start Flashcards';
     flashcardButton.onclick = () => selectMode('flashcards');
-    
-    // Force button visibility with inline styles for debugging
-    flashcardButton.style.display = 'inline-block';
-    flashcardButton.style.visibility = 'visible';
-    flashcardButton.style.opacity = '1';
-    flashcardButton.style.minHeight = '48px';
-    flashcardButton.style.minWidth = '200px';
-    
     buttonsParent.appendChild(flashcardButton);
-
-    // Also force the container styles
-    buttonsParent.style.display = 'flex';
-    buttonsParent.style.flexDirection = 'column';
-    buttonsParent.style.gap = '1rem';
-    buttonsParent.style.alignItems = 'center';
-    modeContainer.style.display = 'block';
 
     // Set navigation state
     backTargetScreen = 'ROOT';
@@ -268,10 +243,6 @@ function renderModeSelection() {
     const oldAllUnitsBtn = document.getElementById('start-all-units');
     if(oldSingleUnitBtn) oldSingleUnitBtn.classList.add('hidden');
     if(oldAllUnitsBtn) oldAllUnitsBtn.classList.add('hidden');
-    
-    console.log('renderModeSelection completed successfully. Buttons in container:', buttonsParent.children.length);
-    console.log('Mode container visible:', !modeContainer.classList.contains('hidden'));
-    console.log('Welcome screen visible:', !welcomeScreenEl.classList.contains('hidden'));
 }
 
 function selectMode(mode) {
