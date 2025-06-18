@@ -221,15 +221,21 @@ function renderModeSelection() {
 
     // Clear and recreate buttons
     console.log('renderModeSelection: Clearing existing buttons');
-    buttonsParent.innerHTML = '';
-
-    console.log('renderModeSelection: Creating new buttons');
+    buttonsParent.innerHTML = '';    console.log('renderModeSelection: Creating new buttons');
     
     // Create Quiz button
     const quizButton = document.createElement('button');
     quizButton.className = 'bg-purple-600 text-white px-6 md:px-8 py-3 md:py-3 rounded-lg hover:bg-purple-700 transition-colors text-base md:text-lg min-h-12 md:min-h-auto';
     quizButton.textContent = 'Start Quiz Review';
     quizButton.onclick = () => selectMode('quiz');
+    
+    // Force button visibility with inline styles for debugging
+    quizButton.style.display = 'inline-block';
+    quizButton.style.visibility = 'visible';
+    quizButton.style.opacity = '1';
+    quizButton.style.minHeight = '48px';
+    quizButton.style.minWidth = '200px';
+    
     buttonsParent.appendChild(quizButton);
 
     // Create Flashcard button
@@ -237,7 +243,22 @@ function renderModeSelection() {
     flashcardButton.className = 'bg-teal-600 text-white px-6 md:px-8 py-3 md:py-3 rounded-lg hover:bg-teal-700 transition-colors text-base md:text-lg min-h-12 md:min-h-auto';
     flashcardButton.textContent = 'Start Flashcards';
     flashcardButton.onclick = () => selectMode('flashcards');
+    
+    // Force button visibility with inline styles for debugging
+    flashcardButton.style.display = 'inline-block';
+    flashcardButton.style.visibility = 'visible';
+    flashcardButton.style.opacity = '1';
+    flashcardButton.style.minHeight = '48px';
+    flashcardButton.style.minWidth = '200px';
+    
     buttonsParent.appendChild(flashcardButton);
+
+    // Also force the container styles
+    buttonsParent.style.display = 'flex';
+    buttonsParent.style.flexDirection = 'column';
+    buttonsParent.style.gap = '1rem';
+    buttonsParent.style.alignItems = 'center';
+    modeContainer.style.display = 'block';
 
     // Set navigation state
     backTargetScreen = 'ROOT';

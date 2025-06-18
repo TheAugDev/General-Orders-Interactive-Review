@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Test Mode Buttons</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="bg-gray-100 p-8">
+    <div id="welcome-screen" class="bg-white p-8 rounded-lg shadow-md text-center">
+        <h2 class="text-2xl font-semibold mb-4">Test Welcome Screen</h2>
+        
+        <div id="mode-selection-container">
+            <div id="mode-selection-buttons" class="flex flex-col sm:flex-row justify-center gap-4 mt-4 mb-6">
+                <!-- Mode buttons will be inserted here -->
+            </div>
+        </div>
+        
+        <button id="test-button" class="bg-red-600 text-white px-8 py-3 rounded-lg hover:bg-red-700 transition-colors text-lg">Test Recreate Buttons</button>
+    </div>
+
+    <script>
+        function createModeButtons() {
+            console.log('createModeButtons called');
+            const buttonsParent = document.getElementById('mode-selection-buttons');
+            
+            if (!buttonsParent) {
+                console.error('mode-selection-buttons not found!');
+                return;
+            }
+            
+            console.log('Clearing existing buttons');
+            buttonsParent.innerHTML = '';
+            
+            console.log('Creating quiz button');
+            const quizButton = document.createElement('button');
+            quizButton.className = 'bg-purple-600 text-white px-8 py-3 rounded-lg hover:bg-purple-700 transition-colors text-lg';
+            quizButton.textContent = 'Start Quiz Review';
+            quizButton.onclick = () => alert('Quiz mode selected');
+            buttonsParent.appendChild(quizButton);
+
+            console.log('Creating flashcard button');
+            const flashcardButton = document.createElement('button');
+            flashcardButton.className = 'bg-teal-600 text-white px-8 py-3 rounded-lg hover:bg-teal-700 transition-colors text-lg';
+            flashcardButton.textContent = 'Start Flashcards';
+            flashcardButton.onclick = () => alert('Flashcard mode selected');
+            buttonsParent.appendChild(flashcardButton);
+            
+            console.log('Buttons created. Total buttons:', buttonsParent.children.length);
+        }
+        
+        document.addEventListener('DOMContentLoaded', function() {
+            console.log('DOM loaded');
+            createModeButtons();
+            
+            document.getElementById('test-button').addEventListener('click', function() {
+                console.log('Test button clicked - recreating mode buttons');
+                createModeButtons();
+            });
+        });
+    </script>
+</body>
+</html>
