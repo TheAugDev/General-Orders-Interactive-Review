@@ -153,10 +153,24 @@ const reviewTypes = [
 document.addEventListener('DOMContentLoaded', init);
 
 function init() {
-    document.getElementById('close-modal').addEventListener('click', showWelcomeScreen);
-    document.getElementById('main-menu-quiz').addEventListener('click', showWelcomeScreen);
-    nextQuestionBtn.addEventListener('click', nextQuestion);
+    // Attach event listeners for main menu/cancel buttons
+    const closeModalBtn = document.getElementById('close-modal');
+    const mainMenuQuizBtn = document.getElementById('main-menu-quiz');
     
+    if (closeModalBtn) {
+        closeModalBtn.addEventListener('click', showWelcomeScreen);
+    } else {
+        console.warn('close-modal button not found during init');
+    }
+    
+    if (mainMenuQuizBtn) {
+        mainMenuQuizBtn.addEventListener('click', showWelcomeScreen);
+    } else {
+        console.warn('main-menu-quiz button not found during init');
+    }
+    
+    // Attach other event listeners
+    if (nextQuestionBtn) nextQuestionBtn.addEventListener('click', nextQuestion);
     if (flashcardCard) flashcardCard.addEventListener('click', flipFlashcard);
     if (previousFlashcardBtn) previousFlashcardBtn.addEventListener('click', previousFlashcard);
     if (nextFlashcardBtn) nextFlashcardBtn.addEventListener('click', nextFlashcard);
@@ -166,11 +180,13 @@ function init() {
     if (backFromQuizBtn) backFromQuizBtn.addEventListener('click', goBack);
     if (backFromFlashcardBtn) backFromFlashcardBtn.addEventListener('click', goBack);
 
-    renderModeSelection(); 
-    quizContainerDiv.classList.add('hidden');
-    resultsContainerDiv.classList.add('hidden');
-    flashcardContainerDiv.classList.add('hidden');
+    // Ensure we start with the correct initial state
+    showWelcomeScreen(); 
+    if (quizContainerDiv) quizContainerDiv.classList.add('hidden');
+    if (resultsContainerDiv) resultsContainerDiv.classList.add('hidden');
+    if (flashcardContainerDiv) flashcardContainerDiv.classList.add('hidden');
 
+    // Set current year in footer
     const yearSpan = document.getElementById('current-year');
     if (yearSpan) {
         yearSpan.textContent = new Date().getFullYear();
@@ -185,38 +201,56 @@ function renderModeSelection() {
     const reviewContainer = document.getElementById('review-type-container');
     const unitModal = document.getElementById('unit-selection-modal');
 
-    if (!welcomeScreenEl || !modeContainer || !buttonsParent || !reviewContainer || !unitModal) {
-        console.error("One or more critical UI elements are missing for renderModeSelection. Check IDs in index.html and JS.");
-        if (welcomeScreenEl) welcomeScreenEl.classList.remove('hidden');
+    // Check for required elements
+    if (!welcomeScreenEl || !modeContainer || !buttonsParent) {
+        console.error("Critical UI elements missing for renderModeSelection:", {
+            welcomeScreenEl: !!welcomeScreenEl,
+            modeContainer: !!modeContainer,
+            buttonsParent: !!buttonsParent
+        });
         return; 
     }
     
-    welcomeScreenEl.classList.remove('hidden'); // Ensure overall welcome screen is visible
-    unitModal.classList.add('hidden');       // Ensure unit modal is hidden
+    console.log('renderModeSelection: Setting visibility states');
+    
+    // Ensure correct visibility states
+    welcomeScreenEl.classList.remove('hidden');
+    if (unitModal) unitModal.classList.add('hidden');
+    modeContainer.classList.remove('hidden');
+    if (reviewContainer) reviewContainer.classList.add('hidden');
 
-    modeContainer.classList.remove('hidden'); // Mode selection should be visible
-    reviewContainer.classList.add('hidden');   // Review type selection should be hidden
+    // Clear and recreate buttons
+    console.log('renderModeSelection: Clearing existing buttons');
+    buttonsParent.innerHTML = '';
 
-    buttonsParent.innerHTML = ''; // Clear previous mode buttons
-
+    console.log('renderModeSelection: Creating new buttons');
+    
+    // Create Quiz button
     const quizButton = document.createElement('button');
-    quizButton.className = 'bg-purple-600 text-white px-8 py-3 rounded-lg hover:bg-purple-700 transition-colors text-lg';
+    quizButton.className = 'bg-purple-600 text-white px-6 md:px-8 py-3 md:py-3 rounded-lg hover:bg-purple-700 transition-colors text-base md:text-lg min-h-12 md:min-h-auto';
     quizButton.textContent = 'Start Quiz Review';
     quizButton.onclick = () => selectMode('quiz');
     buttonsParent.appendChild(quizButton);
 
+    // Create Flashcard button
     const flashcardButton = document.createElement('button');
-    flashcardButton.className = 'bg-teal-600 text-white px-8 py-3 rounded-lg hover:bg-teal-700 transition-colors text-lg';
+    flashcardButton.className = 'bg-teal-600 text-white px-6 md:px-8 py-3 md:py-3 rounded-lg hover:bg-teal-700 transition-colors text-base md:text-lg min-h-12 md:min-h-auto';
     flashcardButton.textContent = 'Start Flashcards';
     flashcardButton.onclick = () => selectMode('flashcards');
     buttonsParent.appendChild(flashcardButton);
 
-    backTargetScreen = 'ROOT'; // When in mode selection, back goes to ROOT
+    // Set navigation state
+    backTargetScreen = 'ROOT';
 
+    // Hide old buttons if they exist
     const oldSingleUnitBtn = document.getElementById('start-single-unit');
     const oldAllUnitsBtn = document.getElementById('start-all-units');
     if(oldSingleUnitBtn) oldSingleUnitBtn.classList.add('hidden');
     if(oldAllUnitsBtn) oldAllUnitsBtn.classList.add('hidden');
+    
+    console.log('renderModeSelection completed successfully. Buttons in container:', buttonsParent.children.length);
+    console.log('Mode container visible:', !modeContainer.classList.contains('hidden'));
+    console.log('Welcome screen visible:', !welcomeScreenEl.classList.contains('hidden'));
 }
 
 function selectMode(mode) {
@@ -249,7 +283,7 @@ function renderReviewTypeSelection() {
 
     reviewTypes.forEach(type => {
         const button = document.createElement('button');
-        button.className = 'bg-blue-600 text-white px-8 py-3 rounded-lg hover:bg-blue-700 transition-colors text-lg';
+        button.className = 'bg-blue-600 text-white px-6 md:px-8 py-3 md:py-3 rounded-lg hover:bg-blue-700 transition-colors text-base md:text-lg min-h-12 md:min-h-auto';
         button.textContent = type.name;
         button.onclick = () => selectReviewType(type);
         reviewTypeButtonContainer.appendChild(button);
@@ -312,7 +346,7 @@ function renderChapterButtons(chapters, modalTitle = 'Select Unit') {
     if (welcomeScreenEl) welcomeScreenEl.classList.add('hidden');
 
     const allButton = document.createElement('button');
-    allButton.className = 'w-full bg-green-600 text-white p-4 rounded-lg text-lg font-semibold hover:bg-green-700 transition-colors shadow-sm mb-2';
+    allButton.className = 'w-full bg-green-600 text-white p-3 md:p-4 rounded-lg text-base md:text-lg font-semibold hover:bg-green-700 transition-colors shadow-sm mb-2 min-h-12 md:min-h-auto';
     
     let allButtonText = 'All Units'; 
     if (currentReviewType.id === 'texasConstitutions') {
@@ -339,7 +373,7 @@ function renderChapterButtons(chapters, modalTitle = 'Select Unit') {
 
     chapters.forEach(chapter => {
         const button = document.createElement('button');
-        button.className = 'w-full bg-blue-600 text-white p-4 rounded-lg text-lg font-semibold hover:bg-blue-700 transition-colors shadow-sm';
+        button.className = 'w-full bg-blue-600 text-white p-3 md:p-4 rounded-lg text-base md:text-lg font-semibold hover:bg-blue-700 transition-colors shadow-sm min-h-12 md:min-h-auto';
         button.textContent = chapter.name;
         button.onclick = () => {
             unitSelectionModal.classList.add('hidden');
@@ -412,7 +446,7 @@ function renderSubcategorySelection(reviewTypeId, weekId, subcategoryNames) {
     if (welcomeScreenEl) welcomeScreenEl.classList.add('hidden');
 
     const allSubcategoriesButton = document.createElement('button');
-    allSubcategoriesButton.className = 'w-full bg-green-600 text-white p-4 rounded-lg text-lg font-semibold hover:bg-green-700 transition-colors shadow-sm mb-2';
+    allSubcategoriesButton.className = 'w-full bg-green-600 text-white p-3 md:p-4 rounded-lg text-base md:text-lg font-semibold hover:bg-green-700 transition-colors shadow-sm mb-2 min-h-12 md:min-h-auto';
     allSubcategoriesButton.textContent = `All Subcategories in ${weekDisplayName}`;
     allSubcategoriesButton.onclick = () => {
         unitSelectionModal.classList.add('hidden');
@@ -427,8 +461,8 @@ function renderSubcategorySelection(reviewTypeId, weekId, subcategoryNames) {
 
     subcategoryNames.forEach(subcategoryName => {
         const button = document.createElement('button');
-        button.className = 'w-full bg-blue-600 text-white p-4 rounded-lg text-lg font-semibold hover:bg-blue-700 transition-colors shadow-sm';
-        button.textContent = subcategoryName; 
+        button.className = 'w-full bg-blue-600 text-white p-3 md:p-4 rounded-lg text-base md:text-lg font-semibold hover:bg-blue-700 transition-colors shadow-sm min-h-12 md:min-h-auto';
+        button.textContent = subcategoryName;
         button.onclick = () => {
             unitSelectionModal.classList.add('hidden');
             if (currentMode === 'quiz') {
@@ -462,22 +496,68 @@ function handleNameCheck() {
 }
 
 function showWelcomeScreen() {
-     quizContainerDiv.classList.add('hidden');
-     flashcardContainerDiv.classList.add('hidden'); 
-     resultsContainerDiv.innerHTML = ''; 
-     resultsContainerDiv.classList.add('hidden');
-     unitSelectionModal.classList.add('hidden'); 
+     console.log('showWelcomeScreen called');
      
+     // Hide all other containers first
+     if (quizContainerDiv) quizContainerDiv.classList.add('hidden');
+     if (flashcardContainerDiv) flashcardContainerDiv.classList.add('hidden'); 
+     if (resultsContainerDiv) {
+         resultsContainerDiv.innerHTML = ''; 
+         resultsContainerDiv.classList.add('hidden');
+     }
+     if (unitSelectionModal) unitSelectionModal.classList.add('hidden'); 
+     
+     // Ensure the main welcome screen element itself is visible
      const welcomeScreenEl = document.getElementById('welcome-screen');
-     if (welcomeScreenEl) welcomeScreenEl.classList.remove('hidden');
+     if (!welcomeScreenEl) {
+         console.error('Welcome screen element not found!');
+         return;
+     }
+     welcomeScreenEl.classList.remove('hidden');
+     console.log('Welcome screen made visible');
      
-     mainHeader.classList.remove('hidden');
-     document.getElementById('main-page-footer').classList.remove('hidden'); 
+     // Show header and footer
+     if (mainHeader) mainHeader.classList.remove('hidden');
+     const footer = document.getElementById('main-page-footer');
+     if (footer) footer.classList.remove('hidden'); 
 
+     // Reset state variables
      currentReviewType = null; 
      currentUnitId = null; 
+     currentMode = 'quiz';
+     backTargetScreen = 'ROOT';
      
+     // Force reset the button containers to initial state
+     const modeContainer = document.getElementById('mode-selection-container');
+     const reviewContainer = document.getElementById('review-type-container');
+     
+     if (!modeContainer || !reviewContainer) {
+         console.error('Required containers not found!', { modeContainer: !!modeContainer, reviewContainer: !!reviewContainer });
+         return;
+     }
+     
+     // Ensure containers are in correct state
+     modeContainer.classList.remove('hidden');
+     reviewContainer.classList.add('hidden');
+     console.log('Containers set to correct visibility state');
+     
+     // Clear any existing content to prevent conflicts
+     const modeButtonsContainer = document.getElementById('mode-selection-buttons');
+     const reviewButtonsContainer = document.getElementById('review-type-buttons');
+     
+     if (modeButtonsContainer) {
+         modeButtonsContainer.innerHTML = '';
+         console.log('Mode buttons container cleared');
+     }
+     if (reviewButtonsContainer) {
+         reviewButtonsContainer.innerHTML = '';
+         console.log('Review buttons container cleared');
+     }
+     
+     // Call renderModeSelection to rebuild the mode buttons
+     console.log('About to call renderModeSelection');
      renderModeSelection(); 
+     console.log('showWelcomeScreen completed');
 }
 
 // --- Back Button Logic ---
@@ -639,16 +719,19 @@ async function startQuiz(reviewTypeId, unitId, subcategoryId = null) {
                     if (subcategoryId === 'all_subcategories') {
                         questionPool = Object.values(weekData).flat();
                         quizName += ` - All Subcategories`;
-                    } else if (subcategoryId && weekData[subcategoryId]) {
-                        questionPool = [...weekData[subcategoryId]]; 
-                        quizName += ` - ${subcategoryId}`;
+                    } else if (subcategoryId) {
+                        // Robust subcategory matching (case-insensitive, trimmed)
+                        const subcatKey = Object.keys(weekData).find(k => k.trim().toLowerCase() === subcategoryId.trim().toLowerCase());
+                        if (subcatKey && Array.isArray(weekData[subcatKey]) && weekData[subcatKey].length > 0) {
+                            questionPool = [...weekData[subcatKey]];
+                            quizName += ` - ${subcatKey}`;
+                        } else {
+                            questionPool = [{ question: `No questions found for subcategory '${subcategoryId}' in ${currentChapter.name}.`, answer: "OK", options: ["OK"], reference: "N/A" }];
+                            quizName += ` - Subcategory Not Found`;
+                        }
                     } else if (!subcategoryId) {
-                        console.error(`BPOC week ${unitId} selected without subcategory, but it has subcategories.`);
                         questionPool = [{ question: `Error: Subcategory not selected for ${currentChapter.name}.`, answer: "OK", options: ["OK"], reference: "N/A" }];
-                         quizName += ` - Error: No Subcategory`;
-                    } else { 
-                         questionPool = [{ question: `Subcategory '${subcategoryId}' not found in ${currentChapter.name}.`, answer: "OK", options: ["OK"], reference: "N/A" }];
-                         quizName += ` - Subcategory Not Found`;
+                        quizName += ` - Error: No Subcategory`;
                     }
                 } else if (Array.isArray(weekData)) { 
                     questionPool = [...weekData]; 
@@ -768,7 +851,7 @@ function displayQuestion() {
     const options = Array.isArray(question.options) ? question.options : [];
     if (options.length === 0 && question.answer === "OK") { 
          const button = document.createElement('button');
-        button.className = 'w-full text-left bg-white p-4 border border-gray-300 rounded-lg hover:bg-gray-200 hover:border-blue-500 transition-colors';
+        button.className = 'w-full text-left bg-white p-3 md:p-4 border border-gray-300 rounded-lg hover:bg-gray-200 hover:border-blue-500 transition-colors min-h-12 md:min-h-auto text-sm md:text-base';
         button.textContent = "OK";
         button.onclick = () => selectOption(button, "OK", question.answer, question.reference || "N/A");
         optionsContainerDiv.appendChild(button);
@@ -776,7 +859,7 @@ function displayQuestion() {
         const shuffledOptions = [...options].sort(() => Math.random() - 0.5);
         shuffledOptions.forEach(option => {
             const button = document.createElement('button');
-            button.className = 'w-full text-left bg-white p-4 border border-gray-300 rounded-lg hover:bg-gray-200 hover:border-blue-500 transition-colors';
+            button.className = 'w-full text-left bg-white p-3 md:p-4 border border-gray-300 rounded-lg hover:bg-gray-200 hover:border-blue-500 transition-colors min-h-12 md:min-h-auto text-sm md:text-base';
             button.textContent = option;
             button.onclick = () => selectOption(button, option, question.answer, question.reference);
             optionsContainerDiv.appendChild(button);
@@ -1254,8 +1337,8 @@ function generateReportHTML() {
             </header>
 
             <section class="report-body grid grid-cols-1 md:grid-cols-3 gap-8 mb-10">
-                <div class="md:col-span-1 officer-info bg-gray-50 p-6 rounded-lg shadow-sm"> <!-- Renamed class -->
-                    <h3 class="text-xl font-semibold text-gray-700 mb-5 border-b pb-2">Officer Information</h3> <!-- Renamed text -->
+                <div class="md:col-span-1 officer-info bg-gray-50 p-4 sm:p-6 rounded-lg shadow-sm"> <!-- Renamed class -->
+                    <h3 class="text-xl font-semibold text-gray-700 mb-4 border-b pb-2">Officer Information</h3> <!-- Renamed text -->
                     <div class="space-y-3">
                         <div><strong class="block text-sm font-medium text-gray-500">Name:</strong> <span class="text-lg text-gray-800">${officerName}</span></div> <!-- Renamed variable -->
                         <div><strong class="block text-sm font-medium text-gray-500">Assessment Type:</strong> <span class="text-lg text-gray-800">${currentReviewType.name}</span></div>
@@ -1268,7 +1351,7 @@ function generateReportHTML() {
                 </div>
 
                 <div class="md:col-span-2 performance-summary">
-                    <h3 class="text-xl font-semibold text-gray-700 mb-5 border-b pb-2">Assessment Results</h3>
+                    <h3 class="text-xl font-semibold text-gray-700 mb-4 border-b pb-2">Assessment Results</h3>
                     <div class="grid grid-cols-1 sm:grid-cols-2 gap-6 items-center">
                         <div class="score-visual text-center p-2 sm:p-4">
                             <svg class="w-40 h-40 sm:w-48 sm:h-48 mx-auto" viewBox="0 0 ${2 * (radius + strokeWidth)} ${2 * (radius + strokeWidth)}">
@@ -1326,7 +1409,7 @@ function generateReportHTML() {
                         Print Report
                     </button>
                      <button id="main-menu-results" class="action-button-secondary">
-                        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="mr-2"><path d="m3 9 9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"></path><polyline points="9 22 9 12 15 12 15 22"></polyline></svg>
+                        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="mr-2"><path d="m3 9 9-7 9  7v11a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2v-5a2 2 0 0 1 2-2h16a2 2 0 0 1 2 2v5a2 2 0 0 1-2 2h-2"></path><polyline points="9 22 9 12 15 12 15 22"></polyline></svg>
                         Main Menu
                     </button>
                 </div>
